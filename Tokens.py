@@ -11,6 +11,7 @@ reserved = {
     'double':'DOUBLE',
     'boolean':'BOOLEAN',
     'null':'NULL',
+    'List':'LIST',
     'ArrayList': 'ARRAYLIST',
     'LinkedList' : 'LINKEDLIST',
     'Queue' : 'QUEUE',
@@ -18,6 +19,16 @@ reserved = {
     'Stack' : 'STACK',
     'new' : 'NEW',
     'final':'FINAL',
+    'if':'IF',
+    'else':'ELSE',
+    'while':'WHILE',
+    'for':'FOR',
+    'switch':'SWITCH',
+    'case':'CASE',
+    'do':'DO',
+    'break':'BREAK',
+    'continue':'CONTINUE',
+    'return':'RETURN',
     'public':'PUBLIC',
     'protected':'PROTECTED',
     'private':'PRIVATE',
@@ -83,6 +94,12 @@ t_PLUSPLUS = r'\+\+'
 t_MINUSMINUS = r'\-\-'
 t_TIMESTIMES=r'\*\*'
 
+t_ignore_LINE_COMMENT = '//.*'
+
+def t_BLOCK_COMMENT(self, t):
+    r'/\*(.|\n)*?\*/'
+    t.lexer.lineno += t.value.count('\n')
+
 def t_newline(t):
     r'\n+'
     t.lexer.lineno += t.value.count("\n")
@@ -90,3 +107,5 @@ def t_newline(t):
 def t_error(t):
     print("Illegal character '{}' ({}) in line {}".format(t.value[0], hex(ord(t.value[0])), t.lexer.lineno))
     t.lexer.skip(1)
+
+lexer = lex.lex()
