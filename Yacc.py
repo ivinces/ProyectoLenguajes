@@ -1,6 +1,9 @@
 import ply.yacc as yacc
 from Tokens import *
 
+def p_empty(p):
+    """empty :"""
+
 def p_Type(p):
     '''Type : INT
             | BOOLEAN
@@ -13,7 +16,7 @@ def p_Type(p):
             | BYTE
             | OBJECT
             | arraydeclaration
-            | EMPTY
+            | empty
             '''
     pass
 
@@ -22,14 +25,14 @@ def p_accessmodif(p):
                     | PRIVATE
                     | PROTECTED
                     | DEFAULT
-                    | EMPTY"""
+                    | empty"""
     pass
 
 def p_finalstatvar(p):
     """finalstatvar : FINAL
                 | STATIC
                 | FINAL STATIC
-                | EMPTY"""
+                | empty"""
     pass
 
 def p_declaration(p):

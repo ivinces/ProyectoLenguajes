@@ -99,7 +99,4 @@ def t_error(t):
     print("Illegal character '{}' ({}) in line {}".format(t.value[0], hex(ord(t.value[0])), t.lexer.lineno))
     t.lexer.skip(1)
 
-def t_empty(t):
-    pass
-
 lex.lex()
