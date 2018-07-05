@@ -28,183 +28,178 @@ Unused terminals:
 
 Grammar
 
-Rule 0     S' -> empty
-Rule 1     empty -> <empty>
-Rule 2     Type -> INT
-Rule 3     Type -> BOOLEAN
-Rule 4     Type -> STRING
-Rule 5     Type -> SHORT
-Rule 6     Type -> FLOAT
-Rule 7     Type -> LONG
-Rule 8     Type -> DOUBLE
-Rule 9     Type -> CHAR
-Rule 10    Type -> BYTE
-Rule 11    Type -> OBJECT
-Rule 12    Type -> arraydeclaration
-Rule 13    Type -> empty
-Rule 14    accessmodif -> PUBLIC
-Rule 15    accessmodif -> PRIVATE
-Rule 16    accessmodif -> PROTECTED
-Rule 17    accessmodif -> DEFAULT
-Rule 18    accessmodif -> empty
-Rule 19    finalstatvar -> FINAL
-Rule 20    finalstatvar -> STATIC
-Rule 21    finalstatvar -> FINAL STATIC
-Rule 22    finalstatvar -> empty
-Rule 23    declaration -> accessmodif finalstatvar Type STRING endexpression
-Rule 24    declaration -> accessmodif finalstatvar Type assign
-Rule 25    listdeclaration -> accessmodif finalstatvar LIST GREATTHAN Type LESSTHAN STRING endexpression
-Rule 26    listdeclaration -> accessmodif finalstatvar LIST GREATTHAN Type LESSTHAN listassign
-Rule 27    listassign -> STRING EQUALS listexpression endexpression
-Rule 28    listexpression -> NEW LIST GREATTHAN Type LESSTHAN LPAREN RPAREN
-Rule 29    arraydeclaration -> accessmodif finalstatvar ARRAYLIST GREATTHAN Type LESSTHAN STRING endexpression
-Rule 30    arraydeclaration -> accessmodif finalstatvar ARRAYLIST GREATTHAN Type LESSTHAN arrayassign
-Rule 31    arrayassign -> STRING EQUALS arrayexpression endexpression
-Rule 32    arrayexpression -> NEW ARRAYLIST GREATTHAN Type LESSTHAN LPAREN RPAREN
-Rule 33    linkedlistdeclaration -> accessmodif finalstatvar LINKEDLIST GREATTHAN Type LESSTHAN STRING endexpression
-Rule 34    linkedlistdeclaration -> accessmodif finalstatvar LINKEDLIST GREATTHAN Type LESSTHAN linkedlistassign
-Rule 35    linkedlistassign -> STRING EQUALS linkedlistexpression endexpression
-Rule 36    linkedlistexpression -> NEW LINKEDLIST GREATTHAN Type LESSTHAN LPAREN RPAREN
-Rule 37    linkedlistdeclaration -> accessmodif finalstatvar DOUBLELINKEDLIST GREATTHAN Type LESSTHAN STRING endexpression
-Rule 38    linkedlistdeclaration -> accessmodif finalstatvar DOUBLELINKEDLIST GREATTHAN Type LESSTHAN doublelinkedlistassign
-Rule 39    doublelinkedlistassign -> STRING EQUALS doublelinkedlistexpression endexpression
-Rule 40    doublelinkedlistexpression -> NEW DOUBLELINKEDLIST GREATTHAN Type LESSTHAN LPAREN RPAREN
-Rule 41    linkedlistdeclaration -> accessmodif finalstatvar STACK GREATTHAN Type LESSTHAN STRING endexpression
-Rule 42    linkedlistdeclaration -> accessmodif finalstatvar STACK GREATTHAN Type LESSTHAN stackassign
-Rule 43    stackassign -> STRING EQUALS stackexpression endexpression
-Rule 44    stackexpression -> NEW STACK GREATTHAN Type LESSTHAN LPAREN RPAREN
-Rule 45    linkedlistdeclaration -> accessmodif finalstatvar QUEUE GREATTHAN Type LESSTHAN STRING endexpression
-Rule 46    linkedlistdeclaration -> accessmodif finalstatvar QUEUE GREATTHAN Type LESSTHAN queueassign
-Rule 47    queueassign -> STRING EQUALS queueexpression endexpression
-Rule 48    queueexpression -> NEW QUEUE GREATTHAN Type LESSTHAN LPAREN RPAREN
-Rule 49    assign -> STRING EQUALS expression endexpression
-Rule 50    endexpression -> PUNTOCOMA
-Rule 51    expression -> expression PLUS expression
-Rule 52    expression -> expression MINUS expression
-Rule 53    expression -> expression TIMES expression
-Rule 54    expression -> expression DIVIDE expression
-Rule 55    expression -> expression MOD expression
-Rule 56    expression -> PLUSPLUS
-Rule 57    expression -> MINUSMINUS
-Rule 58    expression -> expression TIMESTIMES expression
-Rule 59    expression -> TIMES_ASSIGN expression
-Rule 60    expression -> MINUS_ASSIGN expression
-Rule 61    expression -> PLUS_ASSIGN expression
-Rule 62    expression -> DIVIDE_ASSIGN expression
-Rule 63    expression -> MOD_ASSIGN expression
-Rule 64    expression -> LPAREN expression RPAREN
-Rule 65    expression -> INTEGER
-Rule 66    expression -> empty
+Rule 0     S' -> program
+Rule 1     program -> declaration
+Rule 2     program -> listdeclaration
+Rule 3     program -> arraydeclaration
+Rule 4     program -> linkedlistdeclaration
+Rule 5     program -> doublelinkedlistdeclaration
+Rule 6     program -> stackdeclaration
+Rule 7     program -> queuedeclaration
+Rule 8     empty -> <empty>
+Rule 9     Type -> INT
+Rule 10    Type -> BOOLEAN
+Rule 11    Type -> STRING
+Rule 12    Type -> SHORT
+Rule 13    Type -> FLOAT
+Rule 14    Type -> LONG
+Rule 15    Type -> DOUBLE
+Rule 16    Type -> CHAR
+Rule 17    Type -> BYTE
+Rule 18    Type -> OBJECT
+Rule 19    Type -> arraydeclaration
+Rule 20    Type -> empty
+Rule 21    accessmodif -> PUBLIC
+Rule 22    accessmodif -> PRIVATE
+Rule 23    accessmodif -> PROTECTED
+Rule 24    accessmodif -> DEFAULT
+Rule 25    accessmodif -> empty
+Rule 26    finalstatvar -> FINAL
+Rule 27    finalstatvar -> STATIC
+Rule 28    finalstatvar -> FINAL STATIC
+Rule 29    finalstatvar -> empty
+Rule 30    declaration -> accessmodif finalstatvar Type STRING endexpression
+Rule 31    declaration -> accessmodif finalstatvar Type assign
+Rule 32    listdeclaration -> accessmodif finalstatvar LIST GREATTHAN Type LESSTHAN STRING endexpression
+Rule 33    listdeclaration -> accessmodif finalstatvar LIST GREATTHAN Type LESSTHAN listassign
+Rule 34    listassign -> STRING EQUALS listexpression endexpression
+Rule 35    listexpression -> NEW LIST GREATTHAN Type LESSTHAN LPAREN RPAREN
+Rule 36    arraydeclaration -> accessmodif finalstatvar ARRAYLIST LESSTHAN Type GREATTHAN STRING endexpression
+Rule 37    arraydeclaration -> accessmodif finalstatvar ARRAYLIST LESSTHAN Type GREATTHAN arrayassign
+Rule 38    arrayassign -> STRING EQUALS arrayexpression endexpression
+Rule 39    arrayexpression -> NEW ARRAYLIST GREATTHAN Type LESSTHAN LPAREN RPAREN
+Rule 40    linkedlistdeclaration -> accessmodif finalstatvar LINKEDLIST GREATTHAN Type LESSTHAN STRING endexpression
+Rule 41    linkedlistdeclaration -> accessmodif finalstatvar LINKEDLIST GREATTHAN Type LESSTHAN linkedlistassign
+Rule 42    linkedlistassign -> STRING EQUALS linkedlistexpression endexpression
+Rule 43    linkedlistexpression -> NEW LINKEDLIST GREATTHAN Type LESSTHAN LPAREN RPAREN
+Rule 44    doublelinkedlistdeclaration -> accessmodif finalstatvar DOUBLELINKEDLIST GREATTHAN Type LESSTHAN STRING endexpression
+Rule 45    doublelinkedlistdeclaration -> accessmodif finalstatvar DOUBLELINKEDLIST GREATTHAN Type LESSTHAN doublelinkedlistassign
+Rule 46    doublelinkedlistassign -> STRING EQUALS doublelinkedlistexpression endexpression
+Rule 47    doublelinkedlistexpression -> NEW DOUBLELINKEDLIST GREATTHAN Type LESSTHAN LPAREN RPAREN
+Rule 48    stackdeclaration -> accessmodif finalstatvar STACK GREATTHAN Type LESSTHAN STRING endexpression
+Rule 49    stackdeclaration -> accessmodif finalstatvar STACK GREATTHAN Type LESSTHAN stackassign
+Rule 50    stackassign -> STRING EQUALS stackexpression endexpression
+Rule 51    stackexpression -> NEW STACK GREATTHAN Type LESSTHAN LPAREN RPAREN
+Rule 52    queuedeclaration -> accessmodif finalstatvar QUEUE GREATTHAN Type LESSTHAN STRING endexpression
+Rule 53    queuedeclaration -> accessmodif finalstatvar QUEUE GREATTHAN Type LESSTHAN queueassign
+Rule 54    queueassign -> STRING EQUALS queueexpression endexpression
+Rule 55    queueexpression -> NEW QUEUE GREATTHAN Type LESSTHAN LPAREN RPAREN
+Rule 56    assign -> STRING EQUALS expression endexpression
+Rule 57    endexpression -> PUNTOCOMA
+Rule 58    expression -> expression PLUS expression
+Rule 59    expression -> expression MINUS expression
+Rule 60    expression -> expression TIMES expression
+Rule 61    expression -> expression DIVIDE expression
+Rule 62    expression -> expression MOD expression
+Rule 63    expression -> PLUSPLUS
+Rule 64    expression -> MINUSMINUS
+Rule 65    expression -> expression TIMESTIMES expression
+Rule 66    expression -> TIMES_ASSIGN expression
+Rule 67    expression -> MINUS_ASSIGN expression
+Rule 68    expression -> PLUS_ASSIGN expression
+Rule 69    expression -> DIVIDE_ASSIGN expression
+Rule 70    expression -> MOD_ASSIGN expression
+Rule 71    expression -> LPAREN expression RPAREN
+Rule 72    expression -> INTEGER
+Rule 73    expression -> empty
 
 Terminals, with rules where they appear
 
 ABSTRACT             : 
 AND                  : 
 AND_ASSIGN           : 
-ARRAYLIST            : 29 30 32
+ARRAYLIST            : 36 37 39
 BLOCK_COMMENT        : 
-BOOLEAN              : 3
-BYTE                 : 10
-CHAR                 : 9
+BOOLEAN              : 10
+BYTE                 : 17
+CHAR                 : 16
 COMA                 : 
 CONCA                : 
 CONCAT               : 
-DEFAULT              : 17
-DIVIDE               : 54
-DIVIDE_ASSIGN        : 62
+DEFAULT              : 24
+DIVIDE               : 61
+DIVIDE_ASSIGN        : 69
 DOSCOMA              : 
-DOUBLE               : 8
-DOUBLELINKEDLIST     : 37 38 40
+DOUBLE               : 15
+DOUBLELINKEDLIST     : 44 45 47
 EQUAL                : 
-EQUALS               : 27 31 35 39 43 47 49
-FINAL                : 19 21
-FLOAT                : 6
-GREATTHAN            : 25 26 28 29 30 32 33 34 36 37 38 40 41 42 44 45 46 48
+FINAL                : 26 28
+FLOAT                : 13
+GREATTHAN            : 32 33 35 36 37 39 40 41 43 44 45 47 48 49 51 52 53 55
 GREATTHANEQUAL       : 
-INT                  : 2
-INTEGER              : 65
+INT                  : 9
+INTEGER              : 72
 LCORCHETE            : 
-LESSTHAN             : 25 26 28 29 30 32 33 34 36 37 38 40 41 42 44 45 46 48
+LESSTHAN             : 32 33 35 36 37 39 40 41 43 44 45 47 48 49 51 52 53 55
 LESSTHANEQUAL        : 
-LINKEDLIST           : 33 34 36
-LIST                 : 25 26 28
+LINKEDLIST           : 40 41 43
+LIST                 : 32 33 35
 LLLAVE               : 
-LONG                 : 7
-LPAREN               : 28 32 36 40 44 48 64
-MINUS                : 52
-MINUSMINUS           : 57
-MINUS_ASSIGN         : 60
-MOD                  : 55
-MOD_ASSIGN           : 63
+LONG                 : 14
+LPAREN               : 35 39 43 47 51 55 71
+MINUS                : 59
+MINUSMINUS           : 64
+MINUS_ASSIGN         : 67
+MOD                  : 62
+MOD_ASSIGN           : 70
 NEQUAL               : 
-NEW                  : 28 32 36 40 44 48
+NEW                  : 35 39 43 47 51 55
 NOT                  : 
 NULL                 : 
-OBJECT               : 11
+OBJECT               : 18
 OR                   : 
 OR_ASSIGN            : 
-PLUS                 : 51
-PLUSPLUS             : 56
-PLUS_ASSIGN          : 61
-PRIVATE              : 15
-PROTECTED            : 16
-PUBLIC               : 14
+PLUS                 : 58
+PLUSPLUS             : 63
+PLUS_ASSIGN          : 68
+PRIVATE              : 22
+PROTECTED            : 23
+PUBLIC               : 21
 PUNTO                : 
-PUNTOCOMA            : 50
-QUEUE                : 45 46 48
+PUNTOCOMA            : 57
+QUEUE                : 52 53 55
 RCORCHETE            : 
 RLLAVE               : 
-RPAREN               : 28 32 36 40 44 48 64
-SHORT                : 5
-STACK                : 41 42 44
-STATIC               : 20 21
-STRING               : 4 23 25 27 29 31 33 35 37 39 41 43 45 47 49
-TIMES                : 53
-TIMESTIMES           : 58
-TIMES_ASSIGN         : 59
+RPAREN               : 35 39 43 47 51 55 71
+SHORT                : 12
+STACK                : 48 49 51
+STATIC               : 27 28
+STRING               : 11 30 32 34 36 38 40 42 44 46 48 50 52 54 56
+TIMES                : 60
+TIMESTIMES           : 65
+TIMES_ASSIGN         : 66
 XOR                  : 
 XOR_ASSIGN           : 
 error                : 
 
 Nonterminals, with rules where they appear
 
-Type                 : 23 24 25 26 28 29 30 32 33 34 36 37 38 40 41 42 44 45 46 48
-accessmodif          : 23 24 25 26 29 30 33 34 37 38 41 42 45 46
-arrayassign          : 30
-arraydeclaration     : 12
-arrayexpression      : 31
-assign               : 24
-declaration          : 
-doublelinkedlistassign : 38
-doublelinkedlistexpression : 39
-empty                : 13 18 22 66 0
-endexpression        : 23 25 27 29 31 33 35 37 39 41 43 45 47 49
-expression           : 49 51 51 52 52 53 53 54 54 55 55 58 58 59 60 61 62 63 64
-finalstatvar         : 23 24 25 26 29 30 33 34 37 38 41 42 45 46
-linkedlistassign     : 34
-linkedlistdeclaration : 
-linkedlistexpression : 35
-listassign           : 26
-listdeclaration      : 
-listexpression       : 27
-queueassign          : 46
-queueexpression      : 47
-stackassign          : 42
-stackexpression      : 43
-
-Parsing method: LALR
-
-state 0
-
-    (0) S' -> . empty
-    (1) empty -> .
-
-    $end            reduce using rule 1 (empty -> .)
-
-    empty                          shift and go to state 1
-
-state 1
-
-    (0) S' -> empty .
-
+EQUALS               : 34 38 42 46 50 54 56
+Type                 : 30 31 32 33 35 36 37 39 40 41 43 44 45 47 48 49 51 52 53 55
+accessmodif          : 30 31 32 33 36 37 40 41 44 45 48 49 52 53
+arrayassign          : 37
+arraydeclaration     : 3 19
+arrayexpression      : 38
+assign               : 31
+declaration          : 1
+doublelinkedlistassign : 45
+doublelinkedlistdeclaration : 5
+doublelinkedlistexpression : 46
+empty                : 20 25 29 73
+endexpression        : 30 32 34 36 38 40 42 44 46 48 50 52 54 56
+expression           : 56 58 58 59 59 60 60 61 61 62 62 65 65 66 67 68 69 70 71
+finalstatvar         : 30 31 32 33 36 37 40 41 44 45 48 49 52 53
+linkedlistassign     : 41
+linkedlistdeclaration : 4
+linkedlistexpression : 42
+listassign           : 33
+listdeclaration      : 2
+listexpression       : 34
+program              : 0
+queueassign          : 53
+queuedeclaration     : 7
+queueexpression      : 54
+stackassign          : 49
+stackdeclaration     : 6
+stackexpression      : 50
 

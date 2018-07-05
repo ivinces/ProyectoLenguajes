@@ -14,6 +14,16 @@ precedence=[
     ('right', 'PRIVATE', 'PROTECTED', 'PUBLIC'),
 ]
 
+def p_program(p):
+    """program :  declaration
+                | listdeclaration
+                | arraydeclaration
+                | linkedlistdeclaration
+                | doublelinkedlistdeclaration
+                | stackdeclaration
+                | queuedeclaration
+        """
+    pass
 
 def p_empty(p):
     """empty :"""
@@ -72,8 +82,8 @@ def p_listexpression(p):
     pass
 
 def p_arraydeclaration(p):
-    """arraydeclaration : accessmodif finalstatvar ARRAYLIST GREATTHAN Type LESSTHAN STRING endexpression
-            | accessmodif finalstatvar ARRAYLIST GREATTHAN Type LESSTHAN arrayassign
+    """arraydeclaration : accessmodif finalstatvar ARRAYLIST LESSTHAN Type GREATTHAN STRING endexpression
+            | accessmodif finalstatvar ARRAYLIST LESSTHAN Type GREATTHAN arrayassign
             """
     pass
 
@@ -82,13 +92,13 @@ def p_arrayassign(p):
     pass
 
 def p_arrayexpression(p):
-    """arrayexpression : NEW ARRAYLIST GREATTHAN Type LESSTHAN LPAREN RPAREN
+    """arrayexpression : NEW ARRAYLIST LESSTHAN Type GREATTHAN LPAREN RPAREN
         """
     pass
 
 def p_linkedlistdeclaration(p):
-    """linkedlistdeclaration : accessmodif finalstatvar LINKEDLIST GREATTHAN Type LESSTHAN STRING endexpression
-                            | accessmodif finalstatvar LINKEDLIST GREATTHAN Type LESSTHAN linkedlistassign
+    """linkedlistdeclaration : accessmodif finalstatvar LINKEDLIST LESSTHAN Type GREATTHAN STRING endexpression
+                            | accessmodif finalstatvar LINKEDLIST LESSTHAN Type GREATTHAN linkedlistassign
     """
     pass
 
@@ -97,13 +107,13 @@ def p_linkedlistassign(p):
     pass
 
 def p_linkedlistexpression(p):
-    """linkedlistexpression : NEW LINKEDLIST GREATTHAN Type LESSTHAN LPAREN RPAREN
+    """linkedlistexpression : NEW LINKEDLIST LESSTHAN Type GREATTHAN LPAREN RPAREN
         """
     pass
 
 def p_doublelinkedlistdeclaration(p):
-    """linkedlistdeclaration : accessmodif finalstatvar DOUBLELINKEDLIST GREATTHAN Type LESSTHAN STRING endexpression
-                            | accessmodif finalstatvar DOUBLELINKEDLIST GREATTHAN Type LESSTHAN doublelinkedlistassign
+    """doublelinkedlistdeclaration : accessmodif finalstatvar DOUBLELINKEDLIST LESSTHAN Type GREATTHAN STRING endexpression
+                            | accessmodif finalstatvar DOUBLELINKEDLIST LESSTHAN Type GREATTHAN doublelinkedlistassign
     """
     pass
 
@@ -112,13 +122,13 @@ def p_doublelinkedlistassign(p):
     pass
 
 def p_doublelinkedlistexpression(p):
-    """doublelinkedlistexpression : NEW DOUBLELINKEDLIST GREATTHAN Type LESSTHAN LPAREN RPAREN
+    """doublelinkedlistexpression : NEW DOUBLELINKEDLIST LESSTHAN Type GREATTHAN LPAREN RPAREN
         """
     pass
 
 def p_stackdeclaration(p):
-    """linkedlistdeclaration : accessmodif finalstatvar STACK GREATTHAN Type LESSTHAN STRING endexpression
-                            | accessmodif finalstatvar STACK GREATTHAN Type LESSTHAN stackassign
+    """stackdeclaration : accessmodif finalstatvar STACK LESSTHAN Type GREATTHAN STRING endexpression
+                            | accessmodif finalstatvar STACK LESSTHAN Type GREATTHAN stackassign
     """
     pass
 
@@ -132,7 +142,7 @@ def p_stackexpression(p):
     pass
 
 def p_queuedeclaration(p):
-    """linkedlistdeclaration : accessmodif finalstatvar QUEUE GREATTHAN Type LESSTHAN STRING endexpression
+    """queuedeclaration : accessmodif finalstatvar QUEUE GREATTHAN Type LESSTHAN STRING endexpression
                             | accessmodif finalstatvar QUEUE GREATTHAN Type LESSTHAN queueassign
     """
     pass
@@ -204,3 +214,10 @@ def p_error(error):
     return error
 
 parser=yacc.yacc()
+
+while True:
+    try:
+        s = input('calc > ')   # Use raw_input on Python 2
+    except EOFError:
+        break
+    parser.parse(s)
