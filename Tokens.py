@@ -1,5 +1,5 @@
 import ply.lex as lex
-import ply.yacc as yacc
+#import ply.yacc as yacc
 
 reserved = {
     'byte':'BYTE',
@@ -19,27 +19,16 @@ reserved = {
     'Stack' : 'STACK',
     'new' : 'NEW',
     'final':'FINAL',
-    'if':'IF',
-    'else':'ELSE',
-    'while':'WHILE',
-    'for':'FOR',
-    'switch':'SWITCH',
-    'case':'CASE',
-    'do':'DO',
-    'break':'BREAK',
-    'continue':'CONTINUE',
-    'return':'RETURN',
     'public':'PUBLIC',
     'protected':'PROTECTED',
     'private':'PRIVATE',
     'abstract':'ABSTRACT',
     'static':'STATIC',
     'default':'DEFAULT',
-    'instanceof':'INSTANCEOF',
 }
 
 tokens = ['STRING','INTEGER',
-          'PLUS', 'MINUS','TIMES','DIVIDE','MOD','OR', 'AND','XOR','LOR','LAND','NOT','LESSTHAN',
+          'PLUS', 'MINUS','TIMES','DIVIDE','MOD','OR', 'AND','XOR','NOT','CONCAT','LESSTHAN',
           'GREATTHAN','LESSTHANEQUAL', 'GREATTHANEQUAL', 'EQUAL', 'NEQUAL','PLUSPLUS','MINUSMINUS', 'TIMESTIMES','CONCA',
           'TIMES_ASSIGN','DIVIDE_ASSIGN', 'PLUS_ASSIGN', 'MINUS_ASSIGN', 'AND_ASSIGN', 'OR_ASSIGN', 'XOR_ASSIGN',
           'LPAREN', 'RPAREN','LCORCHETE','RCORCHETE','LLLAVE','RLLAVE','COMA','PUNTO','PUNTOCOMA',
@@ -62,6 +51,8 @@ t_COMA=r'\,'
 t_PUNTO= r'\.'
 t_PUNTOCOMA= r'\;'
 t_DOSCOMA= r'\:'
+t_NOT=r'\-'
+t_CONCAT=r'\+'
 
 t_PLUS=r'+'
 t_MINUS=r'-'
@@ -77,8 +68,8 @@ t_EQUAL = '=='
 t_NEQUAL = '!='
 t_GREATTHANEQUAL = '>='
 t_LESSTHANEQUAL = '<='
-t_GREATTHANEQUAL = '>'
-t_LESSTHANEQUAL = '<'
+t_GREATTHAN = '>'
+t_LESSTHAN = '<'
 
 
 t_TIMES_ASSIGN = r'\*='
@@ -108,4 +99,7 @@ def t_error(t):
     print("Illegal character '{}' ({}) in line {}".format(t.value[0], hex(ord(t.value[0])), t.lexer.lineno))
     t.lexer.skip(1)
 
-lexer = lex.lex()
+def t_empty(t):
+    pass
+
+lex.lex()
