@@ -1,7 +1,7 @@
 import ply.yacc as yacc
 from Tokens import *
 
-lex.lex()
+lexer=lex.lex()
 
 precedence=[
     ('left', 'OR'),
@@ -56,25 +56,98 @@ def p_declaration(p):
             """
     pass
 
+def p_listdeclaration(p):
+    """listdeclaration : accessmodif finalstatvar LIST GREATTHAN Type LESSTHAN  STRING endexpression
+            | accessmodif finalstatvar LIST GREATTHAN Type LESSTHAN  listassign
+    """
+    pass
+
+def p_listassign(p):
+    '''listassign : STRING EQUALS listexpression endexpression'''
+    pass
+
+def p_listexpression(p):
+    """listexpression : NEW LIST GREATTHAN Type LESSTHAN LPAREN RPAREN
+        """
+    pass
+
 def p_arraydeclaration(p):
-    """arraydeclaration : accessmodif finalstatvar LIST GREATTHAN Type LESSTHAN  STRING endexpression
-            | accessmodif finalstatvar ARRAYLIST GREATTHAN Type LESSTHAN STRING endexpression
-            | accessmodif finalstatvar LINKEDLIST GREATTHAN Type LESSTHAN STRING endexpression
-            | accessmodif finalstatvar DOUBLELINKEDLIST GREATTHAN Type LESSTHAN STRING endexpression
-            | accessmodif finalstatvar QUEUE GREATTHAN Type LESSTHAN STRING endexpression
-            | accessmodif finalstatvar STACK GREATTHAN Type LESSTHAN STRING endexpression
-            | accessmodif finalstatvar LIST GREATTHAN Type LESSTHAN  assign
-            | accessmodif finalstatvar ARRAYLIST GREATTHAN Type LESSTHAN assign
-            | accessmodif finalstatvar LINKEDLIST GREATTHAN Type LESSTHAN assign
-            | accessmodif finalstatvar DOUBLELINKEDLIST GREATTHAN Type LESSTHAN assign
-            | accessmodif finalstatvar QUEUE GREATTHAN Type LESSTHAN assign
-            | accessmodif finalstatvar STACK GREATTHAN Type LESSTHAN assign
+    """arraydeclaration : accessmodif finalstatvar ARRAYLIST GREATTHAN Type LESSTHAN STRING endexpression
+            | accessmodif finalstatvar ARRAYLIST GREATTHAN Type LESSTHAN arrayassign
             """
     pass
 
+def p_arrayassign(p):
+    '''arrayassign : STRING EQUALS arrayexpression endexpression'''
+    pass
+
+def p_arrayexpression(p):
+    """arrayexpression : NEW ARRAYLIST GREATTHAN Type LESSTHAN LPAREN RPAREN
+        """
+    pass
+
+def p_linkedlistdeclaration(p):
+    """linkedlistdeclaration : accessmodif finalstatvar LINKEDLIST GREATTHAN Type LESSTHAN STRING endexpression
+                            | accessmodif finalstatvar LINKEDLIST GREATTHAN Type LESSTHAN linkedlistassign
+    """
+    pass
+
+def p_linkedlistassign(p):
+    '''linkedlistassign : STRING EQUALS linkedlistexpression endexpression'''
+    pass
+
+def p_linkedlistexpression(p):
+    """linkedlistexpression : NEW LINKEDLIST GREATTHAN Type LESSTHAN LPAREN RPAREN
+        """
+    pass
+
+def p_doublelinkedlistdeclaration(p):
+    """linkedlistdeclaration : accessmodif finalstatvar DOUBLELINKEDLIST GREATTHAN Type LESSTHAN STRING endexpression
+                            | accessmodif finalstatvar DOUBLELINKEDLIST GREATTHAN Type LESSTHAN doublelinkedlistassign
+    """
+    pass
+
+def p_doublelinkedlistassign(p):
+    '''doublelinkedlistassign : STRING EQUALS doublelinkedlistexpression endexpression'''
+    pass
+
+def p_doublelinkedlistexpression(p):
+    """doublelinkedlistexpression : NEW DOUBLELINKEDLIST GREATTHAN Type LESSTHAN LPAREN RPAREN
+        """
+    pass
+
+def p_stackdeclaration(p):
+    """linkedlistdeclaration : accessmodif finalstatvar STACK GREATTHAN Type LESSTHAN STRING endexpression
+                            | accessmodif finalstatvar STACK GREATTHAN Type LESSTHAN stackassign
+    """
+    pass
+
+def p_stackassign(p):
+    '''stackassign : STRING EQUALS stackexpression endexpression'''
+    pass
+
+def p_stackexpression(p):
+    """stackexpression : NEW STACK GREATTHAN Type LESSTHAN LPAREN RPAREN
+        """
+    pass
+
+def p_queuedeclaration(p):
+    """linkedlistdeclaration : accessmodif finalstatvar QUEUE GREATTHAN Type LESSTHAN STRING endexpression
+                            | accessmodif finalstatvar QUEUE GREATTHAN Type LESSTHAN queueassign
+    """
+    pass
+
+def p_queueassign(p):
+    '''queueassign : STRING EQUALS queueexpression endexpression'''
+    pass
+
+def p_queueexpression(p):
+    """queueexpression : NEW QUEUE GREATTHAN Type LESSTHAN LPAREN RPAREN
+        """
+    pass
+
 def p_assign(p):
-    '''assign : STRING EQUALS expression endexpression
-            | STRING EQUALS expressionarray endexpression'''
+    '''assign : STRING EQUALS expression endexpression'''
     pass
 
 def p_endexpression(p):
@@ -126,16 +199,8 @@ def p_expression(p):
         p[0] %= p[2]
     pass
 
-def p_expressionarray(p):
-    """expressionarray : NEW LIST GREATTHAN Type LESSTHAN LPAREN RPAREN
-           | NEW LINKEDLIST GREATTHAN Type LESSTHAN LPAREN RPAREN
-           | NEW DOUBLELINKEDLIST GREATTHAN Type LESSTHAN LPAREN RPAREN
-           | NEW QUEUE GREATTHAN Type LESSTHAN LPAREN RPAREN
-           | NEW STACK GREATTHAN Type LESSTHAN LPAREN RPAREN"""
-    pass
+def p_error(error):
+    print("Syntax Error: Unexpected '%s', near line '%s' " % (error.value, error.lineno))
+    return error
 
-def p_error(p):
-    print("Syntax error")
-    pass
-
-yacc.yacc()
+parser=yacc.yacc()
