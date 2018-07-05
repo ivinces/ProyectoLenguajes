@@ -79,8 +79,8 @@ t_EQUAL = '=='
 t_NEQUAL = '!='
 t_GREATTHANEQUAL = '>='
 t_LESSTHANEQUAL = '<='
-t_GREATTHANEQUAL = '>'
-t_LESSTHANEQUAL = '<'
+t_GREATTHAN = '>'
+t_LESSTHAN = '<'
 
 
 t_TIMES_ASSIGN = r'\*='

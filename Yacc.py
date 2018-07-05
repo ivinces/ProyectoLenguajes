@@ -11,13 +11,27 @@ def p_Type(p):
             | DOUBLE
             | CHAR
             | BYTE
-
+            | arraydeclaration
             '''
     pass
 
-def p_assign(p):
-    '''Type assign: STRING EQUALS expression'''
+def p_declaration(p):
+    """declaration : Type STRING
+            | Type STRING EQUALS expression"""
+    pass
 
+def p_arraydeclaration(p):
+    """arraydeclaration : LIST GREATTHAN Type LESSTHAN LPAREN RPAREN
+            | ARRAYLIST GREATTHAN Type LESSTHAN LPAREN RPAREN
+            | LINKEDLIST GREATTHAN Type LESSTHAN LPAREN RPAREN
+            | DOUBLELINKEDLIST GREATTHAN Type LESSTHAN LPAREN RPAREN
+            | QUEUE GREATTHAN Type LESSTHAN LPAREN RPAREN
+            | STACK GREATTHAN Type LESSTHAN LPAREN RPAREN"""
+    pass
+
+def p_assign(p):
+    '''assign: STRING EQUALS expression'''
+    pass
 
 def p_expression(p):
     '''expression : expression PLUS expression
