@@ -1,5 +1,5 @@
 import ply.lex as lex
-import ply.yacc as yacc
+#import ply.yacc as yacc
 
 reserved = {
     'byte':'BYTE',
@@ -39,7 +39,7 @@ reserved = {
 }
 
 tokens = ['STRING','INTEGER',
-          'PLUS', 'MINUS','TIMES','DIVIDE','MOD','OR', 'AND','XOR','LOR','LAND','NOT','LESSTHAN',
+          'PLUS', 'MINUS','TIMES','DIVIDE','MOD','OR', 'AND','XOR','NOT','CONCAT','LESSTHAN',
           'GREATTHAN','LESSTHANEQUAL', 'GREATTHANEQUAL', 'EQUAL', 'NEQUAL','PLUSPLUS','MINUSMINUS', 'TIMESTIMES','CONCA',
           'TIMES_ASSIGN','DIVIDE_ASSIGN', 'PLUS_ASSIGN', 'MINUS_ASSIGN', 'AND_ASSIGN', 'OR_ASSIGN', 'XOR_ASSIGN',
           'LPAREN', 'RPAREN','LCORCHETE','RCORCHETE','LLLAVE','RLLAVE','COMA','PUNTO','PUNTOCOMA',
@@ -62,6 +62,8 @@ t_COMA=r'\,'
 t_PUNTO= r'\.'
 t_PUNTOCOMA= r'\;'
 t_DOSCOMA= r'\:'
+t_NOT=r'\-'
+t_CONCAT=r'\+'
 
 t_PLUS=r'+'
 t_MINUS=r'-'
@@ -108,4 +110,4 @@ def t_error(t):
     print("Illegal character '{}' ({}) in line {}".format(t.value[0], hex(ord(t.value[0])), t.lexer.lineno))
     t.lexer.skip(1)
 
-lexer = lex.lex()
+lex.lex()
