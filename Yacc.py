@@ -52,16 +52,24 @@ def p_finalstatvar(p):
 
 def p_declaration(p):
     """declaration : accessmodif finalstatvar Type STRING endexpression
-            | accessmodif finalstatvar Type STRING EQUALS expression"""
+            | accessmodif finalstatvar Type assign
+            """
     pass
 
 def p_arraydeclaration(p):
-    """arraydeclaration : LIST GREATTHAN Type LESSTHAN LPAREN RPAREN
-            | ARRAYLIST GREATTHAN Type LESSTHAN LPAREN RPAREN
-            | LINKEDLIST GREATTHAN Type LESSTHAN LPAREN RPAREN
-            | DOUBLELINKEDLIST GREATTHAN Type LESSTHAN LPAREN RPAREN
-            | QUEUE GREATTHAN Type LESSTHAN LPAREN RPAREN
-            | STACK GREATTHAN Type LESSTHAN LPAREN RPAREN"""
+    """arraydeclaration : accessmodif finalstatvar LIST GREATTHAN Type LESSTHAN  STRING endexpression
+            | accessmodif finalstatvar ARRAYLIST GREATTHAN Type LESSTHAN STRING endexpression
+            | accessmodif finalstatvar LINKEDLIST GREATTHAN Type LESSTHAN STRING endexpression
+            | accessmodif finalstatvar DOUBLELINKEDLIST GREATTHAN Type LESSTHAN STRING endexpression
+            | accessmodif finalstatvar QUEUE GREATTHAN Type LESSTHAN STRING endexpression
+            | accessmodif finalstatvar STACK GREATTHAN Type LESSTHAN STRING endexpression
+            | accessmodif finalstatvar LIST GREATTHAN Type LESSTHAN  assign
+            | accessmodif finalstatvar ARRAYLIST GREATTHAN Type LESSTHAN assign
+            | accessmodif finalstatvar LINKEDLIST GREATTHAN Type LESSTHAN assign
+            | accessmodif finalstatvar DOUBLELINKEDLIST GREATTHAN Type LESSTHAN assign
+            | accessmodif finalstatvar QUEUE GREATTHAN Type LESSTHAN assign
+            | accessmodif finalstatvar STACK GREATTHAN Type LESSTHAN assign
+            """
     pass
 
 def p_assign(p):
