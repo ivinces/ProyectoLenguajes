@@ -14,6 +14,7 @@ precedence=[
     ('right', 'PRIVATE', 'PROTECTED', 'PUBLIC'),
 ]
 
+
 def p_program(p):
     """program :  declaration
                 | listdeclaration
@@ -23,10 +24,6 @@ def p_program(p):
                 | stackdeclaration
                 | queuedeclaration
         """
-    pass
-
-def p_empty(p):
-    """empty :"""
     pass
 
 def p_Type(p):
@@ -82,7 +79,7 @@ def p_listexpression(p):
     pass
 
 def p_arraydeclaration(p):
-    """arraydeclaration : accessmodif finalstatvar ARRAYLIST LESSTHAN Type GREATTHAN STRING endexpression
+    """arraydeclaration : accessmodif finalstatvar ARRAYLIST LESSTHAN Type GREATTHAN ESPACIO STRING endexpression
             | accessmodif finalstatvar ARRAYLIST LESSTHAN Type GREATTHAN arrayassign
             """
     pass
@@ -207,6 +204,10 @@ def p_expression(p):
         p[0] *= p[2]
     elif p[1] == '%=':
         p[0] %= p[2]
+    pass
+
+def p_empty(p):
+    """empty :"""
     pass
 
 def p_error(error):

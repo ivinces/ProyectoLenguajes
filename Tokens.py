@@ -28,18 +28,56 @@ reserved = {
     'default':'DEFAULT',
 }
 
-tokens = ['STRING','INTEGER',
+tokens = list(reserved.values())+ ['STRING','INTEGER', 'ESPACIO',
           'PLUS', 'MINUS','TIMES','DIVIDE','MOD','OR', 'AND','XOR','NOT','CONCAT','LESSTHAN',
           'GREATTHAN','LESSTHANEQUAL', 'GREATTHANEQUAL', 'EQUAL','EQUALS', 'NEQUAL','PLUSPLUS','MINUSMINUS', 'TIMESTIMES','CONCA',
           'TIMES_ASSIGN','DIVIDE_ASSIGN', 'PLUS_ASSIGN', 'MINUS_ASSIGN', 'MOD_ASSIGN', 'AND_ASSIGN', 'OR_ASSIGN', 'XOR_ASSIGN',
           'LPAREN', 'RPAREN','LCORCHETE','RCORCHETE','LLLAVE','RLLAVE','COMA','PUNTO','PUNTOCOMA',
-          'DOSCOMA', 'BLOCK_COMMENT']+list(reserved.values())
+          'DOSCOMA', 'BLOCK_COMMENT']
 
 t_STRING=r'[a-zA-Z_][a-zA-Z0-9_]*'
 
 def t_INTEGER(t):
     r'\d+'
     t.value = int(t.value)
+    return t
+
+def t_ARRAYLIST(t):
+    r'ArrayList'
+    t.value=t.value
+    return t
+def t_BYTE(t):
+    r'byte'
+    t.value=t.value
+    return t
+
+def t_SHORT(t):
+    r'short'
+    t.value=t.value
+    return t
+
+def t_INT(t):
+    r'int'
+    t.value=t.value
+    return t
+def t_LONG(t):
+    r'long'
+    t.value=t.value
+    return t
+
+def t_CHAR(t):
+    r'char'
+    t.value=t.value
+    return t
+
+def t_FLOAT(t):
+    r'float'
+    t.value=t.value
+    return t
+
+def t_ESPACIO(t):
+    r'" "'
+    t.value=t.value
     return t
 
 t_LPAREN=r'\('
@@ -104,3 +142,9 @@ def t_error(t):
 lex.lex()
 
 
+lex.input("ArrayList")
+while True:
+    tok=lex.token()
+    print(tok)
+    if not tok:
+        break
