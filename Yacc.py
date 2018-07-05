@@ -126,5 +126,8 @@ def p_expressionarray(p):
            | NEW STACK GREATTHAN Type LESSTHAN LPAREN RPAREN"""
     pass
 
+def p_error(p):
+    print("Syntax error")
+    pass
 
 yacc.yacc()
