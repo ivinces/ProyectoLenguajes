@@ -8,6 +8,7 @@ reserved = {
     'long':'LONG',
     'char':'CHAR',
     'float':'FLOAT',
+    'object':'OBJECT',
     'double':'DOUBLE',
     'boolean':'BOOLEAN',
     'null':'NULL',
@@ -29,10 +30,10 @@ reserved = {
 
 tokens = ['STRING','INTEGER',
           'PLUS', 'MINUS','TIMES','DIVIDE','MOD','OR', 'AND','XOR','NOT','CONCAT','LESSTHAN',
-          'GREATTHAN','LESSTHANEQUAL', 'GREATTHANEQUAL', 'EQUAL', 'NEQUAL','PLUSPLUS','MINUSMINUS', 'TIMESTIMES','CONCA',
-          'TIMES_ASSIGN','DIVIDE_ASSIGN', 'PLUS_ASSIGN', 'MINUS_ASSIGN', 'AND_ASSIGN', 'OR_ASSIGN', 'XOR_ASSIGN',
+          'GREATTHAN','LESSTHANEQUAL', 'GREATTHANEQUAL', 'EQUALS', 'EQUAL', 'NEQUAL','PLUSPLUS','MINUSMINUS', 'TIMESTIMES','CONCA',
+          'TIMES_ASSIGN','DIVIDE_ASSIGN', 'PLUS_ASSIGN', 'MINUS_ASSIGN', 'MOD_ASSIGN', 'AND_ASSIGN', 'OR_ASSIGN', 'XOR_ASSIGN',
           'LPAREN', 'RPAREN','LCORCHETE','RCORCHETE','LLLAVE','RLLAVE','COMA','PUNTO','PUNTOCOMA',
-          'DOSCOMA']+list(reserved.values())
+          'DOSCOMA', 'BLOCK_COMMENT']+list(reserved.values())
 
 t_STRING=r'[a-zA-Z_][a-zA-Z0-9_]*'
 
@@ -54,16 +55,17 @@ t_DOSCOMA= r'\:'
 t_NOT=r'\-'
 t_CONCAT=r'\+'
 
-t_PLUS=r'+'
+t_PLUS=r'\+'
 t_MINUS=r'-'
 t_DIVIDE=r'/'
-t_TIMES=r'*'
+t_TIMES=r'\*'
 t_MOD=r'%'
 
 t_OR = r'\|\|'
-t_AND = '&&'
-t_XOR='^^'
+t_AND = '\&\&'
+t_XOR='\^\^'
 
+t_EQUALS = '\='
 t_EQUAL = '=='
 t_NEQUAL = '!='
 t_GREATTHANEQUAL = '>='
@@ -74,7 +76,7 @@ t_LESSTHAN = '<'
 
 t_TIMES_ASSIGN = r'\*='
 t_DIVIDE_ASSIGN = '/='
-t_MOD_ASSIGN = '%='
+t_MOD_ASSIGN = '\%\='
 t_PLUS_ASSIGN = r'\+='
 t_MINUS_ASSIGN = '-='
 t_AND_ASSIGN = '&='
@@ -87,7 +89,7 @@ t_TIMESTIMES=r'\*\*'
 
 t_ignore_LINE_COMMENT = '//.*'
 
-def t_BLOCK_COMMENT(self, t):
+def t_BLOCK_COMMENT(t):
     r'/\*(.|\n)*?\*/'
     t.lexer.lineno += t.value.count('\n')
 
@@ -100,3 +102,5 @@ def t_error(t):
     t.lexer.skip(1)
 
 lex.lex()
+
+

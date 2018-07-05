@@ -1,8 +1,23 @@
 import ply.yacc as yacc
 from Tokens import *
 
+lex.lex()
+
+precedence=[
+    ('left', 'OR'),
+    ('left', 'XOR'),
+    ('left', 'AND'),
+    ('nonassoc', 'LESSTHAN', 'GREATTHAN'),
+    ('left', 'PLUS', 'MINUS'),
+    ('left', 'TIMES', 'DIVIDE'),
+    ('nonassoc', 'NEW'),
+    ('right', 'PRIVATE', 'PROTECTED', 'PUBLIC'),
+]
+
+
 def p_empty(p):
     """empty :"""
+    pass
 
 def p_Type(p):
     '''Type : INT
@@ -50,7 +65,7 @@ def p_arraydeclaration(p):
     pass
 
 def p_assign(p):
-    '''assign: STRING EQUALS expression endexpression
+    '''assign : STRING EQUALS expression endexpression
             | STRING EQUALS expressionarray endexpression'''
     pass
 
@@ -73,7 +88,8 @@ def p_expression(p):
            | DIVIDE_ASSIGN expression
            | MOD_ASSIGN expression
            | LPAREN expression RPAREN
-           | NUMBER endexpression'''
+           | INTEGER
+           | empty'''
     if p[2] == '+':
         p[0] = p[1] + p[3]
     elif p[2] == '-':

@@ -1,0 +1,185 @@
+Created by PLY version 3.11 (http://www.dabeaz.com/ply)
+
+Unused terminals:
+
+    ABSTRACT
+    AND
+    AND_ASSIGN
+    BLOCK_COMMENT
+    COMA
+    CONCA
+    CONCAT
+    DOSCOMA
+    EQUAL
+    GREATTHANEQUAL
+    LCORCHETE
+    LESSTHANEQUAL
+    LLLAVE
+    NEQUAL
+    NOT
+    NULL
+    OR
+    OR_ASSIGN
+    PUNTO
+    RCORCHETE
+    RLLAVE
+    XOR
+    XOR_ASSIGN
+
+Grammar
+
+Rule 0     S' -> empty
+Rule 1     empty -> <empty>
+Rule 2     Type -> INT
+Rule 3     Type -> BOOLEAN
+Rule 4     Type -> STRING
+Rule 5     Type -> SHORT
+Rule 6     Type -> FLOAT
+Rule 7     Type -> LONG
+Rule 8     Type -> DOUBLE
+Rule 9     Type -> CHAR
+Rule 10    Type -> BYTE
+Rule 11    Type -> OBJECT
+Rule 12    Type -> arraydeclaration
+Rule 13    Type -> empty
+Rule 14    accessmodif -> PUBLIC
+Rule 15    accessmodif -> PRIVATE
+Rule 16    accessmodif -> PROTECTED
+Rule 17    accessmodif -> DEFAULT
+Rule 18    accessmodif -> empty
+Rule 19    finalstatvar -> FINAL
+Rule 20    finalstatvar -> STATIC
+Rule 21    finalstatvar -> FINAL STATIC
+Rule 22    finalstatvar -> empty
+Rule 23    declaration -> accessmodif finalstatvar Type STRING endexpression
+Rule 24    declaration -> accessmodif finalstatvar Type STRING EQUALS expression
+Rule 25    arraydeclaration -> LIST GREATTHAN Type LESSTHAN LPAREN RPAREN
+Rule 26    arraydeclaration -> ARRAYLIST GREATTHAN Type LESSTHAN LPAREN RPAREN
+Rule 27    arraydeclaration -> LINKEDLIST GREATTHAN Type LESSTHAN LPAREN RPAREN
+Rule 28    arraydeclaration -> DOUBLELINKEDLIST GREATTHAN Type LESSTHAN LPAREN RPAREN
+Rule 29    arraydeclaration -> QUEUE GREATTHAN Type LESSTHAN LPAREN RPAREN
+Rule 30    arraydeclaration -> STACK GREATTHAN Type LESSTHAN LPAREN RPAREN
+Rule 31    assign -> STRING EQUALS expression endexpression
+Rule 32    assign -> STRING EQUALS expressionarray endexpression
+Rule 33    endexpression -> PUNTOCOMA
+Rule 34    expression -> expression PLUS expression
+Rule 35    expression -> expression MINUS expression
+Rule 36    expression -> expression TIMES expression
+Rule 37    expression -> expression DIVIDE expression
+Rule 38    expression -> expression MOD expression
+Rule 39    expression -> PLUSPLUS
+Rule 40    expression -> MINUSMINUS
+Rule 41    expression -> expression TIMESTIMES expression
+Rule 42    expression -> TIMES_ASSIGN expression
+Rule 43    expression -> MINUS_ASSIGN expression
+Rule 44    expression -> PLUS_ASSIGN expression
+Rule 45    expression -> DIVIDE_ASSIGN expression
+Rule 46    expression -> MOD_ASSIGN expression
+Rule 47    expression -> LPAREN expression RPAREN
+Rule 48    expression -> INTEGER
+Rule 49    expression -> empty
+Rule 50    expressionarray -> NEW LIST GREATTHAN Type LESSTHAN LPAREN RPAREN
+Rule 51    expressionarray -> NEW LINKEDLIST GREATTHAN Type LESSTHAN LPAREN RPAREN
+Rule 52    expressionarray -> NEW DOUBLELINKEDLIST GREATTHAN Type LESSTHAN LPAREN RPAREN
+Rule 53    expressionarray -> NEW QUEUE GREATTHAN Type LESSTHAN LPAREN RPAREN
+Rule 54    expressionarray -> NEW STACK GREATTHAN Type LESSTHAN LPAREN RPAREN
+
+Terminals, with rules where they appear
+
+ABSTRACT             : 
+AND                  : 
+AND_ASSIGN           : 
+ARRAYLIST            : 26
+BLOCK_COMMENT        : 
+BOOLEAN              : 3
+BYTE                 : 10
+CHAR                 : 9
+COMA                 : 
+CONCA                : 
+CONCAT               : 
+DEFAULT              : 17
+DIVIDE               : 37
+DIVIDE_ASSIGN        : 45
+DOSCOMA              : 
+DOUBLE               : 8
+DOUBLELINKEDLIST     : 28 52
+EQUAL                : 
+EQUALS               : 24 31 32
+FINAL                : 19 21
+FLOAT                : 6
+GREATTHAN            : 25 26 27 28 29 30 50 51 52 53 54
+GREATTHANEQUAL       : 
+INT                  : 2
+INTEGER              : 48
+LCORCHETE            : 
+LESSTHAN             : 25 26 27 28 29 30 50 51 52 53 54
+LESSTHANEQUAL        : 
+LINKEDLIST           : 27 51
+LIST                 : 25 50
+LLLAVE               : 
+LONG                 : 7
+LPAREN               : 25 26 27 28 29 30 47 50 51 52 53 54
+MINUS                : 35
+MINUSMINUS           : 40
+MINUS_ASSIGN         : 43
+MOD                  : 38
+MOD_ASSIGN           : 46
+NEQUAL               : 
+NEW                  : 50 51 52 53 54
+NOT                  : 
+NULL                 : 
+OBJECT               : 11
+OR                   : 
+OR_ASSIGN            : 
+PLUS                 : 34
+PLUSPLUS             : 39
+PLUS_ASSIGN          : 44
+PRIVATE              : 15
+PROTECTED            : 16
+PUBLIC               : 14
+PUNTO                : 
+PUNTOCOMA            : 33
+QUEUE                : 29 53
+RCORCHETE            : 
+RLLAVE               : 
+RPAREN               : 25 26 27 28 29 30 47 50 51 52 53 54
+SHORT                : 5
+STACK                : 30 54
+STATIC               : 20 21
+STRING               : 4 23 24 31 32
+TIMES                : 36
+TIMESTIMES           : 41
+TIMES_ASSIGN         : 42
+XOR                  : 
+XOR_ASSIGN           : 
+error                : 
+
+Nonterminals, with rules where they appear
+
+Type                 : 23 24 25 26 27 28 29 30 50 51 52 53 54
+accessmodif          : 23 24
+arraydeclaration     : 12
+assign               : 
+declaration          : 
+empty                : 13 18 22 49 0
+endexpression        : 23 31 32
+expression           : 24 31 34 34 35 35 36 36 37 37 38 38 41 41 42 43 44 45 46 47
+expressionarray      : 32
+finalstatvar         : 23 24
+
+Parsing method: LALR
+
+state 0
+
+    (0) S' -> . empty
+    (1) empty -> .
+
+    $end            reduce using rule 1 (empty -> .)
+
+    empty                          shift and go to state 1
+
+state 1
+
+    (0) S' -> empty .
+
+
