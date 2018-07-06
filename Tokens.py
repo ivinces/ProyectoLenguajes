@@ -226,11 +226,3 @@ def t_error(t):
     t.lexer.skip(1)
 
 lex.lex()
-
-
-lex.input("<")
-while True:
-    tok=lex.token()
-    print(tok)
-    if not tok:
-        break

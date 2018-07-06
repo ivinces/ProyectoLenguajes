@@ -79,30 +79,31 @@ Rule 46    doublelinkedlistexpression -> NEW DOUBLELINKEDLIST LESSTHAN Type GREA
 Rule 47    stackdeclaration -> accessmodif finalstatvar STACK LESSTHAN Type GREATTHAN STRING endexpression
 Rule 48    stackdeclaration -> accessmodif finalstatvar STACK LESSTHAN Type GREATTHAN stackassign
 Rule 49    stackassign -> STRING EQUALS stackexpression endexpression
-Rule 50    stackexpression -> NEW STACK GREATTHAN Type LESSTHAN LPAREN RPAREN
+Rule 50    stackexpression -> NEW STACK LESSTHAN Type GREATTHAN LPAREN RPAREN
 Rule 51    queuedeclaration -> accessmodif finalstatvar QUEUE LESSTHAN Type GREATTHAN STRING endexpression
 Rule 52    queuedeclaration -> accessmodif finalstatvar QUEUE LESSTHAN Type GREATTHAN queueassign
 Rule 53    queueassign -> STRING EQUALS queueexpression endexpression
 Rule 54    queueexpression -> NEW QUEUE LESSTHAN Type GREATTHAN LPAREN RPAREN
-Rule 55    assign -> STRING EQUALS expression endexpression
-Rule 56    endexpression -> PUNTOCOMA
-Rule 57    expression -> expression PLUS expression
-Rule 58    expression -> expression MINUS expression
-Rule 59    expression -> expression TIMES expression
-Rule 60    expression -> expression DIVIDE expression
-Rule 61    expression -> expression MOD expression
-Rule 62    expression -> PLUSPLUS
-Rule 63    expression -> MINUSMINUS
-Rule 64    expression -> expression TIMESTIMES expression
-Rule 65    expression -> TIMES_ASSIGN expression
-Rule 66    expression -> MINUS_ASSIGN expression
-Rule 67    expression -> PLUS_ASSIGN expression
-Rule 68    expression -> DIVIDE_ASSIGN expression
-Rule 69    expression -> MOD_ASSIGN expression
-Rule 70    expression -> LPAREN expression RPAREN
-Rule 71    expression -> INTEGER
-Rule 72    expression -> empty
-Rule 73    empty -> <empty>
+Rule 55    queueexpression -> NEW LINKEDLIST LESSTHAN Type GREATTHAN LPAREN RPAREN
+Rule 56    assign -> STRING EQUALS expression endexpression
+Rule 57    endexpression -> PUNTOCOMA
+Rule 58    expression -> expression PLUS expression
+Rule 59    expression -> expression MINUS expression
+Rule 60    expression -> expression TIMES expression
+Rule 61    expression -> expression DIVIDE expression
+Rule 62    expression -> expression MOD expression
+Rule 63    expression -> PLUSPLUS
+Rule 64    expression -> MINUSMINUS
+Rule 65    expression -> expression TIMESTIMES expression
+Rule 66    expression -> TIMES_ASSIGN expression
+Rule 67    expression -> MINUS_ASSIGN expression
+Rule 68    expression -> PLUS_ASSIGN expression
+Rule 69    expression -> DIVIDE_ASSIGN expression
+Rule 70    expression -> MOD_ASSIGN expression
+Rule 71    expression -> LPAREN expression RPAREN
+Rule 72    expression -> INTEGER
+Rule 73    expression -> empty
+Rule 74    empty -> <empty>
 
 Terminals, with rules where they appear
 
@@ -118,66 +119,66 @@ COMA                 :
 CONCA                : 
 CONCAT               : 
 DEFAULT              : 23
-DIVIDE               : 60
-DIVIDE_ASSIGN        : 68
+DIVIDE               : 61
+DIVIDE_ASSIGN        : 69
 DOSCOMA              : 
 DOUBLE               : 14
 DOUBLELINKEDLIST     : 43 44 46
 EQUAL                : 
-EQUALS               : 33 37 41 45 49 53 55
+EQUALS               : 33 37 41 45 49 53 56
 ESPACIO              : 
 FINAL                : 25 27
 FLOAT                : 12
-GREATTHAN            : 31 32 34 35 36 38 39 40 42 43 44 46 47 48 50 51 52 54
+GREATTHAN            : 31 32 34 35 36 38 39 40 42 43 44 46 47 48 50 51 52 54 55
 GREATTHANEQUAL       : 
 INT                  : 8
-INTEGER              : 71
+INTEGER              : 72
 LCORCHETE            : 
-LESSTHAN             : 31 32 34 35 36 38 39 40 42 43 44 46 47 48 50 51 52 54
+LESSTHAN             : 31 32 34 35 36 38 39 40 42 43 44 46 47 48 50 51 52 54 55
 LESSTHANEQUAL        : 
-LINKEDLIST           : 39 40 42
+LINKEDLIST           : 39 40 42 55
 LIST                 : 31 32 34
 LLLAVE               : 
 LONG                 : 13
-LPAREN               : 34 38 42 46 50 54 70
-MINUS                : 58
-MINUSMINUS           : 63
-MINUS_ASSIGN         : 66
-MOD                  : 61
-MOD_ASSIGN           : 69
+LPAREN               : 34 38 42 46 50 54 55 71
+MINUS                : 59
+MINUSMINUS           : 64
+MINUS_ASSIGN         : 67
+MOD                  : 62
+MOD_ASSIGN           : 70
 NEQUAL               : 
-NEW                  : 34 38 42 46 50 54
+NEW                  : 34 38 42 46 50 54 55
 NOT                  : 
 NULL                 : 
 OBJECT               : 17
 OR                   : 
 OR_ASSIGN            : 
-PLUS                 : 57
-PLUSPLUS             : 62
-PLUS_ASSIGN          : 67
+PLUS                 : 58
+PLUSPLUS             : 63
+PLUS_ASSIGN          : 68
 PRIVATE              : 21
 PROTECTED            : 22
 PUBLIC               : 20
 PUNTO                : 
-PUNTOCOMA            : 56
+PUNTOCOMA            : 57
 QUEUE                : 51 52 54
 RCORCHETE            : 
 RLLAVE               : 
-RPAREN               : 34 38 42 46 50 54 70
+RPAREN               : 34 38 42 46 50 54 55 71
 SHORT                : 11
 STACK                : 47 48 50
 STATIC               : 26 27
-STRING               : 10 29 31 33 35 37 39 41 43 45 47 49 51 53 55
-TIMES                : 59
-TIMESTIMES           : 64
-TIMES_ASSIGN         : 65
+STRING               : 10 29 31 33 35 37 39 41 43 45 47 49 51 53 56
+TIMES                : 60
+TIMESTIMES           : 65
+TIMES_ASSIGN         : 66
 XOR                  : 
 XOR_ASSIGN           : 
 error                : 
 
 Nonterminals, with rules where they appear
 
-Type                 : 29 30 31 32 34 35 36 38 39 40 42 43 44 46 47 48 50 51 52 54
+Type                 : 29 30 31 32 34 35 36 38 39 40 42 43 44 46 47 48 50 51 52 54 55
 accessmodif          : 29 30 31 32 35 36 39 40 43 44 47 48 51 52
 arrayassign          : 36
 arraydeclaration     : 3 18
@@ -187,9 +188,9 @@ declaration          : 1
 doublelinkedlistassign : 44
 doublelinkedlistdeclaration : 5
 doublelinkedlistexpression : 45
-empty                : 19 24 28 72
-endexpression        : 29 31 33 35 37 39 41 43 45 47 49 51 53 55
-expression           : 55 57 57 58 58 59 59 60 60 61 61 64 64 65 66 67 68 69 70
+empty                : 19 24 28 73
+endexpression        : 29 31 33 35 37 39 41 43 45 47 49 51 53 56
+expression           : 56 58 58 59 59 60 60 61 61 62 62 65 65 66 67 68 69 70 71
 finalstatvar         : 29 30 31 32 35 36 39 40 43 44 47 48 51 52
 linkedlistassign     : 40
 linkedlistdeclaration : 4
@@ -236,7 +237,7 @@ state 0
     (22) accessmodif -> . PROTECTED
     (23) accessmodif -> . DEFAULT
     (24) accessmodif -> . empty
-    (73) empty -> .
+    (74) empty -> .
 
   ! shift/reduce conflict for PUBLIC resolved as shift
   ! shift/reduce conflict for PRIVATE resolved as shift
@@ -246,29 +247,29 @@ state 0
     PRIVATE         shift and go to state 11
     PROTECTED       shift and go to state 12
     DEFAULT         shift and go to state 13
-    FINAL           reduce using rule 73 (empty -> .)
-    STATIC          reduce using rule 73 (empty -> .)
-    LIST            reduce using rule 73 (empty -> .)
-    ARRAYLIST       reduce using rule 73 (empty -> .)
-    LINKEDLIST      reduce using rule 73 (empty -> .)
-    DOUBLELINKEDLIST reduce using rule 73 (empty -> .)
-    STACK           reduce using rule 73 (empty -> .)
-    QUEUE           reduce using rule 73 (empty -> .)
-    INT             reduce using rule 73 (empty -> .)
-    BOOLEAN         reduce using rule 73 (empty -> .)
-    STRING          reduce using rule 73 (empty -> .)
-    SHORT           reduce using rule 73 (empty -> .)
-    FLOAT           reduce using rule 73 (empty -> .)
-    LONG            reduce using rule 73 (empty -> .)
-    DOUBLE          reduce using rule 73 (empty -> .)
-    CHAR            reduce using rule 73 (empty -> .)
-    BYTE            reduce using rule 73 (empty -> .)
-    OBJECT          reduce using rule 73 (empty -> .)
+    FINAL           reduce using rule 74 (empty -> .)
+    STATIC          reduce using rule 74 (empty -> .)
+    LIST            reduce using rule 74 (empty -> .)
+    ARRAYLIST       reduce using rule 74 (empty -> .)
+    LINKEDLIST      reduce using rule 74 (empty -> .)
+    DOUBLELINKEDLIST reduce using rule 74 (empty -> .)
+    STACK           reduce using rule 74 (empty -> .)
+    QUEUE           reduce using rule 74 (empty -> .)
+    INT             reduce using rule 74 (empty -> .)
+    BOOLEAN         reduce using rule 74 (empty -> .)
+    STRING          reduce using rule 74 (empty -> .)
+    SHORT           reduce using rule 74 (empty -> .)
+    FLOAT           reduce using rule 74 (empty -> .)
+    LONG            reduce using rule 74 (empty -> .)
+    DOUBLE          reduce using rule 74 (empty -> .)
+    CHAR            reduce using rule 74 (empty -> .)
+    BYTE            reduce using rule 74 (empty -> .)
+    OBJECT          reduce using rule 74 (empty -> .)
 
-  ! PUBLIC          [ reduce using rule 73 (empty -> .) ]
-  ! PRIVATE         [ reduce using rule 73 (empty -> .) ]
-  ! PROTECTED       [ reduce using rule 73 (empty -> .) ]
-  ! DEFAULT         [ reduce using rule 73 (empty -> .) ]
+  ! PUBLIC          [ reduce using rule 74 (empty -> .) ]
+  ! PRIVATE         [ reduce using rule 74 (empty -> .) ]
+  ! PROTECTED       [ reduce using rule 74 (empty -> .) ]
+  ! DEFAULT         [ reduce using rule 74 (empty -> .) ]
 
     program                        shift and go to state 1
     declaration                    shift and go to state 2
@@ -356,35 +357,35 @@ state 9
     (26) finalstatvar -> . STATIC
     (27) finalstatvar -> . FINAL STATIC
     (28) finalstatvar -> . empty
-    (73) empty -> .
+    (74) empty -> .
 
   ! shift/reduce conflict for FINAL resolved as shift
   ! shift/reduce conflict for STATIC resolved as shift
     FINAL           shift and go to state 16
     STATIC          shift and go to state 17
-    LIST            reduce using rule 73 (empty -> .)
-    ARRAYLIST       reduce using rule 73 (empty -> .)
-    LINKEDLIST      reduce using rule 73 (empty -> .)
-    DOUBLELINKEDLIST reduce using rule 73 (empty -> .)
-    STACK           reduce using rule 73 (empty -> .)
-    QUEUE           reduce using rule 73 (empty -> .)
-    INT             reduce using rule 73 (empty -> .)
-    BOOLEAN         reduce using rule 73 (empty -> .)
-    STRING          reduce using rule 73 (empty -> .)
-    SHORT           reduce using rule 73 (empty -> .)
-    FLOAT           reduce using rule 73 (empty -> .)
-    LONG            reduce using rule 73 (empty -> .)
-    DOUBLE          reduce using rule 73 (empty -> .)
-    CHAR            reduce using rule 73 (empty -> .)
-    BYTE            reduce using rule 73 (empty -> .)
-    OBJECT          reduce using rule 73 (empty -> .)
-    PUBLIC          reduce using rule 73 (empty -> .)
-    PRIVATE         reduce using rule 73 (empty -> .)
-    PROTECTED       reduce using rule 73 (empty -> .)
-    DEFAULT         reduce using rule 73 (empty -> .)
+    LIST            reduce using rule 74 (empty -> .)
+    ARRAYLIST       reduce using rule 74 (empty -> .)
+    LINKEDLIST      reduce using rule 74 (empty -> .)
+    DOUBLELINKEDLIST reduce using rule 74 (empty -> .)
+    STACK           reduce using rule 74 (empty -> .)
+    QUEUE           reduce using rule 74 (empty -> .)
+    INT             reduce using rule 74 (empty -> .)
+    BOOLEAN         reduce using rule 74 (empty -> .)
+    STRING          reduce using rule 74 (empty -> .)
+    SHORT           reduce using rule 74 (empty -> .)
+    FLOAT           reduce using rule 74 (empty -> .)
+    LONG            reduce using rule 74 (empty -> .)
+    DOUBLE          reduce using rule 74 (empty -> .)
+    CHAR            reduce using rule 74 (empty -> .)
+    BYTE            reduce using rule 74 (empty -> .)
+    OBJECT          reduce using rule 74 (empty -> .)
+    PUBLIC          reduce using rule 74 (empty -> .)
+    PRIVATE         reduce using rule 74 (empty -> .)
+    PROTECTED       reduce using rule 74 (empty -> .)
+    DEFAULT         reduce using rule 74 (empty -> .)
 
-  ! FINAL           [ reduce using rule 73 (empty -> .) ]
-  ! STATIC          [ reduce using rule 73 (empty -> .) ]
+  ! FINAL           [ reduce using rule 74 (empty -> .) ]
+  ! STATIC          [ reduce using rule 74 (empty -> .) ]
 
     finalstatvar                   shift and go to state 15
     empty                          shift and go to state 18
@@ -559,7 +560,7 @@ state 15
     (19) Type -> . empty
     (35) arraydeclaration -> . accessmodif finalstatvar ARRAYLIST LESSTHAN Type GREATTHAN STRING endexpression
     (36) arraydeclaration -> . accessmodif finalstatvar ARRAYLIST LESSTHAN Type GREATTHAN arrayassign
-    (73) empty -> .
+    (74) empty -> .
     (20) accessmodif -> . PUBLIC
     (21) accessmodif -> . PRIVATE
     (22) accessmodif -> . PROTECTED
@@ -584,15 +585,15 @@ state 15
     CHAR            shift and go to state 34
     BYTE            shift and go to state 35
     OBJECT          shift and go to state 36
-    FINAL           reduce using rule 73 (empty -> .)
-    STATIC          reduce using rule 73 (empty -> .)
+    FINAL           reduce using rule 74 (empty -> .)
+    STATIC          reduce using rule 74 (empty -> .)
     PUBLIC          shift and go to state 10
     PRIVATE         shift and go to state 11
     PROTECTED       shift and go to state 12
     DEFAULT         shift and go to state 13
 
-  ! STRING          [ reduce using rule 73 (empty -> .) ]
-  ! ARRAYLIST       [ reduce using rule 73 (empty -> .) ]
+  ! STRING          [ reduce using rule 74 (empty -> .) ]
+  ! ARRAYLIST       [ reduce using rule 74 (empty -> .) ]
 
     accessmodif                    shift and go to state 19
     Type                           shift and go to state 20
@@ -695,11 +696,11 @@ state 19
     (26) finalstatvar -> . STATIC
     (27) finalstatvar -> . FINAL STATIC
     (28) finalstatvar -> . empty
-    (73) empty -> .
+    (74) empty -> .
 
     FINAL           shift and go to state 16
     STATIC          shift and go to state 17
-    ARRAYLIST       reduce using rule 73 (empty -> .)
+    ARRAYLIST       reduce using rule 74 (empty -> .)
 
     finalstatvar                   shift and go to state 40
     empty                          shift and go to state 18
@@ -708,7 +709,7 @@ state 20
 
     (29) declaration -> accessmodif finalstatvar Type . STRING endexpression
     (30) declaration -> accessmodif finalstatvar Type . assign
-    (55) assign -> . STRING EQUALS expression endexpression
+    (56) assign -> . STRING EQUALS expression endexpression
 
     STRING          shift and go to state 41
 
@@ -720,7 +721,6 @@ state 21
 
     STRING          reduce using rule 10 (Type -> STRING .)
     GREATTHAN       reduce using rule 10 (Type -> STRING .)
-    LESSTHAN        reduce using rule 10 (Type -> STRING .)
 
 
 state 22
@@ -777,7 +777,6 @@ state 28
 
     STRING          reduce using rule 8 (Type -> INT .)
     GREATTHAN       reduce using rule 8 (Type -> INT .)
-    LESSTHAN        reduce using rule 8 (Type -> INT .)
 
 
 state 29
@@ -786,7 +785,6 @@ state 29
 
     STRING          reduce using rule 9 (Type -> BOOLEAN .)
     GREATTHAN       reduce using rule 9 (Type -> BOOLEAN .)
-    LESSTHAN        reduce using rule 9 (Type -> BOOLEAN .)
 
 
 state 30
@@ -795,7 +793,6 @@ state 30
 
     STRING          reduce using rule 11 (Type -> SHORT .)
     GREATTHAN       reduce using rule 11 (Type -> SHORT .)
-    LESSTHAN        reduce using rule 11 (Type -> SHORT .)
 
 
 state 31
@@ -804,7 +801,6 @@ state 31
 
     STRING          reduce using rule 12 (Type -> FLOAT .)
     GREATTHAN       reduce using rule 12 (Type -> FLOAT .)
-    LESSTHAN        reduce using rule 12 (Type -> FLOAT .)
 
 
 state 32
@@ -813,7 +809,6 @@ state 32
 
     STRING          reduce using rule 13 (Type -> LONG .)
     GREATTHAN       reduce using rule 13 (Type -> LONG .)
-    LESSTHAN        reduce using rule 13 (Type -> LONG .)
 
 
 state 33
@@ -822,7 +817,6 @@ state 33
 
     STRING          reduce using rule 14 (Type -> DOUBLE .)
     GREATTHAN       reduce using rule 14 (Type -> DOUBLE .)
-    LESSTHAN        reduce using rule 14 (Type -> DOUBLE .)
 
 
 state 34
@@ -831,7 +825,6 @@ state 34
 
     STRING          reduce using rule 15 (Type -> CHAR .)
     GREATTHAN       reduce using rule 15 (Type -> CHAR .)
-    LESSTHAN        reduce using rule 15 (Type -> CHAR .)
 
 
 state 35
@@ -840,7 +833,6 @@ state 35
 
     STRING          reduce using rule 16 (Type -> BYTE .)
     GREATTHAN       reduce using rule 16 (Type -> BYTE .)
-    LESSTHAN        reduce using rule 16 (Type -> BYTE .)
 
 
 state 36
@@ -849,7 +841,6 @@ state 36
 
     STRING          reduce using rule 17 (Type -> OBJECT .)
     GREATTHAN       reduce using rule 17 (Type -> OBJECT .)
-    LESSTHAN        reduce using rule 17 (Type -> OBJECT .)
 
 
 state 37
@@ -858,7 +849,6 @@ state 37
 
     STRING          reduce using rule 18 (Type -> arraydeclaration .)
     GREATTHAN       reduce using rule 18 (Type -> arraydeclaration .)
-    LESSTHAN        reduce using rule 18 (Type -> arraydeclaration .)
 
 
 state 38
@@ -868,7 +858,6 @@ state 38
 
     STRING          reduce using rule 19 (Type -> empty .)
     GREATTHAN       reduce using rule 19 (Type -> empty .)
-    LESSTHAN        reduce using rule 19 (Type -> empty .)
     FINAL           reduce using rule 24 (accessmodif -> empty .)
     STATIC          reduce using rule 24 (accessmodif -> empty .)
     ARRAYLIST       reduce using rule 24 (accessmodif -> empty .)
@@ -913,8 +902,8 @@ state 40
 state 41
 
     (29) declaration -> accessmodif finalstatvar Type STRING . endexpression
-    (55) assign -> STRING . EQUALS expression endexpression
-    (56) endexpression -> . PUNTOCOMA
+    (56) assign -> STRING . EQUALS expression endexpression
+    (57) endexpression -> . PUNTOCOMA
 
     EQUALS          shift and go to state 50
     PUNTOCOMA       shift and go to state 51
@@ -946,7 +935,7 @@ state 43
     (19) Type -> . empty
     (35) arraydeclaration -> . accessmodif finalstatvar ARRAYLIST LESSTHAN Type GREATTHAN STRING endexpression
     (36) arraydeclaration -> . accessmodif finalstatvar ARRAYLIST LESSTHAN Type GREATTHAN arrayassign
-    (73) empty -> .
+    (74) empty -> .
     (20) accessmodif -> . PUBLIC
     (21) accessmodif -> . PRIVATE
     (22) accessmodif -> . PROTECTED
@@ -963,10 +952,10 @@ state 43
     CHAR            shift and go to state 34
     BYTE            shift and go to state 35
     OBJECT          shift and go to state 36
-    GREATTHAN       reduce using rule 73 (empty -> .)
-    FINAL           reduce using rule 73 (empty -> .)
-    STATIC          reduce using rule 73 (empty -> .)
-    ARRAYLIST       reduce using rule 73 (empty -> .)
+    GREATTHAN       reduce using rule 74 (empty -> .)
+    FINAL           reduce using rule 74 (empty -> .)
+    STATIC          reduce using rule 74 (empty -> .)
+    ARRAYLIST       reduce using rule 74 (empty -> .)
     PUBLIC          shift and go to state 10
     PRIVATE         shift and go to state 11
     PROTECTED       shift and go to state 12
@@ -995,7 +984,7 @@ state 44
     (19) Type -> . empty
     (35) arraydeclaration -> . accessmodif finalstatvar ARRAYLIST LESSTHAN Type GREATTHAN STRING endexpression
     (36) arraydeclaration -> . accessmodif finalstatvar ARRAYLIST LESSTHAN Type GREATTHAN arrayassign
-    (73) empty -> .
+    (74) empty -> .
     (20) accessmodif -> . PUBLIC
     (21) accessmodif -> . PRIVATE
     (22) accessmodif -> . PROTECTED
@@ -1012,10 +1001,10 @@ state 44
     CHAR            shift and go to state 34
     BYTE            shift and go to state 35
     OBJECT          shift and go to state 36
-    GREATTHAN       reduce using rule 73 (empty -> .)
-    FINAL           reduce using rule 73 (empty -> .)
-    STATIC          reduce using rule 73 (empty -> .)
-    ARRAYLIST       reduce using rule 73 (empty -> .)
+    GREATTHAN       reduce using rule 74 (empty -> .)
+    FINAL           reduce using rule 74 (empty -> .)
+    STATIC          reduce using rule 74 (empty -> .)
+    ARRAYLIST       reduce using rule 74 (empty -> .)
     PUBLIC          shift and go to state 10
     PRIVATE         shift and go to state 11
     PROTECTED       shift and go to state 12
@@ -1044,7 +1033,7 @@ state 45
     (19) Type -> . empty
     (35) arraydeclaration -> . accessmodif finalstatvar ARRAYLIST LESSTHAN Type GREATTHAN STRING endexpression
     (36) arraydeclaration -> . accessmodif finalstatvar ARRAYLIST LESSTHAN Type GREATTHAN arrayassign
-    (73) empty -> .
+    (74) empty -> .
     (20) accessmodif -> . PUBLIC
     (21) accessmodif -> . PRIVATE
     (22) accessmodif -> . PROTECTED
@@ -1061,10 +1050,10 @@ state 45
     CHAR            shift and go to state 34
     BYTE            shift and go to state 35
     OBJECT          shift and go to state 36
-    GREATTHAN       reduce using rule 73 (empty -> .)
-    FINAL           reduce using rule 73 (empty -> .)
-    STATIC          reduce using rule 73 (empty -> .)
-    ARRAYLIST       reduce using rule 73 (empty -> .)
+    GREATTHAN       reduce using rule 74 (empty -> .)
+    FINAL           reduce using rule 74 (empty -> .)
+    STATIC          reduce using rule 74 (empty -> .)
+    ARRAYLIST       reduce using rule 74 (empty -> .)
     PUBLIC          shift and go to state 10
     PRIVATE         shift and go to state 11
     PROTECTED       shift and go to state 12
@@ -1093,7 +1082,7 @@ state 46
     (19) Type -> . empty
     (35) arraydeclaration -> . accessmodif finalstatvar ARRAYLIST LESSTHAN Type GREATTHAN STRING endexpression
     (36) arraydeclaration -> . accessmodif finalstatvar ARRAYLIST LESSTHAN Type GREATTHAN arrayassign
-    (73) empty -> .
+    (74) empty -> .
     (20) accessmodif -> . PUBLIC
     (21) accessmodif -> . PRIVATE
     (22) accessmodif -> . PROTECTED
@@ -1110,10 +1099,10 @@ state 46
     CHAR            shift and go to state 34
     BYTE            shift and go to state 35
     OBJECT          shift and go to state 36
-    GREATTHAN       reduce using rule 73 (empty -> .)
-    FINAL           reduce using rule 73 (empty -> .)
-    STATIC          reduce using rule 73 (empty -> .)
-    ARRAYLIST       reduce using rule 73 (empty -> .)
+    GREATTHAN       reduce using rule 74 (empty -> .)
+    FINAL           reduce using rule 74 (empty -> .)
+    STATIC          reduce using rule 74 (empty -> .)
+    ARRAYLIST       reduce using rule 74 (empty -> .)
     PUBLIC          shift and go to state 10
     PRIVATE         shift and go to state 11
     PROTECTED       shift and go to state 12
@@ -1142,7 +1131,7 @@ state 47
     (19) Type -> . empty
     (35) arraydeclaration -> . accessmodif finalstatvar ARRAYLIST LESSTHAN Type GREATTHAN STRING endexpression
     (36) arraydeclaration -> . accessmodif finalstatvar ARRAYLIST LESSTHAN Type GREATTHAN arrayassign
-    (73) empty -> .
+    (74) empty -> .
     (20) accessmodif -> . PUBLIC
     (21) accessmodif -> . PRIVATE
     (22) accessmodif -> . PROTECTED
@@ -1159,10 +1148,10 @@ state 47
     CHAR            shift and go to state 34
     BYTE            shift and go to state 35
     OBJECT          shift and go to state 36
-    GREATTHAN       reduce using rule 73 (empty -> .)
-    FINAL           reduce using rule 73 (empty -> .)
-    STATIC          reduce using rule 73 (empty -> .)
-    ARRAYLIST       reduce using rule 73 (empty -> .)
+    GREATTHAN       reduce using rule 74 (empty -> .)
+    FINAL           reduce using rule 74 (empty -> .)
+    STATIC          reduce using rule 74 (empty -> .)
+    ARRAYLIST       reduce using rule 74 (empty -> .)
     PUBLIC          shift and go to state 10
     PRIVATE         shift and go to state 11
     PROTECTED       shift and go to state 12
@@ -1191,7 +1180,7 @@ state 48
     (19) Type -> . empty
     (35) arraydeclaration -> . accessmodif finalstatvar ARRAYLIST LESSTHAN Type GREATTHAN STRING endexpression
     (36) arraydeclaration -> . accessmodif finalstatvar ARRAYLIST LESSTHAN Type GREATTHAN arrayassign
-    (73) empty -> .
+    (74) empty -> .
     (20) accessmodif -> . PUBLIC
     (21) accessmodif -> . PRIVATE
     (22) accessmodif -> . PROTECTED
@@ -1208,10 +1197,10 @@ state 48
     CHAR            shift and go to state 34
     BYTE            shift and go to state 35
     OBJECT          shift and go to state 36
-    GREATTHAN       reduce using rule 73 (empty -> .)
-    FINAL           reduce using rule 73 (empty -> .)
-    STATIC          reduce using rule 73 (empty -> .)
-    ARRAYLIST       reduce using rule 73 (empty -> .)
+    GREATTHAN       reduce using rule 74 (empty -> .)
+    FINAL           reduce using rule 74 (empty -> .)
+    STATIC          reduce using rule 74 (empty -> .)
+    ARRAYLIST       reduce using rule 74 (empty -> .)
     PUBLIC          shift and go to state 10
     PRIVATE         shift and go to state 11
     PROTECTED       shift and go to state 12
@@ -1231,24 +1220,24 @@ state 49
 
 state 50
 
-    (55) assign -> STRING EQUALS . expression endexpression
-    (57) expression -> . expression PLUS expression
-    (58) expression -> . expression MINUS expression
-    (59) expression -> . expression TIMES expression
-    (60) expression -> . expression DIVIDE expression
-    (61) expression -> . expression MOD expression
-    (62) expression -> . PLUSPLUS
-    (63) expression -> . MINUSMINUS
-    (64) expression -> . expression TIMESTIMES expression
-    (65) expression -> . TIMES_ASSIGN expression
-    (66) expression -> . MINUS_ASSIGN expression
-    (67) expression -> . PLUS_ASSIGN expression
-    (68) expression -> . DIVIDE_ASSIGN expression
-    (69) expression -> . MOD_ASSIGN expression
-    (70) expression -> . LPAREN expression RPAREN
-    (71) expression -> . INTEGER
-    (72) expression -> . empty
-    (73) empty -> .
+    (56) assign -> STRING EQUALS . expression endexpression
+    (58) expression -> . expression PLUS expression
+    (59) expression -> . expression MINUS expression
+    (60) expression -> . expression TIMES expression
+    (61) expression -> . expression DIVIDE expression
+    (62) expression -> . expression MOD expression
+    (63) expression -> . PLUSPLUS
+    (64) expression -> . MINUSMINUS
+    (65) expression -> . expression TIMESTIMES expression
+    (66) expression -> . TIMES_ASSIGN expression
+    (67) expression -> . MINUS_ASSIGN expression
+    (68) expression -> . PLUS_ASSIGN expression
+    (69) expression -> . DIVIDE_ASSIGN expression
+    (70) expression -> . MOD_ASSIGN expression
+    (71) expression -> . LPAREN expression RPAREN
+    (72) expression -> . INTEGER
+    (73) expression -> . empty
+    (74) empty -> .
 
     PLUSPLUS        shift and go to state 59
     MINUSMINUS      shift and go to state 60
@@ -1259,25 +1248,24 @@ state 50
     MOD_ASSIGN      shift and go to state 65
     LPAREN          shift and go to state 66
     INTEGER         shift and go to state 67
-    PLUS            reduce using rule 73 (empty -> .)
-    MINUS           reduce using rule 73 (empty -> .)
-    TIMES           reduce using rule 73 (empty -> .)
-    DIVIDE          reduce using rule 73 (empty -> .)
-    MOD             reduce using rule 73 (empty -> .)
-    TIMESTIMES      reduce using rule 73 (empty -> .)
-    PUNTOCOMA       reduce using rule 73 (empty -> .)
+    PLUS            reduce using rule 74 (empty -> .)
+    MINUS           reduce using rule 74 (empty -> .)
+    TIMES           reduce using rule 74 (empty -> .)
+    DIVIDE          reduce using rule 74 (empty -> .)
+    MOD             reduce using rule 74 (empty -> .)
+    TIMESTIMES      reduce using rule 74 (empty -> .)
+    PUNTOCOMA       reduce using rule 74 (empty -> .)
 
     expression                     shift and go to state 58
     empty                          shift and go to state 68
 
 state 51
 
-    (56) endexpression -> PUNTOCOMA .
+    (57) endexpression -> PUNTOCOMA .
 
-    $end            reduce using rule 56 (endexpression -> PUNTOCOMA .)
-    STRING          reduce using rule 56 (endexpression -> PUNTOCOMA .)
-    GREATTHAN       reduce using rule 56 (endexpression -> PUNTOCOMA .)
-    LESSTHAN        reduce using rule 56 (endexpression -> PUNTOCOMA .)
+    $end            reduce using rule 57 (endexpression -> PUNTOCOMA .)
+    STRING          reduce using rule 57 (endexpression -> PUNTOCOMA .)
+    GREATTHAN       reduce using rule 57 (endexpression -> PUNTOCOMA .)
 
 
 state 52
@@ -1330,14 +1318,14 @@ state 57
 
 state 58
 
-    (55) assign -> STRING EQUALS expression . endexpression
-    (57) expression -> expression . PLUS expression
-    (58) expression -> expression . MINUS expression
-    (59) expression -> expression . TIMES expression
-    (60) expression -> expression . DIVIDE expression
-    (61) expression -> expression . MOD expression
-    (64) expression -> expression . TIMESTIMES expression
-    (56) endexpression -> . PUNTOCOMA
+    (56) assign -> STRING EQUALS expression . endexpression
+    (58) expression -> expression . PLUS expression
+    (59) expression -> expression . MINUS expression
+    (60) expression -> expression . TIMES expression
+    (61) expression -> expression . DIVIDE expression
+    (62) expression -> expression . MOD expression
+    (65) expression -> expression . TIMESTIMES expression
+    (57) endexpression -> . PUNTOCOMA
 
     PLUS            shift and go to state 76
     MINUS           shift and go to state 77
@@ -1351,52 +1339,52 @@ state 58
 
 state 59
 
-    (62) expression -> PLUSPLUS .
+    (63) expression -> PLUSPLUS .
 
-    PLUS            reduce using rule 62 (expression -> PLUSPLUS .)
-    MINUS           reduce using rule 62 (expression -> PLUSPLUS .)
-    TIMES           reduce using rule 62 (expression -> PLUSPLUS .)
-    DIVIDE          reduce using rule 62 (expression -> PLUSPLUS .)
-    MOD             reduce using rule 62 (expression -> PLUSPLUS .)
-    TIMESTIMES      reduce using rule 62 (expression -> PLUSPLUS .)
-    PUNTOCOMA       reduce using rule 62 (expression -> PLUSPLUS .)
-    RPAREN          reduce using rule 62 (expression -> PLUSPLUS .)
+    PLUS            reduce using rule 63 (expression -> PLUSPLUS .)
+    MINUS           reduce using rule 63 (expression -> PLUSPLUS .)
+    TIMES           reduce using rule 63 (expression -> PLUSPLUS .)
+    DIVIDE          reduce using rule 63 (expression -> PLUSPLUS .)
+    MOD             reduce using rule 63 (expression -> PLUSPLUS .)
+    TIMESTIMES      reduce using rule 63 (expression -> PLUSPLUS .)
+    PUNTOCOMA       reduce using rule 63 (expression -> PLUSPLUS .)
+    RPAREN          reduce using rule 63 (expression -> PLUSPLUS .)
 
 
 state 60
 
-    (63) expression -> MINUSMINUS .
+    (64) expression -> MINUSMINUS .
 
-    PLUS            reduce using rule 63 (expression -> MINUSMINUS .)
-    MINUS           reduce using rule 63 (expression -> MINUSMINUS .)
-    TIMES           reduce using rule 63 (expression -> MINUSMINUS .)
-    DIVIDE          reduce using rule 63 (expression -> MINUSMINUS .)
-    MOD             reduce using rule 63 (expression -> MINUSMINUS .)
-    TIMESTIMES      reduce using rule 63 (expression -> MINUSMINUS .)
-    PUNTOCOMA       reduce using rule 63 (expression -> MINUSMINUS .)
-    RPAREN          reduce using rule 63 (expression -> MINUSMINUS .)
+    PLUS            reduce using rule 64 (expression -> MINUSMINUS .)
+    MINUS           reduce using rule 64 (expression -> MINUSMINUS .)
+    TIMES           reduce using rule 64 (expression -> MINUSMINUS .)
+    DIVIDE          reduce using rule 64 (expression -> MINUSMINUS .)
+    MOD             reduce using rule 64 (expression -> MINUSMINUS .)
+    TIMESTIMES      reduce using rule 64 (expression -> MINUSMINUS .)
+    PUNTOCOMA       reduce using rule 64 (expression -> MINUSMINUS .)
+    RPAREN          reduce using rule 64 (expression -> MINUSMINUS .)
 
 
 state 61
 
-    (65) expression -> TIMES_ASSIGN . expression
-    (57) expression -> . expression PLUS expression
-    (58) expression -> . expression MINUS expression
-    (59) expression -> . expression TIMES expression
-    (60) expression -> . expression DIVIDE expression
-    (61) expression -> . expression MOD expression
-    (62) expression -> . PLUSPLUS
-    (63) expression -> . MINUSMINUS
-    (64) expression -> . expression TIMESTIMES expression
-    (65) expression -> . TIMES_ASSIGN expression
-    (66) expression -> . MINUS_ASSIGN expression
-    (67) expression -> . PLUS_ASSIGN expression
-    (68) expression -> . DIVIDE_ASSIGN expression
-    (69) expression -> . MOD_ASSIGN expression
-    (70) expression -> . LPAREN expression RPAREN
-    (71) expression -> . INTEGER
-    (72) expression -> . empty
-    (73) empty -> .
+    (66) expression -> TIMES_ASSIGN . expression
+    (58) expression -> . expression PLUS expression
+    (59) expression -> . expression MINUS expression
+    (60) expression -> . expression TIMES expression
+    (61) expression -> . expression DIVIDE expression
+    (62) expression -> . expression MOD expression
+    (63) expression -> . PLUSPLUS
+    (64) expression -> . MINUSMINUS
+    (65) expression -> . expression TIMESTIMES expression
+    (66) expression -> . TIMES_ASSIGN expression
+    (67) expression -> . MINUS_ASSIGN expression
+    (68) expression -> . PLUS_ASSIGN expression
+    (69) expression -> . DIVIDE_ASSIGN expression
+    (70) expression -> . MOD_ASSIGN expression
+    (71) expression -> . LPAREN expression RPAREN
+    (72) expression -> . INTEGER
+    (73) expression -> . empty
+    (74) empty -> .
 
     PLUSPLUS        shift and go to state 59
     MINUSMINUS      shift and go to state 60
@@ -1407,38 +1395,38 @@ state 61
     MOD_ASSIGN      shift and go to state 65
     LPAREN          shift and go to state 66
     INTEGER         shift and go to state 67
-    PLUS            reduce using rule 73 (empty -> .)
-    MINUS           reduce using rule 73 (empty -> .)
-    TIMES           reduce using rule 73 (empty -> .)
-    DIVIDE          reduce using rule 73 (empty -> .)
-    MOD             reduce using rule 73 (empty -> .)
-    TIMESTIMES      reduce using rule 73 (empty -> .)
-    PUNTOCOMA       reduce using rule 73 (empty -> .)
-    RPAREN          reduce using rule 73 (empty -> .)
+    PLUS            reduce using rule 74 (empty -> .)
+    MINUS           reduce using rule 74 (empty -> .)
+    TIMES           reduce using rule 74 (empty -> .)
+    DIVIDE          reduce using rule 74 (empty -> .)
+    MOD             reduce using rule 74 (empty -> .)
+    TIMESTIMES      reduce using rule 74 (empty -> .)
+    PUNTOCOMA       reduce using rule 74 (empty -> .)
+    RPAREN          reduce using rule 74 (empty -> .)
 
     expression                     shift and go to state 82
     empty                          shift and go to state 68
 
 state 62
 
-    (66) expression -> MINUS_ASSIGN . expression
-    (57) expression -> . expression PLUS expression
-    (58) expression -> . expression MINUS expression
-    (59) expression -> . expression TIMES expression
-    (60) expression -> . expression DIVIDE expression
-    (61) expression -> . expression MOD expression
-    (62) expression -> . PLUSPLUS
-    (63) expression -> . MINUSMINUS
-    (64) expression -> . expression TIMESTIMES expression
-    (65) expression -> . TIMES_ASSIGN expression
-    (66) expression -> . MINUS_ASSIGN expression
-    (67) expression -> . PLUS_ASSIGN expression
-    (68) expression -> . DIVIDE_ASSIGN expression
-    (69) expression -> . MOD_ASSIGN expression
-    (70) expression -> . LPAREN expression RPAREN
-    (71) expression -> . INTEGER
-    (72) expression -> . empty
-    (73) empty -> .
+    (67) expression -> MINUS_ASSIGN . expression
+    (58) expression -> . expression PLUS expression
+    (59) expression -> . expression MINUS expression
+    (60) expression -> . expression TIMES expression
+    (61) expression -> . expression DIVIDE expression
+    (62) expression -> . expression MOD expression
+    (63) expression -> . PLUSPLUS
+    (64) expression -> . MINUSMINUS
+    (65) expression -> . expression TIMESTIMES expression
+    (66) expression -> . TIMES_ASSIGN expression
+    (67) expression -> . MINUS_ASSIGN expression
+    (68) expression -> . PLUS_ASSIGN expression
+    (69) expression -> . DIVIDE_ASSIGN expression
+    (70) expression -> . MOD_ASSIGN expression
+    (71) expression -> . LPAREN expression RPAREN
+    (72) expression -> . INTEGER
+    (73) expression -> . empty
+    (74) empty -> .
 
     PLUSPLUS        shift and go to state 59
     MINUSMINUS      shift and go to state 60
@@ -1449,38 +1437,38 @@ state 62
     MOD_ASSIGN      shift and go to state 65
     LPAREN          shift and go to state 66
     INTEGER         shift and go to state 67
-    PLUS            reduce using rule 73 (empty -> .)
-    MINUS           reduce using rule 73 (empty -> .)
-    TIMES           reduce using rule 73 (empty -> .)
-    DIVIDE          reduce using rule 73 (empty -> .)
-    MOD             reduce using rule 73 (empty -> .)
-    TIMESTIMES      reduce using rule 73 (empty -> .)
-    PUNTOCOMA       reduce using rule 73 (empty -> .)
-    RPAREN          reduce using rule 73 (empty -> .)
+    PLUS            reduce using rule 74 (empty -> .)
+    MINUS           reduce using rule 74 (empty -> .)
+    TIMES           reduce using rule 74 (empty -> .)
+    DIVIDE          reduce using rule 74 (empty -> .)
+    MOD             reduce using rule 74 (empty -> .)
+    TIMESTIMES      reduce using rule 74 (empty -> .)
+    PUNTOCOMA       reduce using rule 74 (empty -> .)
+    RPAREN          reduce using rule 74 (empty -> .)
 
     expression                     shift and go to state 83
     empty                          shift and go to state 68
 
 state 63
 
-    (67) expression -> PLUS_ASSIGN . expression
-    (57) expression -> . expression PLUS expression
-    (58) expression -> . expression MINUS expression
-    (59) expression -> . expression TIMES expression
-    (60) expression -> . expression DIVIDE expression
-    (61) expression -> . expression MOD expression
-    (62) expression -> . PLUSPLUS
-    (63) expression -> . MINUSMINUS
-    (64) expression -> . expression TIMESTIMES expression
-    (65) expression -> . TIMES_ASSIGN expression
-    (66) expression -> . MINUS_ASSIGN expression
-    (67) expression -> . PLUS_ASSIGN expression
-    (68) expression -> . DIVIDE_ASSIGN expression
-    (69) expression -> . MOD_ASSIGN expression
-    (70) expression -> . LPAREN expression RPAREN
-    (71) expression -> . INTEGER
-    (72) expression -> . empty
-    (73) empty -> .
+    (68) expression -> PLUS_ASSIGN . expression
+    (58) expression -> . expression PLUS expression
+    (59) expression -> . expression MINUS expression
+    (60) expression -> . expression TIMES expression
+    (61) expression -> . expression DIVIDE expression
+    (62) expression -> . expression MOD expression
+    (63) expression -> . PLUSPLUS
+    (64) expression -> . MINUSMINUS
+    (65) expression -> . expression TIMESTIMES expression
+    (66) expression -> . TIMES_ASSIGN expression
+    (67) expression -> . MINUS_ASSIGN expression
+    (68) expression -> . PLUS_ASSIGN expression
+    (69) expression -> . DIVIDE_ASSIGN expression
+    (70) expression -> . MOD_ASSIGN expression
+    (71) expression -> . LPAREN expression RPAREN
+    (72) expression -> . INTEGER
+    (73) expression -> . empty
+    (74) empty -> .
 
     PLUSPLUS        shift and go to state 59
     MINUSMINUS      shift and go to state 60
@@ -1491,38 +1479,38 @@ state 63
     MOD_ASSIGN      shift and go to state 65
     LPAREN          shift and go to state 66
     INTEGER         shift and go to state 67
-    PLUS            reduce using rule 73 (empty -> .)
-    MINUS           reduce using rule 73 (empty -> .)
-    TIMES           reduce using rule 73 (empty -> .)
-    DIVIDE          reduce using rule 73 (empty -> .)
-    MOD             reduce using rule 73 (empty -> .)
-    TIMESTIMES      reduce using rule 73 (empty -> .)
-    PUNTOCOMA       reduce using rule 73 (empty -> .)
-    RPAREN          reduce using rule 73 (empty -> .)
+    PLUS            reduce using rule 74 (empty -> .)
+    MINUS           reduce using rule 74 (empty -> .)
+    TIMES           reduce using rule 74 (empty -> .)
+    DIVIDE          reduce using rule 74 (empty -> .)
+    MOD             reduce using rule 74 (empty -> .)
+    TIMESTIMES      reduce using rule 74 (empty -> .)
+    PUNTOCOMA       reduce using rule 74 (empty -> .)
+    RPAREN          reduce using rule 74 (empty -> .)
 
     expression                     shift and go to state 84
     empty                          shift and go to state 68
 
 state 64
 
-    (68) expression -> DIVIDE_ASSIGN . expression
-    (57) expression -> . expression PLUS expression
-    (58) expression -> . expression MINUS expression
-    (59) expression -> . expression TIMES expression
-    (60) expression -> . expression DIVIDE expression
-    (61) expression -> . expression MOD expression
-    (62) expression -> . PLUSPLUS
-    (63) expression -> . MINUSMINUS
-    (64) expression -> . expression TIMESTIMES expression
-    (65) expression -> . TIMES_ASSIGN expression
-    (66) expression -> . MINUS_ASSIGN expression
-    (67) expression -> . PLUS_ASSIGN expression
-    (68) expression -> . DIVIDE_ASSIGN expression
-    (69) expression -> . MOD_ASSIGN expression
-    (70) expression -> . LPAREN expression RPAREN
-    (71) expression -> . INTEGER
-    (72) expression -> . empty
-    (73) empty -> .
+    (69) expression -> DIVIDE_ASSIGN . expression
+    (58) expression -> . expression PLUS expression
+    (59) expression -> . expression MINUS expression
+    (60) expression -> . expression TIMES expression
+    (61) expression -> . expression DIVIDE expression
+    (62) expression -> . expression MOD expression
+    (63) expression -> . PLUSPLUS
+    (64) expression -> . MINUSMINUS
+    (65) expression -> . expression TIMESTIMES expression
+    (66) expression -> . TIMES_ASSIGN expression
+    (67) expression -> . MINUS_ASSIGN expression
+    (68) expression -> . PLUS_ASSIGN expression
+    (69) expression -> . DIVIDE_ASSIGN expression
+    (70) expression -> . MOD_ASSIGN expression
+    (71) expression -> . LPAREN expression RPAREN
+    (72) expression -> . INTEGER
+    (73) expression -> . empty
+    (74) empty -> .
 
     PLUSPLUS        shift and go to state 59
     MINUSMINUS      shift and go to state 60
@@ -1533,38 +1521,38 @@ state 64
     MOD_ASSIGN      shift and go to state 65
     LPAREN          shift and go to state 66
     INTEGER         shift and go to state 67
-    PLUS            reduce using rule 73 (empty -> .)
-    MINUS           reduce using rule 73 (empty -> .)
-    TIMES           reduce using rule 73 (empty -> .)
-    DIVIDE          reduce using rule 73 (empty -> .)
-    MOD             reduce using rule 73 (empty -> .)
-    TIMESTIMES      reduce using rule 73 (empty -> .)
-    PUNTOCOMA       reduce using rule 73 (empty -> .)
-    RPAREN          reduce using rule 73 (empty -> .)
+    PLUS            reduce using rule 74 (empty -> .)
+    MINUS           reduce using rule 74 (empty -> .)
+    TIMES           reduce using rule 74 (empty -> .)
+    DIVIDE          reduce using rule 74 (empty -> .)
+    MOD             reduce using rule 74 (empty -> .)
+    TIMESTIMES      reduce using rule 74 (empty -> .)
+    PUNTOCOMA       reduce using rule 74 (empty -> .)
+    RPAREN          reduce using rule 74 (empty -> .)
 
     expression                     shift and go to state 85
     empty                          shift and go to state 68
 
 state 65
 
-    (69) expression -> MOD_ASSIGN . expression
-    (57) expression -> . expression PLUS expression
-    (58) expression -> . expression MINUS expression
-    (59) expression -> . expression TIMES expression
-    (60) expression -> . expression DIVIDE expression
-    (61) expression -> . expression MOD expression
-    (62) expression -> . PLUSPLUS
-    (63) expression -> . MINUSMINUS
-    (64) expression -> . expression TIMESTIMES expression
-    (65) expression -> . TIMES_ASSIGN expression
-    (66) expression -> . MINUS_ASSIGN expression
-    (67) expression -> . PLUS_ASSIGN expression
-    (68) expression -> . DIVIDE_ASSIGN expression
-    (69) expression -> . MOD_ASSIGN expression
-    (70) expression -> . LPAREN expression RPAREN
-    (71) expression -> . INTEGER
-    (72) expression -> . empty
-    (73) empty -> .
+    (70) expression -> MOD_ASSIGN . expression
+    (58) expression -> . expression PLUS expression
+    (59) expression -> . expression MINUS expression
+    (60) expression -> . expression TIMES expression
+    (61) expression -> . expression DIVIDE expression
+    (62) expression -> . expression MOD expression
+    (63) expression -> . PLUSPLUS
+    (64) expression -> . MINUSMINUS
+    (65) expression -> . expression TIMESTIMES expression
+    (66) expression -> . TIMES_ASSIGN expression
+    (67) expression -> . MINUS_ASSIGN expression
+    (68) expression -> . PLUS_ASSIGN expression
+    (69) expression -> . DIVIDE_ASSIGN expression
+    (70) expression -> . MOD_ASSIGN expression
+    (71) expression -> . LPAREN expression RPAREN
+    (72) expression -> . INTEGER
+    (73) expression -> . empty
+    (74) empty -> .
 
     PLUSPLUS        shift and go to state 59
     MINUSMINUS      shift and go to state 60
@@ -1575,38 +1563,38 @@ state 65
     MOD_ASSIGN      shift and go to state 65
     LPAREN          shift and go to state 66
     INTEGER         shift and go to state 67
-    PLUS            reduce using rule 73 (empty -> .)
-    MINUS           reduce using rule 73 (empty -> .)
-    TIMES           reduce using rule 73 (empty -> .)
-    DIVIDE          reduce using rule 73 (empty -> .)
-    MOD             reduce using rule 73 (empty -> .)
-    TIMESTIMES      reduce using rule 73 (empty -> .)
-    PUNTOCOMA       reduce using rule 73 (empty -> .)
-    RPAREN          reduce using rule 73 (empty -> .)
+    PLUS            reduce using rule 74 (empty -> .)
+    MINUS           reduce using rule 74 (empty -> .)
+    TIMES           reduce using rule 74 (empty -> .)
+    DIVIDE          reduce using rule 74 (empty -> .)
+    MOD             reduce using rule 74 (empty -> .)
+    TIMESTIMES      reduce using rule 74 (empty -> .)
+    PUNTOCOMA       reduce using rule 74 (empty -> .)
+    RPAREN          reduce using rule 74 (empty -> .)
 
     expression                     shift and go to state 86
     empty                          shift and go to state 68
 
 state 66
 
-    (70) expression -> LPAREN . expression RPAREN
-    (57) expression -> . expression PLUS expression
-    (58) expression -> . expression MINUS expression
-    (59) expression -> . expression TIMES expression
-    (60) expression -> . expression DIVIDE expression
-    (61) expression -> . expression MOD expression
-    (62) expression -> . PLUSPLUS
-    (63) expression -> . MINUSMINUS
-    (64) expression -> . expression TIMESTIMES expression
-    (65) expression -> . TIMES_ASSIGN expression
-    (66) expression -> . MINUS_ASSIGN expression
-    (67) expression -> . PLUS_ASSIGN expression
-    (68) expression -> . DIVIDE_ASSIGN expression
-    (69) expression -> . MOD_ASSIGN expression
-    (70) expression -> . LPAREN expression RPAREN
-    (71) expression -> . INTEGER
-    (72) expression -> . empty
-    (73) empty -> .
+    (71) expression -> LPAREN . expression RPAREN
+    (58) expression -> . expression PLUS expression
+    (59) expression -> . expression MINUS expression
+    (60) expression -> . expression TIMES expression
+    (61) expression -> . expression DIVIDE expression
+    (62) expression -> . expression MOD expression
+    (63) expression -> . PLUSPLUS
+    (64) expression -> . MINUSMINUS
+    (65) expression -> . expression TIMESTIMES expression
+    (66) expression -> . TIMES_ASSIGN expression
+    (67) expression -> . MINUS_ASSIGN expression
+    (68) expression -> . PLUS_ASSIGN expression
+    (69) expression -> . DIVIDE_ASSIGN expression
+    (70) expression -> . MOD_ASSIGN expression
+    (71) expression -> . LPAREN expression RPAREN
+    (72) expression -> . INTEGER
+    (73) expression -> . empty
+    (74) empty -> .
 
     PLUSPLUS        shift and go to state 59
     MINUSMINUS      shift and go to state 60
@@ -1617,43 +1605,43 @@ state 66
     MOD_ASSIGN      shift and go to state 65
     LPAREN          shift and go to state 66
     INTEGER         shift and go to state 67
-    RPAREN          reduce using rule 73 (empty -> .)
-    PLUS            reduce using rule 73 (empty -> .)
-    MINUS           reduce using rule 73 (empty -> .)
-    TIMES           reduce using rule 73 (empty -> .)
-    DIVIDE          reduce using rule 73 (empty -> .)
-    MOD             reduce using rule 73 (empty -> .)
-    TIMESTIMES      reduce using rule 73 (empty -> .)
+    RPAREN          reduce using rule 74 (empty -> .)
+    PLUS            reduce using rule 74 (empty -> .)
+    MINUS           reduce using rule 74 (empty -> .)
+    TIMES           reduce using rule 74 (empty -> .)
+    DIVIDE          reduce using rule 74 (empty -> .)
+    MOD             reduce using rule 74 (empty -> .)
+    TIMESTIMES      reduce using rule 74 (empty -> .)
 
     expression                     shift and go to state 87
     empty                          shift and go to state 68
 
 state 67
 
-    (71) expression -> INTEGER .
+    (72) expression -> INTEGER .
 
-    PLUS            reduce using rule 71 (expression -> INTEGER .)
-    MINUS           reduce using rule 71 (expression -> INTEGER .)
-    TIMES           reduce using rule 71 (expression -> INTEGER .)
-    DIVIDE          reduce using rule 71 (expression -> INTEGER .)
-    MOD             reduce using rule 71 (expression -> INTEGER .)
-    TIMESTIMES      reduce using rule 71 (expression -> INTEGER .)
-    PUNTOCOMA       reduce using rule 71 (expression -> INTEGER .)
-    RPAREN          reduce using rule 71 (expression -> INTEGER .)
+    PLUS            reduce using rule 72 (expression -> INTEGER .)
+    MINUS           reduce using rule 72 (expression -> INTEGER .)
+    TIMES           reduce using rule 72 (expression -> INTEGER .)
+    DIVIDE          reduce using rule 72 (expression -> INTEGER .)
+    MOD             reduce using rule 72 (expression -> INTEGER .)
+    TIMESTIMES      reduce using rule 72 (expression -> INTEGER .)
+    PUNTOCOMA       reduce using rule 72 (expression -> INTEGER .)
+    RPAREN          reduce using rule 72 (expression -> INTEGER .)
 
 
 state 68
 
-    (72) expression -> empty .
+    (73) expression -> empty .
 
-    PLUS            reduce using rule 72 (expression -> empty .)
-    MINUS           reduce using rule 72 (expression -> empty .)
-    TIMES           reduce using rule 72 (expression -> empty .)
-    DIVIDE          reduce using rule 72 (expression -> empty .)
-    MOD             reduce using rule 72 (expression -> empty .)
-    TIMESTIMES      reduce using rule 72 (expression -> empty .)
-    PUNTOCOMA       reduce using rule 72 (expression -> empty .)
-    RPAREN          reduce using rule 72 (expression -> empty .)
+    PLUS            reduce using rule 73 (expression -> empty .)
+    MINUS           reduce using rule 73 (expression -> empty .)
+    TIMES           reduce using rule 73 (expression -> empty .)
+    DIVIDE          reduce using rule 73 (expression -> empty .)
+    MOD             reduce using rule 73 (expression -> empty .)
+    TIMESTIMES      reduce using rule 73 (expression -> empty .)
+    PUNTOCOMA       reduce using rule 73 (expression -> empty .)
+    RPAREN          reduce using rule 73 (expression -> empty .)
 
 
 state 69
@@ -1718,31 +1706,31 @@ state 74
 
 state 75
 
-    (55) assign -> STRING EQUALS expression endexpression .
+    (56) assign -> STRING EQUALS expression endexpression .
 
-    $end            reduce using rule 55 (assign -> STRING EQUALS expression endexpression .)
+    $end            reduce using rule 56 (assign -> STRING EQUALS expression endexpression .)
 
 
 state 76
 
-    (57) expression -> expression PLUS . expression
-    (57) expression -> . expression PLUS expression
-    (58) expression -> . expression MINUS expression
-    (59) expression -> . expression TIMES expression
-    (60) expression -> . expression DIVIDE expression
-    (61) expression -> . expression MOD expression
-    (62) expression -> . PLUSPLUS
-    (63) expression -> . MINUSMINUS
-    (64) expression -> . expression TIMESTIMES expression
-    (65) expression -> . TIMES_ASSIGN expression
-    (66) expression -> . MINUS_ASSIGN expression
-    (67) expression -> . PLUS_ASSIGN expression
-    (68) expression -> . DIVIDE_ASSIGN expression
-    (69) expression -> . MOD_ASSIGN expression
-    (70) expression -> . LPAREN expression RPAREN
-    (71) expression -> . INTEGER
-    (72) expression -> . empty
-    (73) empty -> .
+    (58) expression -> expression PLUS . expression
+    (58) expression -> . expression PLUS expression
+    (59) expression -> . expression MINUS expression
+    (60) expression -> . expression TIMES expression
+    (61) expression -> . expression DIVIDE expression
+    (62) expression -> . expression MOD expression
+    (63) expression -> . PLUSPLUS
+    (64) expression -> . MINUSMINUS
+    (65) expression -> . expression TIMESTIMES expression
+    (66) expression -> . TIMES_ASSIGN expression
+    (67) expression -> . MINUS_ASSIGN expression
+    (68) expression -> . PLUS_ASSIGN expression
+    (69) expression -> . DIVIDE_ASSIGN expression
+    (70) expression -> . MOD_ASSIGN expression
+    (71) expression -> . LPAREN expression RPAREN
+    (72) expression -> . INTEGER
+    (73) expression -> . empty
+    (74) empty -> .
 
     PLUSPLUS        shift and go to state 59
     MINUSMINUS      shift and go to state 60
@@ -1753,38 +1741,38 @@ state 76
     MOD_ASSIGN      shift and go to state 65
     LPAREN          shift and go to state 66
     INTEGER         shift and go to state 67
-    PLUS            reduce using rule 73 (empty -> .)
-    MINUS           reduce using rule 73 (empty -> .)
-    TIMES           reduce using rule 73 (empty -> .)
-    DIVIDE          reduce using rule 73 (empty -> .)
-    MOD             reduce using rule 73 (empty -> .)
-    TIMESTIMES      reduce using rule 73 (empty -> .)
-    PUNTOCOMA       reduce using rule 73 (empty -> .)
-    RPAREN          reduce using rule 73 (empty -> .)
+    PLUS            reduce using rule 74 (empty -> .)
+    MINUS           reduce using rule 74 (empty -> .)
+    TIMES           reduce using rule 74 (empty -> .)
+    DIVIDE          reduce using rule 74 (empty -> .)
+    MOD             reduce using rule 74 (empty -> .)
+    TIMESTIMES      reduce using rule 74 (empty -> .)
+    PUNTOCOMA       reduce using rule 74 (empty -> .)
+    RPAREN          reduce using rule 74 (empty -> .)
 
     expression                     shift and go to state 100
     empty                          shift and go to state 68
 
 state 77
 
-    (58) expression -> expression MINUS . expression
-    (57) expression -> . expression PLUS expression
-    (58) expression -> . expression MINUS expression
-    (59) expression -> . expression TIMES expression
-    (60) expression -> . expression DIVIDE expression
-    (61) expression -> . expression MOD expression
-    (62) expression -> . PLUSPLUS
-    (63) expression -> . MINUSMINUS
-    (64) expression -> . expression TIMESTIMES expression
-    (65) expression -> . TIMES_ASSIGN expression
-    (66) expression -> . MINUS_ASSIGN expression
-    (67) expression -> . PLUS_ASSIGN expression
-    (68) expression -> . DIVIDE_ASSIGN expression
-    (69) expression -> . MOD_ASSIGN expression
-    (70) expression -> . LPAREN expression RPAREN
-    (71) expression -> . INTEGER
-    (72) expression -> . empty
-    (73) empty -> .
+    (59) expression -> expression MINUS . expression
+    (58) expression -> . expression PLUS expression
+    (59) expression -> . expression MINUS expression
+    (60) expression -> . expression TIMES expression
+    (61) expression -> . expression DIVIDE expression
+    (62) expression -> . expression MOD expression
+    (63) expression -> . PLUSPLUS
+    (64) expression -> . MINUSMINUS
+    (65) expression -> . expression TIMESTIMES expression
+    (66) expression -> . TIMES_ASSIGN expression
+    (67) expression -> . MINUS_ASSIGN expression
+    (68) expression -> . PLUS_ASSIGN expression
+    (69) expression -> . DIVIDE_ASSIGN expression
+    (70) expression -> . MOD_ASSIGN expression
+    (71) expression -> . LPAREN expression RPAREN
+    (72) expression -> . INTEGER
+    (73) expression -> . empty
+    (74) empty -> .
 
     PLUSPLUS        shift and go to state 59
     MINUSMINUS      shift and go to state 60
@@ -1795,38 +1783,38 @@ state 77
     MOD_ASSIGN      shift and go to state 65
     LPAREN          shift and go to state 66
     INTEGER         shift and go to state 67
-    PLUS            reduce using rule 73 (empty -> .)
-    MINUS           reduce using rule 73 (empty -> .)
-    TIMES           reduce using rule 73 (empty -> .)
-    DIVIDE          reduce using rule 73 (empty -> .)
-    MOD             reduce using rule 73 (empty -> .)
-    TIMESTIMES      reduce using rule 73 (empty -> .)
-    PUNTOCOMA       reduce using rule 73 (empty -> .)
-    RPAREN          reduce using rule 73 (empty -> .)
+    PLUS            reduce using rule 74 (empty -> .)
+    MINUS           reduce using rule 74 (empty -> .)
+    TIMES           reduce using rule 74 (empty -> .)
+    DIVIDE          reduce using rule 74 (empty -> .)
+    MOD             reduce using rule 74 (empty -> .)
+    TIMESTIMES      reduce using rule 74 (empty -> .)
+    PUNTOCOMA       reduce using rule 74 (empty -> .)
+    RPAREN          reduce using rule 74 (empty -> .)
 
     expression                     shift and go to state 101
     empty                          shift and go to state 68
 
 state 78
 
-    (59) expression -> expression TIMES . expression
-    (57) expression -> . expression PLUS expression
-    (58) expression -> . expression MINUS expression
-    (59) expression -> . expression TIMES expression
-    (60) expression -> . expression DIVIDE expression
-    (61) expression -> . expression MOD expression
-    (62) expression -> . PLUSPLUS
-    (63) expression -> . MINUSMINUS
-    (64) expression -> . expression TIMESTIMES expression
-    (65) expression -> . TIMES_ASSIGN expression
-    (66) expression -> . MINUS_ASSIGN expression
-    (67) expression -> . PLUS_ASSIGN expression
-    (68) expression -> . DIVIDE_ASSIGN expression
-    (69) expression -> . MOD_ASSIGN expression
-    (70) expression -> . LPAREN expression RPAREN
-    (71) expression -> . INTEGER
-    (72) expression -> . empty
-    (73) empty -> .
+    (60) expression -> expression TIMES . expression
+    (58) expression -> . expression PLUS expression
+    (59) expression -> . expression MINUS expression
+    (60) expression -> . expression TIMES expression
+    (61) expression -> . expression DIVIDE expression
+    (62) expression -> . expression MOD expression
+    (63) expression -> . PLUSPLUS
+    (64) expression -> . MINUSMINUS
+    (65) expression -> . expression TIMESTIMES expression
+    (66) expression -> . TIMES_ASSIGN expression
+    (67) expression -> . MINUS_ASSIGN expression
+    (68) expression -> . PLUS_ASSIGN expression
+    (69) expression -> . DIVIDE_ASSIGN expression
+    (70) expression -> . MOD_ASSIGN expression
+    (71) expression -> . LPAREN expression RPAREN
+    (72) expression -> . INTEGER
+    (73) expression -> . empty
+    (74) empty -> .
 
     PLUSPLUS        shift and go to state 59
     MINUSMINUS      shift and go to state 60
@@ -1837,38 +1825,38 @@ state 78
     MOD_ASSIGN      shift and go to state 65
     LPAREN          shift and go to state 66
     INTEGER         shift and go to state 67
-    PLUS            reduce using rule 73 (empty -> .)
-    MINUS           reduce using rule 73 (empty -> .)
-    TIMES           reduce using rule 73 (empty -> .)
-    DIVIDE          reduce using rule 73 (empty -> .)
-    MOD             reduce using rule 73 (empty -> .)
-    TIMESTIMES      reduce using rule 73 (empty -> .)
-    PUNTOCOMA       reduce using rule 73 (empty -> .)
-    RPAREN          reduce using rule 73 (empty -> .)
+    PLUS            reduce using rule 74 (empty -> .)
+    MINUS           reduce using rule 74 (empty -> .)
+    TIMES           reduce using rule 74 (empty -> .)
+    DIVIDE          reduce using rule 74 (empty -> .)
+    MOD             reduce using rule 74 (empty -> .)
+    TIMESTIMES      reduce using rule 74 (empty -> .)
+    PUNTOCOMA       reduce using rule 74 (empty -> .)
+    RPAREN          reduce using rule 74 (empty -> .)
 
     expression                     shift and go to state 102
     empty                          shift and go to state 68
 
 state 79
 
-    (60) expression -> expression DIVIDE . expression
-    (57) expression -> . expression PLUS expression
-    (58) expression -> . expression MINUS expression
-    (59) expression -> . expression TIMES expression
-    (60) expression -> . expression DIVIDE expression
-    (61) expression -> . expression MOD expression
-    (62) expression -> . PLUSPLUS
-    (63) expression -> . MINUSMINUS
-    (64) expression -> . expression TIMESTIMES expression
-    (65) expression -> . TIMES_ASSIGN expression
-    (66) expression -> . MINUS_ASSIGN expression
-    (67) expression -> . PLUS_ASSIGN expression
-    (68) expression -> . DIVIDE_ASSIGN expression
-    (69) expression -> . MOD_ASSIGN expression
-    (70) expression -> . LPAREN expression RPAREN
-    (71) expression -> . INTEGER
-    (72) expression -> . empty
-    (73) empty -> .
+    (61) expression -> expression DIVIDE . expression
+    (58) expression -> . expression PLUS expression
+    (59) expression -> . expression MINUS expression
+    (60) expression -> . expression TIMES expression
+    (61) expression -> . expression DIVIDE expression
+    (62) expression -> . expression MOD expression
+    (63) expression -> . PLUSPLUS
+    (64) expression -> . MINUSMINUS
+    (65) expression -> . expression TIMESTIMES expression
+    (66) expression -> . TIMES_ASSIGN expression
+    (67) expression -> . MINUS_ASSIGN expression
+    (68) expression -> . PLUS_ASSIGN expression
+    (69) expression -> . DIVIDE_ASSIGN expression
+    (70) expression -> . MOD_ASSIGN expression
+    (71) expression -> . LPAREN expression RPAREN
+    (72) expression -> . INTEGER
+    (73) expression -> . empty
+    (74) empty -> .
 
     PLUSPLUS        shift and go to state 59
     MINUSMINUS      shift and go to state 60
@@ -1879,38 +1867,38 @@ state 79
     MOD_ASSIGN      shift and go to state 65
     LPAREN          shift and go to state 66
     INTEGER         shift and go to state 67
-    PLUS            reduce using rule 73 (empty -> .)
-    MINUS           reduce using rule 73 (empty -> .)
-    TIMES           reduce using rule 73 (empty -> .)
-    DIVIDE          reduce using rule 73 (empty -> .)
-    MOD             reduce using rule 73 (empty -> .)
-    TIMESTIMES      reduce using rule 73 (empty -> .)
-    PUNTOCOMA       reduce using rule 73 (empty -> .)
-    RPAREN          reduce using rule 73 (empty -> .)
+    PLUS            reduce using rule 74 (empty -> .)
+    MINUS           reduce using rule 74 (empty -> .)
+    TIMES           reduce using rule 74 (empty -> .)
+    DIVIDE          reduce using rule 74 (empty -> .)
+    MOD             reduce using rule 74 (empty -> .)
+    TIMESTIMES      reduce using rule 74 (empty -> .)
+    PUNTOCOMA       reduce using rule 74 (empty -> .)
+    RPAREN          reduce using rule 74 (empty -> .)
 
     expression                     shift and go to state 103
     empty                          shift and go to state 68
 
 state 80
 
-    (61) expression -> expression MOD . expression
-    (57) expression -> . expression PLUS expression
-    (58) expression -> . expression MINUS expression
-    (59) expression -> . expression TIMES expression
-    (60) expression -> . expression DIVIDE expression
-    (61) expression -> . expression MOD expression
-    (62) expression -> . PLUSPLUS
-    (63) expression -> . MINUSMINUS
-    (64) expression -> . expression TIMESTIMES expression
-    (65) expression -> . TIMES_ASSIGN expression
-    (66) expression -> . MINUS_ASSIGN expression
-    (67) expression -> . PLUS_ASSIGN expression
-    (68) expression -> . DIVIDE_ASSIGN expression
-    (69) expression -> . MOD_ASSIGN expression
-    (70) expression -> . LPAREN expression RPAREN
-    (71) expression -> . INTEGER
-    (72) expression -> . empty
-    (73) empty -> .
+    (62) expression -> expression MOD . expression
+    (58) expression -> . expression PLUS expression
+    (59) expression -> . expression MINUS expression
+    (60) expression -> . expression TIMES expression
+    (61) expression -> . expression DIVIDE expression
+    (62) expression -> . expression MOD expression
+    (63) expression -> . PLUSPLUS
+    (64) expression -> . MINUSMINUS
+    (65) expression -> . expression TIMESTIMES expression
+    (66) expression -> . TIMES_ASSIGN expression
+    (67) expression -> . MINUS_ASSIGN expression
+    (68) expression -> . PLUS_ASSIGN expression
+    (69) expression -> . DIVIDE_ASSIGN expression
+    (70) expression -> . MOD_ASSIGN expression
+    (71) expression -> . LPAREN expression RPAREN
+    (72) expression -> . INTEGER
+    (73) expression -> . empty
+    (74) empty -> .
 
     PLUSPLUS        shift and go to state 59
     MINUSMINUS      shift and go to state 60
@@ -1921,38 +1909,38 @@ state 80
     MOD_ASSIGN      shift and go to state 65
     LPAREN          shift and go to state 66
     INTEGER         shift and go to state 67
-    PLUS            reduce using rule 73 (empty -> .)
-    MINUS           reduce using rule 73 (empty -> .)
-    TIMES           reduce using rule 73 (empty -> .)
-    DIVIDE          reduce using rule 73 (empty -> .)
-    MOD             reduce using rule 73 (empty -> .)
-    TIMESTIMES      reduce using rule 73 (empty -> .)
-    PUNTOCOMA       reduce using rule 73 (empty -> .)
-    RPAREN          reduce using rule 73 (empty -> .)
+    PLUS            reduce using rule 74 (empty -> .)
+    MINUS           reduce using rule 74 (empty -> .)
+    TIMES           reduce using rule 74 (empty -> .)
+    DIVIDE          reduce using rule 74 (empty -> .)
+    MOD             reduce using rule 74 (empty -> .)
+    TIMESTIMES      reduce using rule 74 (empty -> .)
+    PUNTOCOMA       reduce using rule 74 (empty -> .)
+    RPAREN          reduce using rule 74 (empty -> .)
 
     expression                     shift and go to state 104
     empty                          shift and go to state 68
 
 state 81
 
-    (64) expression -> expression TIMESTIMES . expression
-    (57) expression -> . expression PLUS expression
-    (58) expression -> . expression MINUS expression
-    (59) expression -> . expression TIMES expression
-    (60) expression -> . expression DIVIDE expression
-    (61) expression -> . expression MOD expression
-    (62) expression -> . PLUSPLUS
-    (63) expression -> . MINUSMINUS
-    (64) expression -> . expression TIMESTIMES expression
-    (65) expression -> . TIMES_ASSIGN expression
-    (66) expression -> . MINUS_ASSIGN expression
-    (67) expression -> . PLUS_ASSIGN expression
-    (68) expression -> . DIVIDE_ASSIGN expression
-    (69) expression -> . MOD_ASSIGN expression
-    (70) expression -> . LPAREN expression RPAREN
-    (71) expression -> . INTEGER
-    (72) expression -> . empty
-    (73) empty -> .
+    (65) expression -> expression TIMESTIMES . expression
+    (58) expression -> . expression PLUS expression
+    (59) expression -> . expression MINUS expression
+    (60) expression -> . expression TIMES expression
+    (61) expression -> . expression DIVIDE expression
+    (62) expression -> . expression MOD expression
+    (63) expression -> . PLUSPLUS
+    (64) expression -> . MINUSMINUS
+    (65) expression -> . expression TIMESTIMES expression
+    (66) expression -> . TIMES_ASSIGN expression
+    (67) expression -> . MINUS_ASSIGN expression
+    (68) expression -> . PLUS_ASSIGN expression
+    (69) expression -> . DIVIDE_ASSIGN expression
+    (70) expression -> . MOD_ASSIGN expression
+    (71) expression -> . LPAREN expression RPAREN
+    (72) expression -> . INTEGER
+    (73) expression -> . empty
+    (74) empty -> .
 
     PLUSPLUS        shift and go to state 59
     MINUSMINUS      shift and go to state 60
@@ -1963,27 +1951,27 @@ state 81
     MOD_ASSIGN      shift and go to state 65
     LPAREN          shift and go to state 66
     INTEGER         shift and go to state 67
-    PLUS            reduce using rule 73 (empty -> .)
-    MINUS           reduce using rule 73 (empty -> .)
-    TIMES           reduce using rule 73 (empty -> .)
-    DIVIDE          reduce using rule 73 (empty -> .)
-    MOD             reduce using rule 73 (empty -> .)
-    TIMESTIMES      reduce using rule 73 (empty -> .)
-    PUNTOCOMA       reduce using rule 73 (empty -> .)
-    RPAREN          reduce using rule 73 (empty -> .)
+    PLUS            reduce using rule 74 (empty -> .)
+    MINUS           reduce using rule 74 (empty -> .)
+    TIMES           reduce using rule 74 (empty -> .)
+    DIVIDE          reduce using rule 74 (empty -> .)
+    MOD             reduce using rule 74 (empty -> .)
+    TIMESTIMES      reduce using rule 74 (empty -> .)
+    PUNTOCOMA       reduce using rule 74 (empty -> .)
+    RPAREN          reduce using rule 74 (empty -> .)
 
     expression                     shift and go to state 105
     empty                          shift and go to state 68
 
 state 82
 
-    (65) expression -> TIMES_ASSIGN expression .
-    (57) expression -> expression . PLUS expression
-    (58) expression -> expression . MINUS expression
-    (59) expression -> expression . TIMES expression
-    (60) expression -> expression . DIVIDE expression
-    (61) expression -> expression . MOD expression
-    (64) expression -> expression . TIMESTIMES expression
+    (66) expression -> TIMES_ASSIGN expression .
+    (58) expression -> expression . PLUS expression
+    (59) expression -> expression . MINUS expression
+    (60) expression -> expression . TIMES expression
+    (61) expression -> expression . DIVIDE expression
+    (62) expression -> expression . MOD expression
+    (65) expression -> expression . TIMESTIMES expression
 
   ! shift/reduce conflict for PLUS resolved as shift
   ! shift/reduce conflict for MINUS resolved as shift
@@ -1991,8 +1979,8 @@ state 82
   ! shift/reduce conflict for DIVIDE resolved as shift
   ! shift/reduce conflict for MOD resolved as shift
   ! shift/reduce conflict for TIMESTIMES resolved as shift
-    PUNTOCOMA       reduce using rule 65 (expression -> TIMES_ASSIGN expression .)
-    RPAREN          reduce using rule 65 (expression -> TIMES_ASSIGN expression .)
+    PUNTOCOMA       reduce using rule 66 (expression -> TIMES_ASSIGN expression .)
+    RPAREN          reduce using rule 66 (expression -> TIMES_ASSIGN expression .)
     PLUS            shift and go to state 76
     MINUS           shift and go to state 77
     TIMES           shift and go to state 78
@@ -2000,23 +1988,23 @@ state 82
     MOD             shift and go to state 80
     TIMESTIMES      shift and go to state 81
 
-  ! PLUS            [ reduce using rule 65 (expression -> TIMES_ASSIGN expression .) ]
-  ! MINUS           [ reduce using rule 65 (expression -> TIMES_ASSIGN expression .) ]
-  ! TIMES           [ reduce using rule 65 (expression -> TIMES_ASSIGN expression .) ]
-  ! DIVIDE          [ reduce using rule 65 (expression -> TIMES_ASSIGN expression .) ]
-  ! MOD             [ reduce using rule 65 (expression -> TIMES_ASSIGN expression .) ]
-  ! TIMESTIMES      [ reduce using rule 65 (expression -> TIMES_ASSIGN expression .) ]
+  ! PLUS            [ reduce using rule 66 (expression -> TIMES_ASSIGN expression .) ]
+  ! MINUS           [ reduce using rule 66 (expression -> TIMES_ASSIGN expression .) ]
+  ! TIMES           [ reduce using rule 66 (expression -> TIMES_ASSIGN expression .) ]
+  ! DIVIDE          [ reduce using rule 66 (expression -> TIMES_ASSIGN expression .) ]
+  ! MOD             [ reduce using rule 66 (expression -> TIMES_ASSIGN expression .) ]
+  ! TIMESTIMES      [ reduce using rule 66 (expression -> TIMES_ASSIGN expression .) ]
 
 
 state 83
 
-    (66) expression -> MINUS_ASSIGN expression .
-    (57) expression -> expression . PLUS expression
-    (58) expression -> expression . MINUS expression
-    (59) expression -> expression . TIMES expression
-    (60) expression -> expression . DIVIDE expression
-    (61) expression -> expression . MOD expression
-    (64) expression -> expression . TIMESTIMES expression
+    (67) expression -> MINUS_ASSIGN expression .
+    (58) expression -> expression . PLUS expression
+    (59) expression -> expression . MINUS expression
+    (60) expression -> expression . TIMES expression
+    (61) expression -> expression . DIVIDE expression
+    (62) expression -> expression . MOD expression
+    (65) expression -> expression . TIMESTIMES expression
 
   ! shift/reduce conflict for PLUS resolved as shift
   ! shift/reduce conflict for MINUS resolved as shift
@@ -2024,8 +2012,8 @@ state 83
   ! shift/reduce conflict for DIVIDE resolved as shift
   ! shift/reduce conflict for MOD resolved as shift
   ! shift/reduce conflict for TIMESTIMES resolved as shift
-    PUNTOCOMA       reduce using rule 66 (expression -> MINUS_ASSIGN expression .)
-    RPAREN          reduce using rule 66 (expression -> MINUS_ASSIGN expression .)
+    PUNTOCOMA       reduce using rule 67 (expression -> MINUS_ASSIGN expression .)
+    RPAREN          reduce using rule 67 (expression -> MINUS_ASSIGN expression .)
     PLUS            shift and go to state 76
     MINUS           shift and go to state 77
     TIMES           shift and go to state 78
@@ -2033,23 +2021,23 @@ state 83
     MOD             shift and go to state 80
     TIMESTIMES      shift and go to state 81
 
-  ! PLUS            [ reduce using rule 66 (expression -> MINUS_ASSIGN expression .) ]
-  ! MINUS           [ reduce using rule 66 (expression -> MINUS_ASSIGN expression .) ]
-  ! TIMES           [ reduce using rule 66 (expression -> MINUS_ASSIGN expression .) ]
-  ! DIVIDE          [ reduce using rule 66 (expression -> MINUS_ASSIGN expression .) ]
-  ! MOD             [ reduce using rule 66 (expression -> MINUS_ASSIGN expression .) ]
-  ! TIMESTIMES      [ reduce using rule 66 (expression -> MINUS_ASSIGN expression .) ]
+  ! PLUS            [ reduce using rule 67 (expression -> MINUS_ASSIGN expression .) ]
+  ! MINUS           [ reduce using rule 67 (expression -> MINUS_ASSIGN expression .) ]
+  ! TIMES           [ reduce using rule 67 (expression -> MINUS_ASSIGN expression .) ]
+  ! DIVIDE          [ reduce using rule 67 (expression -> MINUS_ASSIGN expression .) ]
+  ! MOD             [ reduce using rule 67 (expression -> MINUS_ASSIGN expression .) ]
+  ! TIMESTIMES      [ reduce using rule 67 (expression -> MINUS_ASSIGN expression .) ]
 
 
 state 84
 
-    (67) expression -> PLUS_ASSIGN expression .
-    (57) expression -> expression . PLUS expression
-    (58) expression -> expression . MINUS expression
-    (59) expression -> expression . TIMES expression
-    (60) expression -> expression . DIVIDE expression
-    (61) expression -> expression . MOD expression
-    (64) expression -> expression . TIMESTIMES expression
+    (68) expression -> PLUS_ASSIGN expression .
+    (58) expression -> expression . PLUS expression
+    (59) expression -> expression . MINUS expression
+    (60) expression -> expression . TIMES expression
+    (61) expression -> expression . DIVIDE expression
+    (62) expression -> expression . MOD expression
+    (65) expression -> expression . TIMESTIMES expression
 
   ! shift/reduce conflict for PLUS resolved as shift
   ! shift/reduce conflict for MINUS resolved as shift
@@ -2057,8 +2045,8 @@ state 84
   ! shift/reduce conflict for DIVIDE resolved as shift
   ! shift/reduce conflict for MOD resolved as shift
   ! shift/reduce conflict for TIMESTIMES resolved as shift
-    PUNTOCOMA       reduce using rule 67 (expression -> PLUS_ASSIGN expression .)
-    RPAREN          reduce using rule 67 (expression -> PLUS_ASSIGN expression .)
+    PUNTOCOMA       reduce using rule 68 (expression -> PLUS_ASSIGN expression .)
+    RPAREN          reduce using rule 68 (expression -> PLUS_ASSIGN expression .)
     PLUS            shift and go to state 76
     MINUS           shift and go to state 77
     TIMES           shift and go to state 78
@@ -2066,23 +2054,23 @@ state 84
     MOD             shift and go to state 80
     TIMESTIMES      shift and go to state 81
 
-  ! PLUS            [ reduce using rule 67 (expression -> PLUS_ASSIGN expression .) ]
-  ! MINUS           [ reduce using rule 67 (expression -> PLUS_ASSIGN expression .) ]
-  ! TIMES           [ reduce using rule 67 (expression -> PLUS_ASSIGN expression .) ]
-  ! DIVIDE          [ reduce using rule 67 (expression -> PLUS_ASSIGN expression .) ]
-  ! MOD             [ reduce using rule 67 (expression -> PLUS_ASSIGN expression .) ]
-  ! TIMESTIMES      [ reduce using rule 67 (expression -> PLUS_ASSIGN expression .) ]
+  ! PLUS            [ reduce using rule 68 (expression -> PLUS_ASSIGN expression .) ]
+  ! MINUS           [ reduce using rule 68 (expression -> PLUS_ASSIGN expression .) ]
+  ! TIMES           [ reduce using rule 68 (expression -> PLUS_ASSIGN expression .) ]
+  ! DIVIDE          [ reduce using rule 68 (expression -> PLUS_ASSIGN expression .) ]
+  ! MOD             [ reduce using rule 68 (expression -> PLUS_ASSIGN expression .) ]
+  ! TIMESTIMES      [ reduce using rule 68 (expression -> PLUS_ASSIGN expression .) ]
 
 
 state 85
 
-    (68) expression -> DIVIDE_ASSIGN expression .
-    (57) expression -> expression . PLUS expression
-    (58) expression -> expression . MINUS expression
-    (59) expression -> expression . TIMES expression
-    (60) expression -> expression . DIVIDE expression
-    (61) expression -> expression . MOD expression
-    (64) expression -> expression . TIMESTIMES expression
+    (69) expression -> DIVIDE_ASSIGN expression .
+    (58) expression -> expression . PLUS expression
+    (59) expression -> expression . MINUS expression
+    (60) expression -> expression . TIMES expression
+    (61) expression -> expression . DIVIDE expression
+    (62) expression -> expression . MOD expression
+    (65) expression -> expression . TIMESTIMES expression
 
   ! shift/reduce conflict for PLUS resolved as shift
   ! shift/reduce conflict for MINUS resolved as shift
@@ -2090,8 +2078,8 @@ state 85
   ! shift/reduce conflict for DIVIDE resolved as shift
   ! shift/reduce conflict for MOD resolved as shift
   ! shift/reduce conflict for TIMESTIMES resolved as shift
-    PUNTOCOMA       reduce using rule 68 (expression -> DIVIDE_ASSIGN expression .)
-    RPAREN          reduce using rule 68 (expression -> DIVIDE_ASSIGN expression .)
+    PUNTOCOMA       reduce using rule 69 (expression -> DIVIDE_ASSIGN expression .)
+    RPAREN          reduce using rule 69 (expression -> DIVIDE_ASSIGN expression .)
     PLUS            shift and go to state 76
     MINUS           shift and go to state 77
     TIMES           shift and go to state 78
@@ -2099,23 +2087,23 @@ state 85
     MOD             shift and go to state 80
     TIMESTIMES      shift and go to state 81
 
-  ! PLUS            [ reduce using rule 68 (expression -> DIVIDE_ASSIGN expression .) ]
-  ! MINUS           [ reduce using rule 68 (expression -> DIVIDE_ASSIGN expression .) ]
-  ! TIMES           [ reduce using rule 68 (expression -> DIVIDE_ASSIGN expression .) ]
-  ! DIVIDE          [ reduce using rule 68 (expression -> DIVIDE_ASSIGN expression .) ]
-  ! MOD             [ reduce using rule 68 (expression -> DIVIDE_ASSIGN expression .) ]
-  ! TIMESTIMES      [ reduce using rule 68 (expression -> DIVIDE_ASSIGN expression .) ]
+  ! PLUS            [ reduce using rule 69 (expression -> DIVIDE_ASSIGN expression .) ]
+  ! MINUS           [ reduce using rule 69 (expression -> DIVIDE_ASSIGN expression .) ]
+  ! TIMES           [ reduce using rule 69 (expression -> DIVIDE_ASSIGN expression .) ]
+  ! DIVIDE          [ reduce using rule 69 (expression -> DIVIDE_ASSIGN expression .) ]
+  ! MOD             [ reduce using rule 69 (expression -> DIVIDE_ASSIGN expression .) ]
+  ! TIMESTIMES      [ reduce using rule 69 (expression -> DIVIDE_ASSIGN expression .) ]
 
 
 state 86
 
-    (69) expression -> MOD_ASSIGN expression .
-    (57) expression -> expression . PLUS expression
-    (58) expression -> expression . MINUS expression
-    (59) expression -> expression . TIMES expression
-    (60) expression -> expression . DIVIDE expression
-    (61) expression -> expression . MOD expression
-    (64) expression -> expression . TIMESTIMES expression
+    (70) expression -> MOD_ASSIGN expression .
+    (58) expression -> expression . PLUS expression
+    (59) expression -> expression . MINUS expression
+    (60) expression -> expression . TIMES expression
+    (61) expression -> expression . DIVIDE expression
+    (62) expression -> expression . MOD expression
+    (65) expression -> expression . TIMESTIMES expression
 
   ! shift/reduce conflict for PLUS resolved as shift
   ! shift/reduce conflict for MINUS resolved as shift
@@ -2123,8 +2111,8 @@ state 86
   ! shift/reduce conflict for DIVIDE resolved as shift
   ! shift/reduce conflict for MOD resolved as shift
   ! shift/reduce conflict for TIMESTIMES resolved as shift
-    PUNTOCOMA       reduce using rule 69 (expression -> MOD_ASSIGN expression .)
-    RPAREN          reduce using rule 69 (expression -> MOD_ASSIGN expression .)
+    PUNTOCOMA       reduce using rule 70 (expression -> MOD_ASSIGN expression .)
+    RPAREN          reduce using rule 70 (expression -> MOD_ASSIGN expression .)
     PLUS            shift and go to state 76
     MINUS           shift and go to state 77
     TIMES           shift and go to state 78
@@ -2132,23 +2120,23 @@ state 86
     MOD             shift and go to state 80
     TIMESTIMES      shift and go to state 81
 
-  ! PLUS            [ reduce using rule 69 (expression -> MOD_ASSIGN expression .) ]
-  ! MINUS           [ reduce using rule 69 (expression -> MOD_ASSIGN expression .) ]
-  ! TIMES           [ reduce using rule 69 (expression -> MOD_ASSIGN expression .) ]
-  ! DIVIDE          [ reduce using rule 69 (expression -> MOD_ASSIGN expression .) ]
-  ! MOD             [ reduce using rule 69 (expression -> MOD_ASSIGN expression .) ]
-  ! TIMESTIMES      [ reduce using rule 69 (expression -> MOD_ASSIGN expression .) ]
+  ! PLUS            [ reduce using rule 70 (expression -> MOD_ASSIGN expression .) ]
+  ! MINUS           [ reduce using rule 70 (expression -> MOD_ASSIGN expression .) ]
+  ! TIMES           [ reduce using rule 70 (expression -> MOD_ASSIGN expression .) ]
+  ! DIVIDE          [ reduce using rule 70 (expression -> MOD_ASSIGN expression .) ]
+  ! MOD             [ reduce using rule 70 (expression -> MOD_ASSIGN expression .) ]
+  ! TIMESTIMES      [ reduce using rule 70 (expression -> MOD_ASSIGN expression .) ]
 
 
 state 87
 
-    (70) expression -> LPAREN expression . RPAREN
-    (57) expression -> expression . PLUS expression
-    (58) expression -> expression . MINUS expression
-    (59) expression -> expression . TIMES expression
-    (60) expression -> expression . DIVIDE expression
-    (61) expression -> expression . MOD expression
-    (64) expression -> expression . TIMESTIMES expression
+    (71) expression -> LPAREN expression . RPAREN
+    (58) expression -> expression . PLUS expression
+    (59) expression -> expression . MINUS expression
+    (60) expression -> expression . TIMES expression
+    (61) expression -> expression . DIVIDE expression
+    (62) expression -> expression . MOD expression
+    (65) expression -> expression . TIMESTIMES expression
 
     RPAREN          shift and go to state 106
     PLUS            shift and go to state 76
@@ -2163,7 +2151,7 @@ state 88
 
     (31) listdeclaration -> accessmodif finalstatvar LIST LESSTHAN Type GREATTHAN STRING . endexpression
     (33) listassign -> STRING . EQUALS listexpression endexpression
-    (56) endexpression -> . PUNTOCOMA
+    (57) endexpression -> . PUNTOCOMA
 
     EQUALS          shift and go to state 108
     PUNTOCOMA       shift and go to state 51
@@ -2181,7 +2169,7 @@ state 90
 
     (35) arraydeclaration -> accessmodif finalstatvar ARRAYLIST LESSTHAN Type GREATTHAN STRING . endexpression
     (37) arrayassign -> STRING . EQUALS arrayexpression endexpression
-    (56) endexpression -> . PUNTOCOMA
+    (57) endexpression -> . PUNTOCOMA
 
     EQUALS          shift and go to state 110
     PUNTOCOMA       shift and go to state 51
@@ -2195,14 +2183,13 @@ state 91
     $end            reduce using rule 36 (arraydeclaration -> accessmodif finalstatvar ARRAYLIST LESSTHAN Type GREATTHAN arrayassign .)
     STRING          reduce using rule 36 (arraydeclaration -> accessmodif finalstatvar ARRAYLIST LESSTHAN Type GREATTHAN arrayassign .)
     GREATTHAN       reduce using rule 36 (arraydeclaration -> accessmodif finalstatvar ARRAYLIST LESSTHAN Type GREATTHAN arrayassign .)
-    LESSTHAN        reduce using rule 36 (arraydeclaration -> accessmodif finalstatvar ARRAYLIST LESSTHAN Type GREATTHAN arrayassign .)
 
 
 state 92
 
     (39) linkedlistdeclaration -> accessmodif finalstatvar LINKEDLIST LESSTHAN Type GREATTHAN STRING . endexpression
     (41) linkedlistassign -> STRING . EQUALS linkedlistexpression endexpression
-    (56) endexpression -> . PUNTOCOMA
+    (57) endexpression -> . PUNTOCOMA
 
     EQUALS          shift and go to state 112
     PUNTOCOMA       shift and go to state 51
@@ -2220,7 +2207,7 @@ state 94
 
     (43) doublelinkedlistdeclaration -> accessmodif finalstatvar DOUBLELINKEDLIST LESSTHAN Type GREATTHAN STRING . endexpression
     (45) doublelinkedlistassign -> STRING . EQUALS doublelinkedlistexpression endexpression
-    (56) endexpression -> . PUNTOCOMA
+    (57) endexpression -> . PUNTOCOMA
 
     EQUALS          shift and go to state 114
     PUNTOCOMA       shift and go to state 51
@@ -2238,7 +2225,7 @@ state 96
 
     (47) stackdeclaration -> accessmodif finalstatvar STACK LESSTHAN Type GREATTHAN STRING . endexpression
     (49) stackassign -> STRING . EQUALS stackexpression endexpression
-    (56) endexpression -> . PUNTOCOMA
+    (57) endexpression -> . PUNTOCOMA
 
     EQUALS          shift and go to state 116
     PUNTOCOMA       shift and go to state 51
@@ -2256,7 +2243,7 @@ state 98
 
     (51) queuedeclaration -> accessmodif finalstatvar QUEUE LESSTHAN Type GREATTHAN STRING . endexpression
     (53) queueassign -> STRING . EQUALS queueexpression endexpression
-    (56) endexpression -> . PUNTOCOMA
+    (57) endexpression -> . PUNTOCOMA
 
     EQUALS          shift and go to state 118
     PUNTOCOMA       shift and go to state 51
@@ -2272,25 +2259,25 @@ state 99
 
 state 100
 
-    (57) expression -> expression PLUS expression .
-    (57) expression -> expression . PLUS expression
-    (58) expression -> expression . MINUS expression
-    (59) expression -> expression . TIMES expression
-    (60) expression -> expression . DIVIDE expression
-    (61) expression -> expression . MOD expression
-    (64) expression -> expression . TIMESTIMES expression
+    (58) expression -> expression PLUS expression .
+    (58) expression -> expression . PLUS expression
+    (59) expression -> expression . MINUS expression
+    (60) expression -> expression . TIMES expression
+    (61) expression -> expression . DIVIDE expression
+    (62) expression -> expression . MOD expression
+    (65) expression -> expression . TIMESTIMES expression
 
-    PLUS            reduce using rule 57 (expression -> expression PLUS expression .)
-    MINUS           reduce using rule 57 (expression -> expression PLUS expression .)
-    MOD             reduce using rule 57 (expression -> expression PLUS expression .)
-    TIMESTIMES      reduce using rule 57 (expression -> expression PLUS expression .)
-    PUNTOCOMA       reduce using rule 57 (expression -> expression PLUS expression .)
-    RPAREN          reduce using rule 57 (expression -> expression PLUS expression .)
+    PLUS            reduce using rule 58 (expression -> expression PLUS expression .)
+    MINUS           reduce using rule 58 (expression -> expression PLUS expression .)
+    MOD             reduce using rule 58 (expression -> expression PLUS expression .)
+    TIMESTIMES      reduce using rule 58 (expression -> expression PLUS expression .)
+    PUNTOCOMA       reduce using rule 58 (expression -> expression PLUS expression .)
+    RPAREN          reduce using rule 58 (expression -> expression PLUS expression .)
     TIMES           shift and go to state 78
     DIVIDE          shift and go to state 79
 
-  ! TIMES           [ reduce using rule 57 (expression -> expression PLUS expression .) ]
-  ! DIVIDE          [ reduce using rule 57 (expression -> expression PLUS expression .) ]
+  ! TIMES           [ reduce using rule 58 (expression -> expression PLUS expression .) ]
+  ! DIVIDE          [ reduce using rule 58 (expression -> expression PLUS expression .) ]
   ! PLUS            [ shift and go to state 76 ]
   ! MINUS           [ shift and go to state 77 ]
   ! MOD             [ shift and go to state 80 ]
@@ -2299,25 +2286,25 @@ state 100
 
 state 101
 
-    (58) expression -> expression MINUS expression .
-    (57) expression -> expression . PLUS expression
-    (58) expression -> expression . MINUS expression
-    (59) expression -> expression . TIMES expression
-    (60) expression -> expression . DIVIDE expression
-    (61) expression -> expression . MOD expression
-    (64) expression -> expression . TIMESTIMES expression
+    (59) expression -> expression MINUS expression .
+    (58) expression -> expression . PLUS expression
+    (59) expression -> expression . MINUS expression
+    (60) expression -> expression . TIMES expression
+    (61) expression -> expression . DIVIDE expression
+    (62) expression -> expression . MOD expression
+    (65) expression -> expression . TIMESTIMES expression
 
-    PLUS            reduce using rule 58 (expression -> expression MINUS expression .)
-    MINUS           reduce using rule 58 (expression -> expression MINUS expression .)
-    MOD             reduce using rule 58 (expression -> expression MINUS expression .)
-    TIMESTIMES      reduce using rule 58 (expression -> expression MINUS expression .)
-    PUNTOCOMA       reduce using rule 58 (expression -> expression MINUS expression .)
-    RPAREN          reduce using rule 58 (expression -> expression MINUS expression .)
+    PLUS            reduce using rule 59 (expression -> expression MINUS expression .)
+    MINUS           reduce using rule 59 (expression -> expression MINUS expression .)
+    MOD             reduce using rule 59 (expression -> expression MINUS expression .)
+    TIMESTIMES      reduce using rule 59 (expression -> expression MINUS expression .)
+    PUNTOCOMA       reduce using rule 59 (expression -> expression MINUS expression .)
+    RPAREN          reduce using rule 59 (expression -> expression MINUS expression .)
     TIMES           shift and go to state 78
     DIVIDE          shift and go to state 79
 
-  ! TIMES           [ reduce using rule 58 (expression -> expression MINUS expression .) ]
-  ! DIVIDE          [ reduce using rule 58 (expression -> expression MINUS expression .) ]
+  ! TIMES           [ reduce using rule 59 (expression -> expression MINUS expression .) ]
+  ! DIVIDE          [ reduce using rule 59 (expression -> expression MINUS expression .) ]
   ! PLUS            [ shift and go to state 76 ]
   ! MINUS           [ shift and go to state 77 ]
   ! MOD             [ shift and go to state 80 ]
@@ -2326,22 +2313,22 @@ state 101
 
 state 102
 
-    (59) expression -> expression TIMES expression .
-    (57) expression -> expression . PLUS expression
-    (58) expression -> expression . MINUS expression
-    (59) expression -> expression . TIMES expression
-    (60) expression -> expression . DIVIDE expression
-    (61) expression -> expression . MOD expression
-    (64) expression -> expression . TIMESTIMES expression
+    (60) expression -> expression TIMES expression .
+    (58) expression -> expression . PLUS expression
+    (59) expression -> expression . MINUS expression
+    (60) expression -> expression . TIMES expression
+    (61) expression -> expression . DIVIDE expression
+    (62) expression -> expression . MOD expression
+    (65) expression -> expression . TIMESTIMES expression
 
-    PLUS            reduce using rule 59 (expression -> expression TIMES expression .)
-    MINUS           reduce using rule 59 (expression -> expression TIMES expression .)
-    TIMES           reduce using rule 59 (expression -> expression TIMES expression .)
-    DIVIDE          reduce using rule 59 (expression -> expression TIMES expression .)
-    MOD             reduce using rule 59 (expression -> expression TIMES expression .)
-    TIMESTIMES      reduce using rule 59 (expression -> expression TIMES expression .)
-    PUNTOCOMA       reduce using rule 59 (expression -> expression TIMES expression .)
-    RPAREN          reduce using rule 59 (expression -> expression TIMES expression .)
+    PLUS            reduce using rule 60 (expression -> expression TIMES expression .)
+    MINUS           reduce using rule 60 (expression -> expression TIMES expression .)
+    TIMES           reduce using rule 60 (expression -> expression TIMES expression .)
+    DIVIDE          reduce using rule 60 (expression -> expression TIMES expression .)
+    MOD             reduce using rule 60 (expression -> expression TIMES expression .)
+    TIMESTIMES      reduce using rule 60 (expression -> expression TIMES expression .)
+    PUNTOCOMA       reduce using rule 60 (expression -> expression TIMES expression .)
+    RPAREN          reduce using rule 60 (expression -> expression TIMES expression .)
 
   ! PLUS            [ shift and go to state 76 ]
   ! MINUS           [ shift and go to state 77 ]
@@ -2353,22 +2340,22 @@ state 102
 
 state 103
 
-    (60) expression -> expression DIVIDE expression .
-    (57) expression -> expression . PLUS expression
-    (58) expression -> expression . MINUS expression
-    (59) expression -> expression . TIMES expression
-    (60) expression -> expression . DIVIDE expression
-    (61) expression -> expression . MOD expression
-    (64) expression -> expression . TIMESTIMES expression
+    (61) expression -> expression DIVIDE expression .
+    (58) expression -> expression . PLUS expression
+    (59) expression -> expression . MINUS expression
+    (60) expression -> expression . TIMES expression
+    (61) expression -> expression . DIVIDE expression
+    (62) expression -> expression . MOD expression
+    (65) expression -> expression . TIMESTIMES expression
 
-    PLUS            reduce using rule 60 (expression -> expression DIVIDE expression .)
-    MINUS           reduce using rule 60 (expression -> expression DIVIDE expression .)
-    TIMES           reduce using rule 60 (expression -> expression DIVIDE expression .)
-    DIVIDE          reduce using rule 60 (expression -> expression DIVIDE expression .)
-    MOD             reduce using rule 60 (expression -> expression DIVIDE expression .)
-    TIMESTIMES      reduce using rule 60 (expression -> expression DIVIDE expression .)
-    PUNTOCOMA       reduce using rule 60 (expression -> expression DIVIDE expression .)
-    RPAREN          reduce using rule 60 (expression -> expression DIVIDE expression .)
+    PLUS            reduce using rule 61 (expression -> expression DIVIDE expression .)
+    MINUS           reduce using rule 61 (expression -> expression DIVIDE expression .)
+    TIMES           reduce using rule 61 (expression -> expression DIVIDE expression .)
+    DIVIDE          reduce using rule 61 (expression -> expression DIVIDE expression .)
+    MOD             reduce using rule 61 (expression -> expression DIVIDE expression .)
+    TIMESTIMES      reduce using rule 61 (expression -> expression DIVIDE expression .)
+    PUNTOCOMA       reduce using rule 61 (expression -> expression DIVIDE expression .)
+    RPAREN          reduce using rule 61 (expression -> expression DIVIDE expression .)
 
   ! PLUS            [ shift and go to state 76 ]
   ! MINUS           [ shift and go to state 77 ]
@@ -2380,13 +2367,13 @@ state 103
 
 state 104
 
-    (61) expression -> expression MOD expression .
-    (57) expression -> expression . PLUS expression
-    (58) expression -> expression . MINUS expression
-    (59) expression -> expression . TIMES expression
-    (60) expression -> expression . DIVIDE expression
-    (61) expression -> expression . MOD expression
-    (64) expression -> expression . TIMESTIMES expression
+    (62) expression -> expression MOD expression .
+    (58) expression -> expression . PLUS expression
+    (59) expression -> expression . MINUS expression
+    (60) expression -> expression . TIMES expression
+    (61) expression -> expression . DIVIDE expression
+    (62) expression -> expression . MOD expression
+    (65) expression -> expression . TIMESTIMES expression
 
   ! shift/reduce conflict for PLUS resolved as shift
   ! shift/reduce conflict for MINUS resolved as shift
@@ -2394,8 +2381,8 @@ state 104
   ! shift/reduce conflict for DIVIDE resolved as shift
   ! shift/reduce conflict for MOD resolved as shift
   ! shift/reduce conflict for TIMESTIMES resolved as shift
-    PUNTOCOMA       reduce using rule 61 (expression -> expression MOD expression .)
-    RPAREN          reduce using rule 61 (expression -> expression MOD expression .)
+    PUNTOCOMA       reduce using rule 62 (expression -> expression MOD expression .)
+    RPAREN          reduce using rule 62 (expression -> expression MOD expression .)
     PLUS            shift and go to state 76
     MINUS           shift and go to state 77
     TIMES           shift and go to state 78
@@ -2403,23 +2390,23 @@ state 104
     MOD             shift and go to state 80
     TIMESTIMES      shift and go to state 81
 
-  ! PLUS            [ reduce using rule 61 (expression -> expression MOD expression .) ]
-  ! MINUS           [ reduce using rule 61 (expression -> expression MOD expression .) ]
-  ! TIMES           [ reduce using rule 61 (expression -> expression MOD expression .) ]
-  ! DIVIDE          [ reduce using rule 61 (expression -> expression MOD expression .) ]
-  ! MOD             [ reduce using rule 61 (expression -> expression MOD expression .) ]
-  ! TIMESTIMES      [ reduce using rule 61 (expression -> expression MOD expression .) ]
+  ! PLUS            [ reduce using rule 62 (expression -> expression MOD expression .) ]
+  ! MINUS           [ reduce using rule 62 (expression -> expression MOD expression .) ]
+  ! TIMES           [ reduce using rule 62 (expression -> expression MOD expression .) ]
+  ! DIVIDE          [ reduce using rule 62 (expression -> expression MOD expression .) ]
+  ! MOD             [ reduce using rule 62 (expression -> expression MOD expression .) ]
+  ! TIMESTIMES      [ reduce using rule 62 (expression -> expression MOD expression .) ]
 
 
 state 105
 
-    (64) expression -> expression TIMESTIMES expression .
-    (57) expression -> expression . PLUS expression
-    (58) expression -> expression . MINUS expression
-    (59) expression -> expression . TIMES expression
-    (60) expression -> expression . DIVIDE expression
-    (61) expression -> expression . MOD expression
-    (64) expression -> expression . TIMESTIMES expression
+    (65) expression -> expression TIMESTIMES expression .
+    (58) expression -> expression . PLUS expression
+    (59) expression -> expression . MINUS expression
+    (60) expression -> expression . TIMES expression
+    (61) expression -> expression . DIVIDE expression
+    (62) expression -> expression . MOD expression
+    (65) expression -> expression . TIMESTIMES expression
 
   ! shift/reduce conflict for PLUS resolved as shift
   ! shift/reduce conflict for MINUS resolved as shift
@@ -2427,8 +2414,8 @@ state 105
   ! shift/reduce conflict for DIVIDE resolved as shift
   ! shift/reduce conflict for MOD resolved as shift
   ! shift/reduce conflict for TIMESTIMES resolved as shift
-    PUNTOCOMA       reduce using rule 64 (expression -> expression TIMESTIMES expression .)
-    RPAREN          reduce using rule 64 (expression -> expression TIMESTIMES expression .)
+    PUNTOCOMA       reduce using rule 65 (expression -> expression TIMESTIMES expression .)
+    RPAREN          reduce using rule 65 (expression -> expression TIMESTIMES expression .)
     PLUS            shift and go to state 76
     MINUS           shift and go to state 77
     TIMES           shift and go to state 78
@@ -2436,26 +2423,26 @@ state 105
     MOD             shift and go to state 80
     TIMESTIMES      shift and go to state 81
 
-  ! PLUS            [ reduce using rule 64 (expression -> expression TIMESTIMES expression .) ]
-  ! MINUS           [ reduce using rule 64 (expression -> expression TIMESTIMES expression .) ]
-  ! TIMES           [ reduce using rule 64 (expression -> expression TIMESTIMES expression .) ]
-  ! DIVIDE          [ reduce using rule 64 (expression -> expression TIMESTIMES expression .) ]
-  ! MOD             [ reduce using rule 64 (expression -> expression TIMESTIMES expression .) ]
-  ! TIMESTIMES      [ reduce using rule 64 (expression -> expression TIMESTIMES expression .) ]
+  ! PLUS            [ reduce using rule 65 (expression -> expression TIMESTIMES expression .) ]
+  ! MINUS           [ reduce using rule 65 (expression -> expression TIMESTIMES expression .) ]
+  ! TIMES           [ reduce using rule 65 (expression -> expression TIMESTIMES expression .) ]
+  ! DIVIDE          [ reduce using rule 65 (expression -> expression TIMESTIMES expression .) ]
+  ! MOD             [ reduce using rule 65 (expression -> expression TIMESTIMES expression .) ]
+  ! TIMESTIMES      [ reduce using rule 65 (expression -> expression TIMESTIMES expression .) ]
 
 
 state 106
 
-    (70) expression -> LPAREN expression RPAREN .
+    (71) expression -> LPAREN expression RPAREN .
 
-    PLUS            reduce using rule 70 (expression -> LPAREN expression RPAREN .)
-    MINUS           reduce using rule 70 (expression -> LPAREN expression RPAREN .)
-    TIMES           reduce using rule 70 (expression -> LPAREN expression RPAREN .)
-    DIVIDE          reduce using rule 70 (expression -> LPAREN expression RPAREN .)
-    MOD             reduce using rule 70 (expression -> LPAREN expression RPAREN .)
-    TIMESTIMES      reduce using rule 70 (expression -> LPAREN expression RPAREN .)
-    PUNTOCOMA       reduce using rule 70 (expression -> LPAREN expression RPAREN .)
-    RPAREN          reduce using rule 70 (expression -> LPAREN expression RPAREN .)
+    PLUS            reduce using rule 71 (expression -> LPAREN expression RPAREN .)
+    MINUS           reduce using rule 71 (expression -> LPAREN expression RPAREN .)
+    TIMES           reduce using rule 71 (expression -> LPAREN expression RPAREN .)
+    DIVIDE          reduce using rule 71 (expression -> LPAREN expression RPAREN .)
+    MOD             reduce using rule 71 (expression -> LPAREN expression RPAREN .)
+    TIMESTIMES      reduce using rule 71 (expression -> LPAREN expression RPAREN .)
+    PUNTOCOMA       reduce using rule 71 (expression -> LPAREN expression RPAREN .)
+    RPAREN          reduce using rule 71 (expression -> LPAREN expression RPAREN .)
 
 
 state 107
@@ -2481,7 +2468,6 @@ state 109
     $end            reduce using rule 35 (arraydeclaration -> accessmodif finalstatvar ARRAYLIST LESSTHAN Type GREATTHAN STRING endexpression .)
     STRING          reduce using rule 35 (arraydeclaration -> accessmodif finalstatvar ARRAYLIST LESSTHAN Type GREATTHAN STRING endexpression .)
     GREATTHAN       reduce using rule 35 (arraydeclaration -> accessmodif finalstatvar ARRAYLIST LESSTHAN Type GREATTHAN STRING endexpression .)
-    LESSTHAN        reduce using rule 35 (arraydeclaration -> accessmodif finalstatvar ARRAYLIST LESSTHAN Type GREATTHAN STRING endexpression .)
 
 
 state 110
@@ -2535,7 +2521,7 @@ state 115
 state 116
 
     (49) stackassign -> STRING EQUALS . stackexpression endexpression
-    (50) stackexpression -> . NEW STACK GREATTHAN Type LESSTHAN LPAREN RPAREN
+    (50) stackexpression -> . NEW STACK LESSTHAN Type GREATTHAN LPAREN RPAREN
 
     NEW             shift and go to state 128
 
@@ -2552,6 +2538,7 @@ state 118
 
     (53) queueassign -> STRING EQUALS . queueexpression endexpression
     (54) queueexpression -> . NEW QUEUE LESSTHAN Type GREATTHAN LPAREN RPAREN
+    (55) queueexpression -> . NEW LINKEDLIST LESSTHAN Type GREATTHAN LPAREN RPAREN
 
     NEW             shift and go to state 130
 
@@ -2560,7 +2547,7 @@ state 118
 state 119
 
     (33) listassign -> STRING EQUALS listexpression . endexpression
-    (56) endexpression -> . PUNTOCOMA
+    (57) endexpression -> . PUNTOCOMA
 
     PUNTOCOMA       shift and go to state 51
 
@@ -2576,7 +2563,7 @@ state 120
 state 121
 
     (37) arrayassign -> STRING EQUALS arrayexpression . endexpression
-    (56) endexpression -> . PUNTOCOMA
+    (57) endexpression -> . PUNTOCOMA
 
     PUNTOCOMA       shift and go to state 51
 
@@ -2592,7 +2579,7 @@ state 122
 state 123
 
     (41) linkedlistassign -> STRING EQUALS linkedlistexpression . endexpression
-    (56) endexpression -> . PUNTOCOMA
+    (57) endexpression -> . PUNTOCOMA
 
     PUNTOCOMA       shift and go to state 51
 
@@ -2608,7 +2595,7 @@ state 124
 state 125
 
     (45) doublelinkedlistassign -> STRING EQUALS doublelinkedlistexpression . endexpression
-    (56) endexpression -> . PUNTOCOMA
+    (57) endexpression -> . PUNTOCOMA
 
     PUNTOCOMA       shift and go to state 51
 
@@ -2624,7 +2611,7 @@ state 126
 state 127
 
     (49) stackassign -> STRING EQUALS stackexpression . endexpression
-    (56) endexpression -> . PUNTOCOMA
+    (57) endexpression -> . PUNTOCOMA
 
     PUNTOCOMA       shift and go to state 51
 
@@ -2632,7 +2619,7 @@ state 127
 
 state 128
 
-    (50) stackexpression -> NEW . STACK GREATTHAN Type LESSTHAN LPAREN RPAREN
+    (50) stackexpression -> NEW . STACK LESSTHAN Type GREATTHAN LPAREN RPAREN
 
     STACK           shift and go to state 140
 
@@ -2640,7 +2627,7 @@ state 128
 state 129
 
     (53) queueassign -> STRING EQUALS queueexpression . endexpression
-    (56) endexpression -> . PUNTOCOMA
+    (57) endexpression -> . PUNTOCOMA
 
     PUNTOCOMA       shift and go to state 51
 
@@ -2649,8 +2636,10 @@ state 129
 state 130
 
     (54) queueexpression -> NEW . QUEUE LESSTHAN Type GREATTHAN LPAREN RPAREN
+    (55) queueexpression -> NEW . LINKEDLIST LESSTHAN Type GREATTHAN LPAREN RPAREN
 
     QUEUE           shift and go to state 142
+    LINKEDLIST      shift and go to state 143
 
 
 state 131
@@ -2664,7 +2653,7 @@ state 132
 
     (34) listexpression -> NEW LIST . LESSTHAN Type GREATTHAN LPAREN RPAREN
 
-    LESSTHAN        shift and go to state 143
+    LESSTHAN        shift and go to state 144
 
 
 state 133
@@ -2674,14 +2663,13 @@ state 133
     $end            reduce using rule 37 (arrayassign -> STRING EQUALS arrayexpression endexpression .)
     STRING          reduce using rule 37 (arrayassign -> STRING EQUALS arrayexpression endexpression .)
     GREATTHAN       reduce using rule 37 (arrayassign -> STRING EQUALS arrayexpression endexpression .)
-    LESSTHAN        reduce using rule 37 (arrayassign -> STRING EQUALS arrayexpression endexpression .)
 
 
 state 134
 
     (38) arrayexpression -> NEW ARRAYLIST . LESSTHAN Type GREATTHAN LPAREN RPAREN
 
-    LESSTHAN        shift and go to state 144
+    LESSTHAN        shift and go to state 145
 
 
 state 135
@@ -2695,7 +2683,7 @@ state 136
 
     (42) linkedlistexpression -> NEW LINKEDLIST . LESSTHAN Type GREATTHAN LPAREN RPAREN
 
-    LESSTHAN        shift and go to state 145
+    LESSTHAN        shift and go to state 146
 
 
 state 137
@@ -2709,7 +2697,7 @@ state 138
 
     (46) doublelinkedlistexpression -> NEW DOUBLELINKEDLIST . LESSTHAN Type GREATTHAN LPAREN RPAREN
 
-    LESSTHAN        shift and go to state 146
+    LESSTHAN        shift and go to state 147
 
 
 state 139
@@ -2721,9 +2709,9 @@ state 139
 
 state 140
 
-    (50) stackexpression -> NEW STACK . GREATTHAN Type LESSTHAN LPAREN RPAREN
+    (50) stackexpression -> NEW STACK . LESSTHAN Type GREATTHAN LPAREN RPAREN
 
-    GREATTHAN       shift and go to state 147
+    LESSTHAN        shift and go to state 148
 
 
 state 141
@@ -2737,10 +2725,17 @@ state 142
 
     (54) queueexpression -> NEW QUEUE . LESSTHAN Type GREATTHAN LPAREN RPAREN
 
-    LESSTHAN        shift and go to state 148
+    LESSTHAN        shift and go to state 149
 
 
 state 143
+
+    (55) queueexpression -> NEW LINKEDLIST . LESSTHAN Type GREATTHAN LPAREN RPAREN
+
+    LESSTHAN        shift and go to state 150
+
+
+state 144
 
     (34) listexpression -> NEW LIST LESSTHAN . Type GREATTHAN LPAREN RPAREN
     (8) Type -> . INT
@@ -2757,7 +2752,7 @@ state 143
     (19) Type -> . empty
     (35) arraydeclaration -> . accessmodif finalstatvar ARRAYLIST LESSTHAN Type GREATTHAN STRING endexpression
     (36) arraydeclaration -> . accessmodif finalstatvar ARRAYLIST LESSTHAN Type GREATTHAN arrayassign
-    (73) empty -> .
+    (74) empty -> .
     (20) accessmodif -> . PUBLIC
     (21) accessmodif -> . PRIVATE
     (22) accessmodif -> . PROTECTED
@@ -2774,21 +2769,21 @@ state 143
     CHAR            shift and go to state 34
     BYTE            shift and go to state 35
     OBJECT          shift and go to state 36
-    GREATTHAN       reduce using rule 73 (empty -> .)
-    FINAL           reduce using rule 73 (empty -> .)
-    STATIC          reduce using rule 73 (empty -> .)
-    ARRAYLIST       reduce using rule 73 (empty -> .)
+    GREATTHAN       reduce using rule 74 (empty -> .)
+    FINAL           reduce using rule 74 (empty -> .)
+    STATIC          reduce using rule 74 (empty -> .)
+    ARRAYLIST       reduce using rule 74 (empty -> .)
     PUBLIC          shift and go to state 10
     PRIVATE         shift and go to state 11
     PROTECTED       shift and go to state 12
     DEFAULT         shift and go to state 13
 
-    Type                           shift and go to state 149
+    Type                           shift and go to state 151
     arraydeclaration               shift and go to state 37
     empty                          shift and go to state 38
     accessmodif                    shift and go to state 19
 
-state 144
+state 145
 
     (38) arrayexpression -> NEW ARRAYLIST LESSTHAN . Type GREATTHAN LPAREN RPAREN
     (8) Type -> . INT
@@ -2805,7 +2800,7 @@ state 144
     (19) Type -> . empty
     (35) arraydeclaration -> . accessmodif finalstatvar ARRAYLIST LESSTHAN Type GREATTHAN STRING endexpression
     (36) arraydeclaration -> . accessmodif finalstatvar ARRAYLIST LESSTHAN Type GREATTHAN arrayassign
-    (73) empty -> .
+    (74) empty -> .
     (20) accessmodif -> . PUBLIC
     (21) accessmodif -> . PRIVATE
     (22) accessmodif -> . PROTECTED
@@ -2822,21 +2817,21 @@ state 144
     CHAR            shift and go to state 34
     BYTE            shift and go to state 35
     OBJECT          shift and go to state 36
-    GREATTHAN       reduce using rule 73 (empty -> .)
-    FINAL           reduce using rule 73 (empty -> .)
-    STATIC          reduce using rule 73 (empty -> .)
-    ARRAYLIST       reduce using rule 73 (empty -> .)
+    GREATTHAN       reduce using rule 74 (empty -> .)
+    FINAL           reduce using rule 74 (empty -> .)
+    STATIC          reduce using rule 74 (empty -> .)
+    ARRAYLIST       reduce using rule 74 (empty -> .)
     PUBLIC          shift and go to state 10
     PRIVATE         shift and go to state 11
     PROTECTED       shift and go to state 12
     DEFAULT         shift and go to state 13
 
-    Type                           shift and go to state 150
+    Type                           shift and go to state 152
     arraydeclaration               shift and go to state 37
     empty                          shift and go to state 38
     accessmodif                    shift and go to state 19
 
-state 145
+state 146
 
     (42) linkedlistexpression -> NEW LINKEDLIST LESSTHAN . Type GREATTHAN LPAREN RPAREN
     (8) Type -> . INT
@@ -2853,7 +2848,7 @@ state 145
     (19) Type -> . empty
     (35) arraydeclaration -> . accessmodif finalstatvar ARRAYLIST LESSTHAN Type GREATTHAN STRING endexpression
     (36) arraydeclaration -> . accessmodif finalstatvar ARRAYLIST LESSTHAN Type GREATTHAN arrayassign
-    (73) empty -> .
+    (74) empty -> .
     (20) accessmodif -> . PUBLIC
     (21) accessmodif -> . PRIVATE
     (22) accessmodif -> . PROTECTED
@@ -2870,21 +2865,21 @@ state 145
     CHAR            shift and go to state 34
     BYTE            shift and go to state 35
     OBJECT          shift and go to state 36
-    GREATTHAN       reduce using rule 73 (empty -> .)
-    FINAL           reduce using rule 73 (empty -> .)
-    STATIC          reduce using rule 73 (empty -> .)
-    ARRAYLIST       reduce using rule 73 (empty -> .)
+    GREATTHAN       reduce using rule 74 (empty -> .)
+    FINAL           reduce using rule 74 (empty -> .)
+    STATIC          reduce using rule 74 (empty -> .)
+    ARRAYLIST       reduce using rule 74 (empty -> .)
     PUBLIC          shift and go to state 10
     PRIVATE         shift and go to state 11
     PROTECTED       shift and go to state 12
     DEFAULT         shift and go to state 13
 
-    Type                           shift and go to state 151
+    Type                           shift and go to state 153
     arraydeclaration               shift and go to state 37
     empty                          shift and go to state 38
     accessmodif                    shift and go to state 19
 
-state 146
+state 147
 
     (46) doublelinkedlistexpression -> NEW DOUBLELINKEDLIST LESSTHAN . Type GREATTHAN LPAREN RPAREN
     (8) Type -> . INT
@@ -2901,7 +2896,7 @@ state 146
     (19) Type -> . empty
     (35) arraydeclaration -> . accessmodif finalstatvar ARRAYLIST LESSTHAN Type GREATTHAN STRING endexpression
     (36) arraydeclaration -> . accessmodif finalstatvar ARRAYLIST LESSTHAN Type GREATTHAN arrayassign
-    (73) empty -> .
+    (74) empty -> .
     (20) accessmodif -> . PUBLIC
     (21) accessmodif -> . PRIVATE
     (22) accessmodif -> . PROTECTED
@@ -2918,23 +2913,23 @@ state 146
     CHAR            shift and go to state 34
     BYTE            shift and go to state 35
     OBJECT          shift and go to state 36
-    GREATTHAN       reduce using rule 73 (empty -> .)
-    FINAL           reduce using rule 73 (empty -> .)
-    STATIC          reduce using rule 73 (empty -> .)
-    ARRAYLIST       reduce using rule 73 (empty -> .)
+    GREATTHAN       reduce using rule 74 (empty -> .)
+    FINAL           reduce using rule 74 (empty -> .)
+    STATIC          reduce using rule 74 (empty -> .)
+    ARRAYLIST       reduce using rule 74 (empty -> .)
     PUBLIC          shift and go to state 10
     PRIVATE         shift and go to state 11
     PROTECTED       shift and go to state 12
     DEFAULT         shift and go to state 13
 
-    Type                           shift and go to state 152
+    Type                           shift and go to state 154
     arraydeclaration               shift and go to state 37
     empty                          shift and go to state 38
     accessmodif                    shift and go to state 19
 
-state 147
+state 148
 
-    (50) stackexpression -> NEW STACK GREATTHAN . Type LESSTHAN LPAREN RPAREN
+    (50) stackexpression -> NEW STACK LESSTHAN . Type GREATTHAN LPAREN RPAREN
     (8) Type -> . INT
     (9) Type -> . BOOLEAN
     (10) Type -> . STRING
@@ -2949,7 +2944,7 @@ state 147
     (19) Type -> . empty
     (35) arraydeclaration -> . accessmodif finalstatvar ARRAYLIST LESSTHAN Type GREATTHAN STRING endexpression
     (36) arraydeclaration -> . accessmodif finalstatvar ARRAYLIST LESSTHAN Type GREATTHAN arrayassign
-    (73) empty -> .
+    (74) empty -> .
     (20) accessmodif -> . PUBLIC
     (21) accessmodif -> . PRIVATE
     (22) accessmodif -> . PROTECTED
@@ -2966,21 +2961,21 @@ state 147
     CHAR            shift and go to state 34
     BYTE            shift and go to state 35
     OBJECT          shift and go to state 36
-    LESSTHAN        reduce using rule 73 (empty -> .)
-    FINAL           reduce using rule 73 (empty -> .)
-    STATIC          reduce using rule 73 (empty -> .)
-    ARRAYLIST       reduce using rule 73 (empty -> .)
+    GREATTHAN       reduce using rule 74 (empty -> .)
+    FINAL           reduce using rule 74 (empty -> .)
+    STATIC          reduce using rule 74 (empty -> .)
+    ARRAYLIST       reduce using rule 74 (empty -> .)
     PUBLIC          shift and go to state 10
     PRIVATE         shift and go to state 11
     PROTECTED       shift and go to state 12
     DEFAULT         shift and go to state 13
 
-    Type                           shift and go to state 153
+    Type                           shift and go to state 155
     arraydeclaration               shift and go to state 37
     empty                          shift and go to state 38
     accessmodif                    shift and go to state 19
 
-state 148
+state 149
 
     (54) queueexpression -> NEW QUEUE LESSTHAN . Type GREATTHAN LPAREN RPAREN
     (8) Type -> . INT
@@ -2997,7 +2992,7 @@ state 148
     (19) Type -> . empty
     (35) arraydeclaration -> . accessmodif finalstatvar ARRAYLIST LESSTHAN Type GREATTHAN STRING endexpression
     (36) arraydeclaration -> . accessmodif finalstatvar ARRAYLIST LESSTHAN Type GREATTHAN arrayassign
-    (73) empty -> .
+    (74) empty -> .
     (20) accessmodif -> . PUBLIC
     (21) accessmodif -> . PRIVATE
     (22) accessmodif -> . PROTECTED
@@ -3014,186 +3009,262 @@ state 148
     CHAR            shift and go to state 34
     BYTE            shift and go to state 35
     OBJECT          shift and go to state 36
-    GREATTHAN       reduce using rule 73 (empty -> .)
-    FINAL           reduce using rule 73 (empty -> .)
-    STATIC          reduce using rule 73 (empty -> .)
-    ARRAYLIST       reduce using rule 73 (empty -> .)
+    GREATTHAN       reduce using rule 74 (empty -> .)
+    FINAL           reduce using rule 74 (empty -> .)
+    STATIC          reduce using rule 74 (empty -> .)
+    ARRAYLIST       reduce using rule 74 (empty -> .)
     PUBLIC          shift and go to state 10
     PRIVATE         shift and go to state 11
     PROTECTED       shift and go to state 12
     DEFAULT         shift and go to state 13
 
-    Type                           shift and go to state 154
+    Type                           shift and go to state 156
     arraydeclaration               shift and go to state 37
     empty                          shift and go to state 38
     accessmodif                    shift and go to state 19
 
-state 149
-
-    (34) listexpression -> NEW LIST LESSTHAN Type . GREATTHAN LPAREN RPAREN
-
-    GREATTHAN       shift and go to state 155
-
-
 state 150
 
-    (38) arrayexpression -> NEW ARRAYLIST LESSTHAN Type . GREATTHAN LPAREN RPAREN
+    (55) queueexpression -> NEW LINKEDLIST LESSTHAN . Type GREATTHAN LPAREN RPAREN
+    (8) Type -> . INT
+    (9) Type -> . BOOLEAN
+    (10) Type -> . STRING
+    (11) Type -> . SHORT
+    (12) Type -> . FLOAT
+    (13) Type -> . LONG
+    (14) Type -> . DOUBLE
+    (15) Type -> . CHAR
+    (16) Type -> . BYTE
+    (17) Type -> . OBJECT
+    (18) Type -> . arraydeclaration
+    (19) Type -> . empty
+    (35) arraydeclaration -> . accessmodif finalstatvar ARRAYLIST LESSTHAN Type GREATTHAN STRING endexpression
+    (36) arraydeclaration -> . accessmodif finalstatvar ARRAYLIST LESSTHAN Type GREATTHAN arrayassign
+    (74) empty -> .
+    (20) accessmodif -> . PUBLIC
+    (21) accessmodif -> . PRIVATE
+    (22) accessmodif -> . PROTECTED
+    (23) accessmodif -> . DEFAULT
+    (24) accessmodif -> . empty
 
-    GREATTHAN       shift and go to state 156
+    INT             shift and go to state 28
+    BOOLEAN         shift and go to state 29
+    STRING          shift and go to state 21
+    SHORT           shift and go to state 30
+    FLOAT           shift and go to state 31
+    LONG            shift and go to state 32
+    DOUBLE          shift and go to state 33
+    CHAR            shift and go to state 34
+    BYTE            shift and go to state 35
+    OBJECT          shift and go to state 36
+    GREATTHAN       reduce using rule 74 (empty -> .)
+    FINAL           reduce using rule 74 (empty -> .)
+    STATIC          reduce using rule 74 (empty -> .)
+    ARRAYLIST       reduce using rule 74 (empty -> .)
+    PUBLIC          shift and go to state 10
+    PRIVATE         shift and go to state 11
+    PROTECTED       shift and go to state 12
+    DEFAULT         shift and go to state 13
 
+    Type                           shift and go to state 157
+    arraydeclaration               shift and go to state 37
+    empty                          shift and go to state 38
+    accessmodif                    shift and go to state 19
 
 state 151
 
-    (42) linkedlistexpression -> NEW LINKEDLIST LESSTHAN Type . GREATTHAN LPAREN RPAREN
-
-    GREATTHAN       shift and go to state 157
-
-
-state 152
-
-    (46) doublelinkedlistexpression -> NEW DOUBLELINKEDLIST LESSTHAN Type . GREATTHAN LPAREN RPAREN
+    (34) listexpression -> NEW LIST LESSTHAN Type . GREATTHAN LPAREN RPAREN
 
     GREATTHAN       shift and go to state 158
 
 
+state 152
+
+    (38) arrayexpression -> NEW ARRAYLIST LESSTHAN Type . GREATTHAN LPAREN RPAREN
+
+    GREATTHAN       shift and go to state 159
+
+
 state 153
 
-    (50) stackexpression -> NEW STACK GREATTHAN Type . LESSTHAN LPAREN RPAREN
-
-    LESSTHAN        shift and go to state 159
-
-
-state 154
-
-    (54) queueexpression -> NEW QUEUE LESSTHAN Type . GREATTHAN LPAREN RPAREN
+    (42) linkedlistexpression -> NEW LINKEDLIST LESSTHAN Type . GREATTHAN LPAREN RPAREN
 
     GREATTHAN       shift and go to state 160
 
 
+state 154
+
+    (46) doublelinkedlistexpression -> NEW DOUBLELINKEDLIST LESSTHAN Type . GREATTHAN LPAREN RPAREN
+
+    GREATTHAN       shift and go to state 161
+
+
 state 155
 
-    (34) listexpression -> NEW LIST LESSTHAN Type GREATTHAN . LPAREN RPAREN
+    (50) stackexpression -> NEW STACK LESSTHAN Type . GREATTHAN LPAREN RPAREN
 
-    LPAREN          shift and go to state 161
+    GREATTHAN       shift and go to state 162
 
 
 state 156
 
-    (38) arrayexpression -> NEW ARRAYLIST LESSTHAN Type GREATTHAN . LPAREN RPAREN
+    (54) queueexpression -> NEW QUEUE LESSTHAN Type . GREATTHAN LPAREN RPAREN
 
-    LPAREN          shift and go to state 162
+    GREATTHAN       shift and go to state 163
 
 
 state 157
 
-    (42) linkedlistexpression -> NEW LINKEDLIST LESSTHAN Type GREATTHAN . LPAREN RPAREN
+    (55) queueexpression -> NEW LINKEDLIST LESSTHAN Type . GREATTHAN LPAREN RPAREN
 
-    LPAREN          shift and go to state 163
+    GREATTHAN       shift and go to state 164
 
 
 state 158
 
-    (46) doublelinkedlistexpression -> NEW DOUBLELINKEDLIST LESSTHAN Type GREATTHAN . LPAREN RPAREN
-
-    LPAREN          shift and go to state 164
-
-
-state 159
-
-    (50) stackexpression -> NEW STACK GREATTHAN Type LESSTHAN . LPAREN RPAREN
+    (34) listexpression -> NEW LIST LESSTHAN Type GREATTHAN . LPAREN RPAREN
 
     LPAREN          shift and go to state 165
 
 
-state 160
+state 159
 
-    (54) queueexpression -> NEW QUEUE LESSTHAN Type GREATTHAN . LPAREN RPAREN
+    (38) arrayexpression -> NEW ARRAYLIST LESSTHAN Type GREATTHAN . LPAREN RPAREN
 
     LPAREN          shift and go to state 166
 
 
+state 160
+
+    (42) linkedlistexpression -> NEW LINKEDLIST LESSTHAN Type GREATTHAN . LPAREN RPAREN
+
+    LPAREN          shift and go to state 167
+
+
 state 161
 
-    (34) listexpression -> NEW LIST LESSTHAN Type GREATTHAN LPAREN . RPAREN
+    (46) doublelinkedlistexpression -> NEW DOUBLELINKEDLIST LESSTHAN Type GREATTHAN . LPAREN RPAREN
 
-    RPAREN          shift and go to state 167
+    LPAREN          shift and go to state 168
 
 
 state 162
 
-    (38) arrayexpression -> NEW ARRAYLIST LESSTHAN Type GREATTHAN LPAREN . RPAREN
+    (50) stackexpression -> NEW STACK LESSTHAN Type GREATTHAN . LPAREN RPAREN
 
-    RPAREN          shift and go to state 168
+    LPAREN          shift and go to state 169
 
 
 state 163
 
-    (42) linkedlistexpression -> NEW LINKEDLIST LESSTHAN Type GREATTHAN LPAREN . RPAREN
+    (54) queueexpression -> NEW QUEUE LESSTHAN Type GREATTHAN . LPAREN RPAREN
 
-    RPAREN          shift and go to state 169
+    LPAREN          shift and go to state 170
 
 
 state 164
 
-    (46) doublelinkedlistexpression -> NEW DOUBLELINKEDLIST LESSTHAN Type GREATTHAN LPAREN . RPAREN
+    (55) queueexpression -> NEW LINKEDLIST LESSTHAN Type GREATTHAN . LPAREN RPAREN
 
-    RPAREN          shift and go to state 170
+    LPAREN          shift and go to state 171
 
 
 state 165
 
-    (50) stackexpression -> NEW STACK GREATTHAN Type LESSTHAN LPAREN . RPAREN
-
-    RPAREN          shift and go to state 171
-
-
-state 166
-
-    (54) queueexpression -> NEW QUEUE LESSTHAN Type GREATTHAN LPAREN . RPAREN
+    (34) listexpression -> NEW LIST LESSTHAN Type GREATTHAN LPAREN . RPAREN
 
     RPAREN          shift and go to state 172
 
 
+state 166
+
+    (38) arrayexpression -> NEW ARRAYLIST LESSTHAN Type GREATTHAN LPAREN . RPAREN
+
+    RPAREN          shift and go to state 173
+
+
 state 167
+
+    (42) linkedlistexpression -> NEW LINKEDLIST LESSTHAN Type GREATTHAN LPAREN . RPAREN
+
+    RPAREN          shift and go to state 174
+
+
+state 168
+
+    (46) doublelinkedlistexpression -> NEW DOUBLELINKEDLIST LESSTHAN Type GREATTHAN LPAREN . RPAREN
+
+    RPAREN          shift and go to state 175
+
+
+state 169
+
+    (50) stackexpression -> NEW STACK LESSTHAN Type GREATTHAN LPAREN . RPAREN
+
+    RPAREN          shift and go to state 176
+
+
+state 170
+
+    (54) queueexpression -> NEW QUEUE LESSTHAN Type GREATTHAN LPAREN . RPAREN
+
+    RPAREN          shift and go to state 177
+
+
+state 171
+
+    (55) queueexpression -> NEW LINKEDLIST LESSTHAN Type GREATTHAN LPAREN . RPAREN
+
+    RPAREN          shift and go to state 178
+
+
+state 172
 
     (34) listexpression -> NEW LIST LESSTHAN Type GREATTHAN LPAREN RPAREN .
 
     PUNTOCOMA       reduce using rule 34 (listexpression -> NEW LIST LESSTHAN Type GREATTHAN LPAREN RPAREN .)
 
 
-state 168
+state 173
 
     (38) arrayexpression -> NEW ARRAYLIST LESSTHAN Type GREATTHAN LPAREN RPAREN .
 
     PUNTOCOMA       reduce using rule 38 (arrayexpression -> NEW ARRAYLIST LESSTHAN Type GREATTHAN LPAREN RPAREN .)
 
 
-state 169
+state 174
 
     (42) linkedlistexpression -> NEW LINKEDLIST LESSTHAN Type GREATTHAN LPAREN RPAREN .
 
     PUNTOCOMA       reduce using rule 42 (linkedlistexpression -> NEW LINKEDLIST LESSTHAN Type GREATTHAN LPAREN RPAREN .)
 
 
-state 170
+state 175
 
     (46) doublelinkedlistexpression -> NEW DOUBLELINKEDLIST LESSTHAN Type GREATTHAN LPAREN RPAREN .
 
     PUNTOCOMA       reduce using rule 46 (doublelinkedlistexpression -> NEW DOUBLELINKEDLIST LESSTHAN Type GREATTHAN LPAREN RPAREN .)
 
 
-state 171
+state 176
 
-    (50) stackexpression -> NEW STACK GREATTHAN Type LESSTHAN LPAREN RPAREN .
+    (50) stackexpression -> NEW STACK LESSTHAN Type GREATTHAN LPAREN RPAREN .
 
-    PUNTOCOMA       reduce using rule 50 (stackexpression -> NEW STACK GREATTHAN Type LESSTHAN LPAREN RPAREN .)
+    PUNTOCOMA       reduce using rule 50 (stackexpression -> NEW STACK LESSTHAN Type GREATTHAN LPAREN RPAREN .)
 
 
-state 172
+state 177
 
     (54) queueexpression -> NEW QUEUE LESSTHAN Type GREATTHAN LPAREN RPAREN .
 
     PUNTOCOMA       reduce using rule 54 (queueexpression -> NEW QUEUE LESSTHAN Type GREATTHAN LPAREN RPAREN .)
+
+
+state 178
+
+    (55) queueexpression -> NEW LINKEDLIST LESSTHAN Type GREATTHAN LPAREN RPAREN .
+
+    PUNTOCOMA       reduce using rule 55 (queueexpression -> NEW LINKEDLIST LESSTHAN Type GREATTHAN LPAREN RPAREN .)
 
 WARNING: 
 WARNING: Conflicts:

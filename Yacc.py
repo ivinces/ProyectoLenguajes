@@ -1,6 +1,7 @@
 import ply.yacc as yacc
 from Tokens import *
-
+from asignar_var import *
+from tkinter import *
 lexer=lex.lex()
 
 precedence=[
@@ -134,7 +135,7 @@ def p_stackassign(p):
     pass
 
 def p_stackexpression(p):
-    """stackexpression : NEW STACK GREATTHAN Type LESSTHAN LPAREN RPAREN
+    """stackexpression : NEW STACK LESSTHAN Type GREATTHAN LPAREN RPAREN
         """
     pass
 
@@ -150,6 +151,7 @@ def p_queueassign(p):
 
 def p_queueexpression(p):
     """queueexpression : NEW QUEUE LESSTHAN Type GREATTHAN LPAREN RPAREN
+                        | NEW LINKEDLIST LESSTHAN Type GREATTHAN LPAREN RPAREN
         """
     pass
 
@@ -216,11 +218,12 @@ def p_error(error):
 
 parser=yacc.yacc()
 
-
-while True:
+def comprobar(a):
+    s = a.replace(" ", "")
     try:
-        a = input('calc > ')   # Use raw_input on Python 2
-        s = a.replace(" ","")
-    except EOFError:
-        break
-    parser.parse(s)
+        parser.parse(s)
+        text="Correcta"
+    except:
+        text="Incorrecta"
+
+    return text

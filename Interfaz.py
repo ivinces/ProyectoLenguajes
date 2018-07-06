@@ -1,9 +1,11 @@
 from tkinter import *
 from asignar_var import *
+from Yacc import comprobar
 w=Tk()
 w.geometry("400x600")
 texto= StringVar()
 text=StringVar()
+respuesta=""
 
 def imprimir(text,w):
     l8= Label(w, text=text,justify="right")
@@ -31,8 +33,9 @@ l7= Label(w, text="Ingrese su cadena: ",font="Helvfont",justify="right")
 l7.grid(row=21,column=0)
 f=Entry(w, textvar=texto)
 f.grid(row=23,column=0)
-b1=Button(w, text="Ingresar",command=lambda: asignar_var(texto.get(),text))
+b1=Button(w, text="Ingresar",command=lambda: asignar_var(comprobar(texto.get()),text))
 b1.grid(row=25,column=0)
 label1=Label(w,textvar=text).grid(row=29,column=0)
+
 w.mainloop()
 
