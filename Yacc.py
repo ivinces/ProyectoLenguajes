@@ -214,16 +214,18 @@ def p_empty(p):
 
 def p_error(error):
     print("Syntax Error: Unexpected '%s', near line '%s' " % (error.value, error.lineno))
+    raise SyntaxError
     return error
 
 parser=yacc.yacc()
+
 
 def comprobar(a):
     s = a.replace(" ", "")
     try:
         parser.parse(s)
         text="Correcta"
-    except:
+    except SyntaxError:
         text="Incorrecta"
 
     return text
