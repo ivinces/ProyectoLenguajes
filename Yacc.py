@@ -64,8 +64,8 @@ def p_declaration(p):
     pass
 
 def p_listdeclaration(p):
-    """listdeclaration : accessmodif finalstatvar LIST GREATTHAN Type LESSTHAN  STRING endexpression
-            | accessmodif finalstatvar LIST GREATTHAN Type LESSTHAN  listassign
+    """listdeclaration : accessmodif finalstatvar LIST LESSTHAN Type GREATTHAN STRING endexpression
+            | accessmodif finalstatvar LIST LESSTHAN Type GREATTHAN  listassign
     """
     pass
 
@@ -74,12 +74,12 @@ def p_listassign(p):
     pass
 
 def p_listexpression(p):
-    """listexpression : NEW LIST GREATTHAN Type LESSTHAN LPAREN RPAREN
+    """listexpression : NEW LIST LESSTHAN Type GREATTHAN LPAREN RPAREN
         """
     pass
 
 def p_arraydeclaration(p):
-    """arraydeclaration : accessmodif finalstatvar ARRAYLIST LESSTHAN Type GREATTHAN ESPACIO STRING endexpression
+    """arraydeclaration : accessmodif finalstatvar ARRAYLIST LESSTHAN Type GREATTHAN STRING endexpression
             | accessmodif finalstatvar ARRAYLIST LESSTHAN Type GREATTHAN arrayassign
             """
     pass
@@ -139,8 +139,8 @@ def p_stackexpression(p):
     pass
 
 def p_queuedeclaration(p):
-    """queuedeclaration : accessmodif finalstatvar QUEUE GREATTHAN Type LESSTHAN STRING endexpression
-                            | accessmodif finalstatvar QUEUE GREATTHAN Type LESSTHAN queueassign
+    """queuedeclaration : accessmodif finalstatvar QUEUE LESSTHAN Type GREATTHAN  STRING endexpression
+                            | accessmodif finalstatvar QUEUE LESSTHAN Type GREATTHAN queueassign
     """
     pass
 
@@ -149,7 +149,7 @@ def p_queueassign(p):
     pass
 
 def p_queueexpression(p):
-    """queueexpression : NEW QUEUE GREATTHAN Type LESSTHAN LPAREN RPAREN
+    """queueexpression : NEW QUEUE LESSTHAN Type GREATTHAN LPAREN RPAREN
         """
     pass
 
@@ -216,9 +216,11 @@ def p_error(error):
 
 parser=yacc.yacc()
 
+
 while True:
     try:
-        s = input('calc > ')   # Use raw_input on Python 2
+        a = input('calc > ')   # Use raw_input on Python 2
+        s = a.replace(" ","")
     except EOFError:
         break
     parser.parse(s)

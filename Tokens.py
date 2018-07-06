@@ -42,10 +42,36 @@ def t_INTEGER(t):
     t.value = int(t.value)
     return t
 
+def t_LIST(t):
+    r'List'
+    t.value=t.value
+    return t
+
 def t_ARRAYLIST(t):
     r'ArrayList'
     t.value=t.value
     return t
+
+def t_LINKEDLIST(t):
+    r'LinkedList'
+    t.value=t.value
+    return t
+
+def t_DOUBLELINKEDLIST(t):
+    r'DoubleLinkedList'
+    t.value=t.value
+    return t
+
+def t_QUEUE(t):
+    r'Queue'
+    t.value=t.value
+    return t
+
+def t_STACK(t):
+    r'Stack'
+    t.value=t.value
+    return t
+
 def t_BYTE(t):
     r'byte'
     t.value=t.value
@@ -72,6 +98,66 @@ def t_CHAR(t):
 
 def t_FLOAT(t):
     r'float'
+    t.value=t.value
+    return t
+
+def t_OBJECT(t):
+    r'Object'
+    t.value=t.value
+    return t
+
+def t_DOUBLE(t):
+    r'double'
+    t.value=t.value
+    return t
+
+def t_BOOLEAN(t):
+    r'boolean'
+    t.value=t.value
+    return t
+
+def t_NULL(t):
+    r'NULL'
+    t.value=t.value
+    return t
+
+def t_NEW(t):
+    r'new'
+    t.value=t.value
+    return t
+
+def t_FINAL(t):
+    r'final'
+    t.value=t.value
+    return t
+
+def t_PUBLIC(t):
+    r'public'
+    t.value=t.value
+    return t
+
+def t_PROTECTED(t):
+    r'protected'
+    t.value=t.value
+    return t
+
+def t_PRIVATE(t):
+    r'private'
+    t.value=t.value
+    return t
+
+def t_ABSTRACT(t):
+    r'abstract'
+    t.value=t.value
+    return t
+
+def t_STATIC(t):
+    r'static'
+    t.value=t.value
+    return t
+
+def t_DEFAULT(t):
+    r'default'
     t.value=t.value
     return t
 
@@ -142,7 +228,7 @@ def t_error(t):
 lex.lex()
 
 
-lex.input("ArrayList")
+lex.input("<")
 while True:
     tok=lex.token()
     print(tok)
