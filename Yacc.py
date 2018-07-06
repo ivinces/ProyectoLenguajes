@@ -26,19 +26,31 @@ def p_program(p):
                 | queuedeclaration
         """
     pass
-
 def p_Type(p):
     '''Type : INT
             | BOOLEAN
-            | STRING
             | SHORT
             | FLOAT
             | LONG
+            | STRING
             | DOUBLE
             | CHAR
             | BYTE
             | OBJECT
-            | arraydeclaration
+            '''
+    pass
+
+def p_Typet(p):
+    '''Typet : INT
+            | BOOLEAN
+            | SHORT
+            | FLOAT
+            | LONG
+            | DOUBLE
+            | STRING
+            | CHAR
+            | BYTE
+            | OBJECT
             | empty
             '''
     pass
@@ -59,74 +71,84 @@ def p_finalstatvar(p):
     pass
 
 def p_declaration(p):
-    """declaration : accessmodif finalstatvar Type STRING endexpression
+    """declaration : accessmodif finalstatvar Type VAR endexpression
             | accessmodif finalstatvar Type assign
             """
     pass
 
 def p_listdeclaration(p):
-    """listdeclaration : accessmodif finalstatvar LIST LESSTHAN Type GREATTHAN STRING endexpression
+    """listdeclaration : accessmodif finalstatvar LIST LESSTHAN Type GREATTHAN VAR endexpression
+            | accessmodif accessmodif finalstatvar LIST LESSTHAN Type GREATTHAN VAR endexpression
             | accessmodif finalstatvar LIST LESSTHAN Type GREATTHAN  listassign
+            | accessmodif accessmodif finalstatvar LIST LESSTHAN Type GREATTHAN listassign
     """
     pass
 
 def p_listassign(p):
-    '''listassign : STRING EQUALS listexpression endexpression'''
+    '''listassign : VAR EQUALS listexpression endexpression'''
     pass
 
 def p_listexpression(p):
-    """listexpression : NEW LIST LESSTHAN Type GREATTHAN LPAREN RPAREN
+    """listexpression : NEW LIST LESSTHAN Typet GREATTHAN LPAREN RPAREN
         """
     pass
 
 def p_arraydeclaration(p):
-    """arraydeclaration : accessmodif finalstatvar ARRAYLIST LESSTHAN Type GREATTHAN STRING endexpression
+    """arraydeclaration : accessmodif finalstatvar ARRAYLIST LESSTHAN Type GREATTHAN VAR endexpression
+            | accessmodif accessmodif finalstatvar ARRAYLIST LESSTHAN Type GREATTHAN VAR endexpression
             | accessmodif finalstatvar ARRAYLIST LESSTHAN Type GREATTHAN arrayassign
+            | accessmodif accessmodif finalstatvar ARRAYLIST LESSTHAN Type GREATTHAN arrayassign
             """
     pass
 
 def p_arrayassign(p):
-    '''arrayassign : STRING EQUALS arrayexpression endexpression'''
+    '''arrayassign : VAR EQUALS arrayexpression endexpression'''
     pass
 
 def p_arrayexpression(p):
-    """arrayexpression : NEW ARRAYLIST LESSTHAN Type GREATTHAN LPAREN RPAREN
+    """arrayexpression : NEW ARRAYLIST LESSTHAN Typet GREATTHAN LPAREN RPAREN
         """
     pass
 
 def p_linkedlistdeclaration(p):
-    """linkedlistdeclaration : accessmodif finalstatvar LINKEDLIST LESSTHAN Type GREATTHAN STRING endexpression
+    """linkedlistdeclaration : accessmodif finalstatvar LINKEDLIST LESSTHAN Type GREATTHAN VAR endexpression
+                            | accessmodif accessmodif finalstatvar LINKEDLIST LESSTHAN Type GREATTHAN VAR endexpression
                             | accessmodif finalstatvar LINKEDLIST LESSTHAN Type GREATTHAN linkedlistassign
+                            | accessmodif accessmodif finalstatvar LINKEDLIST LESSTHAN Type GREATTHAN linkedlistassign
     """
     pass
 
 def p_linkedlistassign(p):
-    '''linkedlistassign : STRING EQUALS linkedlistexpression endexpression'''
+    '''linkedlistassign : VAR EQUALS linkedlistexpression endexpression'''
     pass
 
 def p_linkedlistexpression(p):
-    """linkedlistexpression : NEW LINKEDLIST LESSTHAN Type GREATTHAN LPAREN RPAREN
+    """linkedlistexpression : NEW LINKEDLIST LESSTHAN Typet GREATTHAN LPAREN RPAREN
         """
     pass
 
 def p_doublelinkedlistdeclaration(p):
-    """doublelinkedlistdeclaration : accessmodif finalstatvar DOUBLELINKEDLIST LESSTHAN Type GREATTHAN STRING endexpression
+    """doublelinkedlistdeclaration : accessmodif finalstatvar DOUBLELINKEDLIST LESSTHAN Type GREATTHAN VAR endexpression
+                            | accessmodif accessmodif finalstatvar DOUBLELINKEDLIST LESSTHAN Type GREATTHAN VAR endexpression
                             | accessmodif finalstatvar DOUBLELINKEDLIST LESSTHAN Type GREATTHAN doublelinkedlistassign
+                            | accessmodif accessmodif finalstatvar DOUBLELINKEDLIST LESSTHAN Type GREATTHAN doublelinkedlistassign
     """
     pass
 
 def p_doublelinkedlistassign(p):
-    '''doublelinkedlistassign : STRING EQUALS doublelinkedlistexpression endexpression'''
+    '''doublelinkedlistassign : VAR EQUALS doublelinkedlistexpression endexpression'''
     pass
 
 def p_doublelinkedlistexpression(p):
-    """doublelinkedlistexpression : NEW DOUBLELINKEDLIST LESSTHAN Type GREATTHAN LPAREN RPAREN
+    """doublelinkedlistexpression : NEW DOUBLELINKEDLIST LESSTHAN Typet GREATTHAN LPAREN RPAREN
         """
     pass
 
 def p_stackdeclaration(p):
-    """stackdeclaration : accessmodif finalstatvar STACK LESSTHAN Type GREATTHAN STRING endexpression
+    """stackdeclaration : accessmodif finalstatvar STACK LESSTHAN Type GREATTHAN VAR endexpression
+                            | accessmodif accessmodif finalstatvar STACK LESSTHAN Type GREATTHAN VAR endexpression
                             | accessmodif finalstatvar STACK LESSTHAN Type GREATTHAN stackassign
+                            | accessmodif accessmodif finalstatvar STACK LESSTHAN Type GREATTHAN stackassign
     """
     pass
 
@@ -135,28 +157,30 @@ def p_stackassign(p):
     pass
 
 def p_stackexpression(p):
-    """stackexpression : NEW STACK LESSTHAN Type GREATTHAN LPAREN RPAREN
+    """stackexpression : NEW STACK LESSTHAN Typet GREATTHAN LPAREN RPAREN
         """
     pass
 
 def p_queuedeclaration(p):
-    """queuedeclaration : accessmodif finalstatvar QUEUE LESSTHAN Type GREATTHAN  STRING endexpression
+    """queuedeclaration : accessmodif finalstatvar QUEUE LESSTHAN Type GREATTHAN  VAR endexpression
+                            | accessmodif accessmodif finalstatvar QUEUE LESSTHAN Type GREATTHAN  VAR endexpression
                             | accessmodif finalstatvar QUEUE LESSTHAN Type GREATTHAN queueassign
+                            | accessmodif accessmodif finalstatvar QUEUE LESSTHAN Type GREATTHAN queueassign
     """
     pass
 
 def p_queueassign(p):
-    '''queueassign : STRING EQUALS queueexpression endexpression'''
+    '''queueassign : VAR EQUALS queueexpression endexpression'''
     pass
 
 def p_queueexpression(p):
-    """queueexpression : NEW QUEUE LESSTHAN Type GREATTHAN LPAREN RPAREN
-                        | NEW LINKEDLIST LESSTHAN Type GREATTHAN LPAREN RPAREN
+    """queueexpression : NEW QUEUE LESSTHAN Typet GREATTHAN LPAREN RPAREN
+                        | NEW LINKEDLIST LESSTHAN Typet GREATTHAN LPAREN RPAREN
         """
     pass
 
 def p_assign(p):
-    '''assign : STRING EQUALS expression endexpression'''
+    '''assign : VAR EQUALS expression endexpression'''
     pass
 
 def p_endexpression(p):

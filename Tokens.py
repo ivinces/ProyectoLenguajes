@@ -26,16 +26,22 @@ reserved = {
     'abstract':'ABSTRACT',
     'static':'STATIC',
     'default':'DEFAULT',
+    'String' : 'STRING',
 }
 
-tokens = list(reserved.values())+ ['STRING','INTEGER', 'ESPACIO',
+tokens = list(reserved.values())+ ['VAR','INTEGER', 'ESPACIO',
           'PLUS', 'MINUS','TIMES','DIVIDE','MOD','OR', 'AND','XOR','NOT','CONCAT','LESSTHAN',
           'GREATTHAN','LESSTHANEQUAL', 'GREATTHANEQUAL', 'EQUAL','EQUALS', 'NEQUAL','PLUSPLUS','MINUSMINUS', 'TIMESTIMES','CONCA',
           'TIMES_ASSIGN','DIVIDE_ASSIGN', 'PLUS_ASSIGN', 'MINUS_ASSIGN', 'MOD_ASSIGN', 'AND_ASSIGN', 'OR_ASSIGN', 'XOR_ASSIGN',
           'LPAREN', 'RPAREN','LCORCHETE','RCORCHETE','LLLAVE','RLLAVE','COMA','PUNTO','PUNTOCOMA',
           'DOSCOMA', 'BLOCK_COMMENT']
 
-t_STRING=r'[a-zA-Z_][a-zA-Z0-9_]*'
+t_VAR=r'[a-zA-Z_][a-zA-Z0-9_]*' #Se cambio de String a Var para que en Tipo no acepte cualquier cosa.
+
+def t_STRING(t):
+    r'String'
+    t.value=t.value
+    return t
 
 def t_INTEGER(t):
     r'\d+'
