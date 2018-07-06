@@ -2,7 +2,7 @@ from tkinter import *
 from asignar_var import *
 from Yacc import comprobar
 w=Tk()
-w.geometry("400x600")
+w.geometry("300x600")
 texto= StringVar()
 text=StringVar()
 respuesta=""

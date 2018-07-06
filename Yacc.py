@@ -213,9 +213,7 @@ def p_empty(p):
     pass
 
 def p_error(error):
-    print("Syntax Error: Unexpected '%s', near line '%s' " % (error.value, error.lineno))
     raise SyntaxError
-    return error
 
 parser=yacc.yacc()
 
@@ -225,7 +223,7 @@ def comprobar(a):
     try:
         parser.parse(s)
         text="Correcta"
-    except SyntaxError:
+    except SyntaxError or Exception:
         text="Incorrecta"
 
     return text
